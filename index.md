@@ -86,6 +86,8 @@ Al finalizar el curso, la persona participante será capaz de:
 
 ## Uso del repositorio
 
+Este curso es un recurso educativo abierto. Su código fuente completo, historial de cambios y archivos reproducibles están disponibles en: [github.com/glacy/frontmatter-academico](https://github.com/glacy/frontmatter-academico)
+
 - `examples/` contiene ejemplos funcionales de frontmatter para distintos contextos académicos.
   - `legacy/` contiene archivos de configuración antiguos (`_toc.yml`, `_config.yml`) por referencia histórica.
 - `exercises/` incluye actividades guiadas asociadas a cada sesión.
