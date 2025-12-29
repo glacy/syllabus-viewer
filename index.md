@@ -52,8 +52,7 @@ Al finalizar el curso, la persona participante será capaz de:
 
 ---
 
-```{include} ./sessions_table.md
-
+```{include} sessions_table.md
 ```
 
 ---
