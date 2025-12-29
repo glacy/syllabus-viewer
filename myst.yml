@@ -7,7 +7,7 @@ project:
   copyright: >
     © 2025 glacy. Contenido distribuido bajo licencia Creative Commons
     Atribución 4.0 Internacional (CC BY 4.0).
-  github: glacy/frontmatter-curso
+  github: glacy/frontmatter-academico
   toc:
     - file: index.md
     - title: "Fundamentos"
