@@ -203,4 +203,4 @@ Estas prácticas facilitan la lectura humana y el procesamiento automático.
 
 > La herencia de metadatos no es una optimización técnica, sino una decisión pedagógica y semántica.
 
-En la próxima sesión se abordará la integración de frontmatter con _toc.yml y la estructura pedagógica, conectando metadatos con navegación y evaluación.
+En la próxima sesión se abordará la integración de frontmatter con myst.yml y la estructura pedagógica, conectando metadatos con navegación y evaluación.

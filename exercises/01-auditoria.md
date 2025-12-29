@@ -29,4 +29,4 @@ Esta actividad se evalúa con base en:
 - uso correcto del vocabulario introducido;
 - coherencia del análisis.
 
-Esta evidencia alimenta directamente la matriz de evaluación del curso y no requiere todavía validación automática.
+

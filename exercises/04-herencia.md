@@ -10,7 +10,7 @@
   - un frontmatter de sesión mínimo.
 4. Justifique por qué cada campo se hereda o se especializa.
 
-No se requiere implementar aún `_config.yml`.
+No se requiere implementar aún `myst.yml`.
 
 **Producto esperado**
 
