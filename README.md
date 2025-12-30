@@ -20,14 +20,14 @@ El curso está construido con **MyST Markdown** y demuestra principios de:
 - **Reproducibilidad:** Entorno controlado y despliegue automatizado.
 - **Documentación como código:** CI/CD con GitHub Actions.
 
-## Ejecución en la nube (Recomendado)
+## Ejecución en la nube (recomendado)
 
 La forma más sencilla de ejecutar este curso es utilizando **GitHub Codespaces**.
 1. Haga clic en el botón "Open in GitHub Codespaces" de arriba.
 2. Espere a que el entorno se construya (instalará automáticamente todas las dependencias).
 3. Una vez lista la terminal, el entorno `frontmatter-academico` estará activo.
 
-### Buenas prácticas (Pre-commit)
+### Buenas prácticas (pre-commit)
 
 Si clonas el repositorio localmente, se recomienda instalar los hooks de git para validación automática:
 
@@ -41,6 +41,8 @@ Esto validará el frontmatter automáticamente al intentar hacer un commit.
 
 ```text
 frontmatter-academico/
+├── assets/                # 🎨 Recursos estáticos (logos, imágenes)
+├── scripts/               # 🛠️ Scripts de mantenimiento y automatización
 ├── myst.yml               # ⚙️ Configuración del sitio y metadatos globales
 ├── index.md               # 🏠 Portada del curso (Home)
 ├── sessions/              # 📚 Contenido del curso (Capítulos)
@@ -89,27 +91,27 @@ Se incluyen scripts para verificar la integridad del entorno y el contenido:
 - **Verificar entorno técnico:**
   ```bash
   # Linux / macOS / WSL
-  ./verify_env.sh
+  ./scripts/verify_env.sh
 
   # Windows (PowerShell)
-  .\verify_env.ps1
+  .\scripts\verify_env.ps1
   ```
   Comprueba que todas las herramientas necesarias (MyST, Pandoc, Python, etc.) estén instaladas y accesibles.
 
 - **Validar frontmatter:**
   ```bash
   # Linux / macOS / WSL
-  ./validate_frontmatter.sh
+  ./scripts/validate_frontmatter.sh
 
   # Windows
-  python validate_frontmatter.sh
+  python scripts/validate_frontmatter.sh
   ```
   Analiza todos los archivos en `sessions/` para asegurar que cumplen con la estructura de metadatos requerida (título, objetivos, keywords, etc.).
 
 - **Generar tabla de sesiones:**
   ```bash
   # Linux / macOS / WSL
-  python3 generate_sessions_table.sh
+  python3 scripts/generate_sessions_table.sh
   ```
   Escanea los archivos en `sessions/` y regenera automáticamente `sessions_table.md` con los títulos y objetivos de aprendizaje. **Nota:** Este paso se ejecuta automáticamente al desplegar el sitio vía GitHub Actions.
 

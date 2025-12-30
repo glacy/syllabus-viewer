@@ -36,17 +36,17 @@ files = sorted(glob.glob("sessions/*.md"))
 
 for file_path in files:
     print(f"→ {file_path}")
-    
+
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-            
+
         match = re.search(r'^---\n(.*?)\n---', content, re.DOTALL)
         if not match:
             print(f"  {RED}✗ Sin frontmatter{RESET}")
             status = 1
             continue
-            
+
         frontmatter_str = match.group(1)
         try:
             frontmatter = yaml.safe_load(frontmatter_str)
@@ -54,7 +54,7 @@ for file_path in files:
             print(f"  {RED}✗ YAML inválido: {e}{RESET}")
             status = 1
             continue
-            
+
         if not isinstance(frontmatter, dict):
             print(f"  {RED}✗ Frontmatter no es un diccionario{RESET}")
             status = 1

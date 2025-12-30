@@ -3,7 +3,7 @@ repos:
     hooks:
       - id: validate-frontmatter
         name: Validate Frontmatter
-        entry: python validate_frontmatter.sh
+        entry: python scripts/validate_frontmatter.sh
         language: python
         files: ^sessions/.*\.md$
         pass_filenames: false

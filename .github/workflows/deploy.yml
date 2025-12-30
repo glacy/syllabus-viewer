@@ -10,7 +10,7 @@ on:
       - 'environment.yml'
       - 'README.md'
       - 'INSTRUCTORS.md'
-      - '*.sh'
+      - 'scripts/**'
 env:
   # `BASE_URL` determines, relative to the root of the domain, the URL that your site is served from.
   # E.g., if your site lives at `https://mydomain.org/myproject`, set `BASE_URL=/myproject`.
@@ -49,7 +49,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyyaml
       - name: Generate Sessions Table
-        run: python3 generate_sessions_table.sh
+        run: python3 scripts/generate_sessions_table.sh
       - name: Install MyST
         run: npm install -g mystmd
       - name: Build HTML Assets

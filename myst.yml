@@ -32,6 +32,6 @@ site:
   subtitle: "Frontmatter y metadatos en entornos reproducibles"
   options:
     folders: true
-    logo: site_logo.svg
-    logo_dark: site_logo_dark.svg
+    logo: assets/site_logo.svg
+    logo_dark: assets/site_logo_dark.svg
   template: book-theme

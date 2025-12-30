@@ -23,29 +23,29 @@ try:
             try:
                 with open(file_path, "r", encoding="utf-8") as md:
                     content = md.read()
-                    
+
                 match = re.search(r'^---\n(.*?)\n---', content, re.DOTALL)
                 if match:
                     fm = yaml.safe_load(match.group(1))
-                    
+
                     # Extract fields with safe defaults
                     number = fm.get('session', {}).get('number', '')
                     title = fm.get('title', '')
-                    
+
                     # Check for learning_objectives (standard) or fallback to learning_outcomes
                     objectives = fm.get('learning_objectives') or fm.get('learning_outcomes', [])
-                    
+
                     if isinstance(objectives, list):
                         formatted_objectives = "<ul>" + "".join([f"<li>{o}</li>" for o in objectives]) + "</ul>"
                     elif objectives:
                          formatted_objectives = str(objectives)
                     else:
                         formatted_objectives = ""
-                    
+
                     # Escape pipes in content to prevent breaking the table
                     title = str(title).replace("|", "&#124;")
                     formatted_objectives = formatted_objectives.replace("|", "&#124;")
-                    
+
                     f.write(f"| {number} | {title} | {formatted_objectives} |\n")
             except Exception as e:
                 print(f"{RED}Error procesando {file_path}: {e}{RESET}")

@@ -69,4 +69,3 @@ echo -e " ${GREEN}✔ El entorno está correctamente configurado${NC}"
 echo -e "=============================================="
 echo
 echo "Puede continuar con las actividades del curso."
-
