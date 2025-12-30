@@ -1,7 +1,7 @@
 ---
-title: "Anexo: Banco de ejemplos comentados"
+title: "Banco de ejemplos comentados"
 subtitle: "Patrones de frontmatter listos para usar"
-subject: "Anexos"
+subject: "Anexo"
 type: reference
 keywords:
   - ejemplos

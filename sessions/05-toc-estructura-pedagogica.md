@@ -10,6 +10,7 @@ learning_objectives:
   - "Comprender el rol de `myst.yml` como estructura pedagógica explícita."
   - "Declarar estructuras curriculares mediante el campo `toc`"
   - "Diseñar progresiones didácticas navegables"
+  - "Configurar la identidad visual y experiencia de usuario mediante el campo `site`"
 keywords:
   - estructura
   - pedagogía
@@ -105,7 +106,7 @@ version: 1
 project:
   toc:
     - file: index.md
-    
+
     - title: "Fundamentos"
       children:
         - file: sessions/01-introduccion-frontmatter.md
@@ -157,6 +158,31 @@ Una estructura clara permite que:
 - el curso sea reutilizable y auditable.
 
 Esto es especialmente importante en entornos universitarios.
+
+## Configuración de la experiencia (`site`)
+
+Mientras que `project` define *qué es* el documento (metadatos) y `toc` define *cómo se ordena* (estructura), la llave **`site`** define *cómo se presenta* visualmente al lector.
+
+Es la "piel" de tu proyecto digital.
+
+```yaml
+site:
+  title: "Nombre del Curso en la Web"
+  logo: assets/logo.png
+  # Define la plantilla visual (ej. libro, artículo, web)
+  template: book-theme
+  actions:
+    - title: Descargar PDF
+      url: proyecto.pdf
+      static: true
+  options:
+    favicon: assets/favicon.ico
+```
+
+- **`template`**: Selecciona un tema visual prediseñado (como `book-theme` o `article-theme`) que asegura consistencia tipográfica.
+- **`actions`**: Botones de interacción para el usuario (descargas, enlaces externos).
+
+La alineación entre `site` y `project` es vital: si tu `project` promete un curso académico riguroso pero usas un template informal o sin navegación, hay una disonancia en la experiencia.
 
 ## Actividad práctica
 

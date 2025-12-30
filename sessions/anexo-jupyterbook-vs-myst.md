@@ -1,7 +1,7 @@
 ---
-title: "Anexo: Jupyter Book vs MyST"
+title: "Jupyter Book vs MyST"
 subtitle: "Evolución, diferencias y convergencia"
-subject: "Anexos"
+subject: "Anexo"
 type: reference
 keywords:
   - jupyter book

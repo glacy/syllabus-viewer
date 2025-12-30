@@ -1,7 +1,7 @@
 ---
-title: "Anexo: Guía de sintaxis YAML para humanos"
+title: "Guía de sintaxis YAML para humanos"
 subtitle: "Reglas básicas, errores comunes y validación"
-subject: "Anexos"
+subject: "Anexo"
 type: reference
 keywords:
   - yaml

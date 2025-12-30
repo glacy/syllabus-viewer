@@ -72,10 +72,11 @@ La tabla de contenidos debe mostrar una narrativa:
 - ¿Los títulos y secciones en el `toc` reflejan una progresión?
 - Uso correcto de la estructura jerárquica (`title`, `children`, `file`) para agrupar contenido.
 
-#### 3. Configuración global (`myst.yml`)
+#### 3. Configuración global y Sitio (`myst.yml`)
 
-- Definición correcta de metadatos a nivel de libro.
-- Ausencia de configuración innecesaria o "basura" generada automáticamente.
+- Definición correcta de metadatos del proyecto (`project`).
+- **Configuración de experiencia (`site`)**: El sitio debe tener título, logo y acciones (ej. descargas) que sean coherentes con el propósito del documento.
+- Ausencia de configuración innecesaria.
 
 ### Validación del sistema
 
@@ -111,4 +112,3 @@ Durante la sesión se realizará una **auditoría cruzada**:
 ### Proyección
 
 Este ejercicio entrena la capacidad de pensar en **documentación como código**: estructuras mantenibles, legibles por máquina y semánticamente ricas, independientemente de la herramienta final de visualización.
-
