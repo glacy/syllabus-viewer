@@ -5,14 +5,14 @@
 
 1. Planifique la estructura de un curso breve (3-4 sesiones).
 2. Defina los "Parts" (Unidades) y "Chapters" (Sesiones) necesarios.
-3. Cree un archivo `_toc.yml` válido que refleje esta estructura.
+3. Cree una estructura `toc` en `myst.yml` que refleje esta organización.
 4. Asegúrese de usar `caption` para las partes y `chapters` o `file` para el contenido.
 
-**Opcional:** Si se siente cómodo, intente también definir la estructura en `myst.yml` para comparar.
+**Opcional:** Puede revisar cómo se hacía anteriormente con `_toc.yml` (legacy) para entender las diferencias.
 
 **Producto esperado**
 
-- Un archivo `_toc.yml` funcional.
+- Un bloque `toc` válido en `myst.yml`.
 - Un breve diagrama o lista explicando la lógica de agrupación (por qué se dividió así).
 
 ### Criterios de evaluación
