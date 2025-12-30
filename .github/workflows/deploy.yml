@@ -9,6 +9,7 @@ on:
     paths-ignore:
       - 'environment.yml'
       - 'README.md'
+      - 'INSTRUCTORS.md'
       - '*.sh'
 env:
   # `BASE_URL` determines, relative to the root of the domain, the URL that your site is served from.
