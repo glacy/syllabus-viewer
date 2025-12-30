@@ -50,7 +50,7 @@ Si deseas ejecutar este curso en tu computadora:
     ```
     El sitio estará disponible en `http://localhost:3000`.
 
-## Reproducibilidad y Configuración Local
+## Reproducibilidad y configuración local
 
 Para garantizar un entorno de desarrollo consistente, este proyecto utiliza Anaconda/Miniconda.
 
@@ -63,7 +63,7 @@ conda env create -f environment.yml
 conda activate frontmatter-academico
 ```
 
-### 2. Verificación y Validación
+### 2. Verificación y validación
 Se incluyen scripts para verificar la integridad del entorno y el contenido:
 
 - **Verificar entorno técnico:**
