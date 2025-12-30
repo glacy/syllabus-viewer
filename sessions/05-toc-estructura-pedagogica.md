@@ -1,5 +1,6 @@
 ---
 title: "Estructura pedagógica con myst.yml"
+subtitle: "Organización de contenidos y narrativa didáctica"
 subject: "Sesión 5"
 session:
   number: 5
