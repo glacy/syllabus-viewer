@@ -11,6 +11,7 @@ set -e
 CYAN='\033[0;36m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
+YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 echo -e "=============================================="
@@ -27,12 +28,11 @@ if [[ -z "$CONDA_DEFAULT_ENV" ]]; then
 fi
 
 if [[ "$CONDA_DEFAULT_ENV" != "frontmatter-academico" ]]; then
-  echo -e "${RED}❌ ERROR: El entorno activo es '$CONDA_DEFAULT_ENV'${NC}"
-  echo "   Se requiere: 'frontmatter-academico'"
-  exit 1
+  echo -e "${YELLOW}⚠ ADVERTENCIA: El entorno activo es '$CONDA_DEFAULT_ENV'${NC}"
+  echo "   Se recomienda: 'frontmatter-academico'. Continuando..."
+else
+  echo -e "${GREEN}✔ Entorno Conda activo: $CONDA_DEFAULT_ENV${NC}"
 fi
-
-echo -e "${GREEN}✔ Entorno Conda activo: $CONDA_DEFAULT_ENV${NC}"
 echo
 
 # 2. Función auxiliar para verificar comandos

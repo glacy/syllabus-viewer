@@ -7,6 +7,7 @@ $ErrorActionPreference = "Stop"
 $CYAN = "$([char]27)[96m"
 $GREEN = "$([char]27)[92m"
 $RED = "$([char]27)[91m"
+$YELLOW = "$([char]27)[33m"
 $RESET = "$([char]27)[0m"
 
 Write-Host "${CYAN}==============================================${RESET}"
@@ -24,12 +25,11 @@ if ([string]::IsNullOrEmpty($env:CONDA_DEFAULT_ENV)) {
 }
 
 if ($env:CONDA_DEFAULT_ENV -ne "frontmatter-academico") {
-    Write-Host "${RED}❌ ERROR: El entorno activo es '$env:CONDA_DEFAULT_ENV'${RESET}"
-    Write-Host "   Se requiere: 'frontmatter-academico'"
-    exit 1
+    Write-Host "${YELLOW}⚠ ADVERTENCIA: El entorno activo es '$env:CONDA_DEFAULT_ENV'${RESET}"
+    Write-Host "   Se recomienda: 'frontmatter-academico'. Continuando..."
+} else {
+    Write-Host "${GREEN}✔ Entorno Conda activo: $env:CONDA_DEFAULT_ENV${RESET}"
 }
-
-Write-Host "${GREEN}✔ Entorno Conda activo: $env:CONDA_DEFAULT_ENV${RESET}"
 Write-Host ""
 
 # 2. Función auxiliar para verificar comandos

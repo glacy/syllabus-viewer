@@ -20,6 +20,5 @@ jobs:
           pip install pyyaml
       - name: Run Frontmatter Validation
         run: |
-          chmod +x validate_frontmatter.sh
-          ./validate_frontmatter.sh
+          python3 scripts/validate_frontmatter.py
         id: validation
