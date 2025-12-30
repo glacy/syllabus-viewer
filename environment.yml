@@ -5,8 +5,8 @@ dependencies:
   - python=3.11
   - pandoc
   - nodejs>=18
+  - npm
   - git
-
   - jupyterlab
   - quarto
   - pip
