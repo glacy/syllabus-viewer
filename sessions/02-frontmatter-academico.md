@@ -51,6 +51,12 @@ Declarar explícitamente la autoría:
 - facilita la citación,
 - permite distinguir responsabilidades académicas.
 
+La autoría moderna exige precisión. En lugar de roles genéricos, se recomienda utilizar la taxonomía **CRediT** [@niso_credit] para especificar contribuciones:
+- Conceptualization
+- Methodology
+- Software
+- Writing - original draft
+
 ### Afiliación institucional
 
 La afiliación vincula el documento con una estructura académica formal.
