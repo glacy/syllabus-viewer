@@ -4,6 +4,19 @@ A React-based, fully responsive presentation engine designed for academic and te
 
 ## Key features
 
+### 🎨 Dynamic Theming & Colors
+- **Real-time Color System**: Users can switch themes instantly (Blue, Purple, Orange, etc.) via a persistent palette menu.
+- **Semantic Tokens**: Built on CSS variables (`--color-primary`, `--color-accent`), ensuring all components adapt automatically.
+- **Monochromatic Consistency**: Accent elements automatically sync with the selected primary color for a polished look.
+- **Dark Mode**: Native support with smooth transitions (`bg-slate-900` vs `bg-white`).
+- **Persistence**: Preferences are saved to `localStorage` and restored on reload.
+
+### ♿ Accessibility First (A11y)
+- **Advanced Contrast Logic**: Uses **Relative Luminance** (WCAG standard) to dynamically calculate whether text should be black or white (`on-primary`) based on the selected background color.
+- **Dark Mode Optimization**: Text shades automatically adjust (e.g., `primary-300` instead of `400`) to guarantee legibility against dark backgrounds.
+- **Keyboard Navigation**: Fully navigable via keyboard (Tab, Arrows, Enter), including the color palette and slide controls.
+- **Screen Readers**: Semantic HTML structure (`role="region"`, `aria-label`) for full JAWS/NVDA compatibility.
+
 ### 🖥️ Modern "App Shell" Layout
 The presentation uses a robust CSS-driven architecture:
 
@@ -17,10 +30,8 @@ Slides are built using reusable, highly configurable components to ensure consis
 -   **`SlideLayout`**: Standardized wrapper handling spacing and responsiveness.
 -   **`SlideHeader`**: Uniform gradient headers with title/subtitle support. Now supports sticky positioning.
 -   **`IconCard`**: Versatile content cards with icon support and semantic variants (`info`, `warning`, `outlined`, `clean`).
-
-### 🎨 Themed & accessible
--   **Dark mode**: Native support with smooth transitions (`bg-slate-900`, `text-slate-200`).
--   **Accessibility (a11y)**: WCAG AA compliant color contrast, ARIA labels for navigation, and screen reader compatible structure (`role="region"`).
+-   **`CodeBlock`**: Syntax-highlighted code containers with dark mode support.
+-   **`CallToAction`**: High-impact closing banners.
 
 ## Technical Stack
 
