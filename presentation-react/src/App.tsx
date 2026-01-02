@@ -1,96 +1,26 @@
-import { useState, useEffect, useLayoutEffect, KeyboardEvent } from 'react';
-import Slides, { slidesCount } from './components/Slides';
-import { applyTheme } from './utils/colors';
-
-interface ColorPreset {
-    name: string;
-    value: string;
-}
-
-const PRESET_COLORS: ColorPreset[] = [
-    { name: 'Blue', value: '#0ea5e9' },   // Sky 500
-    { name: 'Purple', value: '#8b5cf6' }, // Violet 500
-    { name: 'Pink', value: '#ec4899' },   // Pink 500
-    { name: 'Red', value: '#ef4444' },    // Red 500
-    { name: 'Orange', value: '#f97316' }, // Orange 500
-    { name: 'Green', value: '#22c55e' },  // Green 500
-    { name: 'Teal', value: '#14b8a6' },   // Teal 500
-];
+import { KeyboardEvent } from 'react';
+import Slides from './components/Slides';
+import { useTheme } from './hooks/useTheme';
+import { useSlides } from './hooks/useSlides';
 
 function App() {
-    const [currentSlide, setCurrentSlide] = useState<number>(0);
-    // Default colors
-    const [primaryColor, setPrimaryColor] = useState<string>(() => localStorage.getItem('primaryColor') || '#0ea5e9');
-    const [accentColor, setAccentColor] = useState<string>(() => localStorage.getItem('accentColor') || '#f97316');
-    const [showPalette, setShowPalette] = useState<boolean>(false);
+    const {
+        primaryColor,
+        setPrimaryColor,
+        setAccentColor,
+        showPalette,
+        setShowPalette,
+        isDark,
+        setIsDark,
+        PRESET_COLORS
+    } = useTheme();
 
-    const [isDark, setIsDark] = useState<boolean>(() => {
-        if (typeof window !== 'undefined') {
-            return localStorage.getItem('theme') === 'dark' ||
-                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        }
-        return false;
-    });
-
-
-
-    // Apply Theme Colors
-    useLayoutEffect(() => {
-        applyTheme(primaryColor, accentColor);
-        localStorage.setItem('primaryColor', primaryColor);
-        localStorage.setItem('accentColor', accentColor);
-    }, [primaryColor, accentColor]);
-
-
-
-    // Autofocus selection when palette opens
-    useEffect(() => {
-        if (showPalette) {
-            // Small timeout to allow DOM node to mount
-            setTimeout(() => {
-                const activeBtn = document.querySelector(`button[data-color="${primaryColor}"]`) as HTMLButtonElement | null;
-                activeBtn?.focus();
-            }, 0);
-        }
-    }, [showPalette]);
-
-    // Dark Mode Logic
-    useEffect(() => {
-        if (isDark) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'light');
-        }
-    }, [isDark]);
-
-    // Navegación
-    const nextSlide = () => {
-        if (currentSlide < slidesCount - 1) {
-            setCurrentSlide(prev => prev + 1);
-            if (window.innerWidth < 1024) window.scrollTo(0, 0); // Scroll al inicio en móvil
-        }
-    };
-
-    const prevSlide = () => {
-        if (currentSlide > 0) {
-            setCurrentSlide(prev => prev - 1);
-            if (window.innerWidth < 1024) window.scrollTo(0, 0);
-        }
-    };
-
-    // Teclado
-    useEffect(() => {
-        const handleKeyDown = (e: globalThis.KeyboardEvent) => {
-            // Solo habilitar teclado si no hay scroll activo que pueda interferir, o mejor dejar simple
-            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
-            if (e.key === 'ArrowLeft') prevSlide();
-        };
-
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [currentSlide]);
+    const {
+        currentSlide,
+        nextSlide,
+        prevSlide,
+        slidesCount
+    } = useSlides();
 
     const handlePaletteKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
         const buttons = Array.from(e.currentTarget.parentElement?.querySelectorAll('button') || []);
