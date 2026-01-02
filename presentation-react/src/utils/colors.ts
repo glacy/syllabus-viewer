@@ -53,8 +53,9 @@ export function getContrastColor(hexColor: string): string {
 
     const contrastWhite = 1.05 / (lum + 0.05);
 
-    // Prefer white text if contrast is sufficient (>4.5), otherwise black
-    return (contrastWhite >= 4.5) ? '#ffffff' : '#0f172a';
+    // Prefer white text if contrast is sufficient (>4.0), otherwise black
+    // Lowered to 4.0 to handle edge cases like Green 700 where 4.49 flips to black
+    return (contrastWhite >= 4.0) ? '#ffffff' : '#0f172a';
 }
 
 export function hexToRgb(hex: string): string {

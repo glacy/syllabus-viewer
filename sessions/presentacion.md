@@ -4,7 +4,7 @@ subtitle: "Visión sintáctica y gráfica de los conceptos clave"
 subject: "Recurso"
 type: presentation
 session:
-  number: 99
+  number: Anexo
   duration: "N/A"
   modality: "Recurso asíncrono"
 keywords:
