@@ -33,6 +33,74 @@ Slides are built using reusable, highly configurable components to ensure consis
 -   **`CodeBlock`**: Syntax-highlighted code containers with dark mode support.
 -   **`CallToAction`**: High-impact closing banners.
 
+## Component Reference & Examples
+
+### `IconCard`
+The most versatile core component for displaying content blocks.
+
+**Props:**
+- `icon` (string): Material Icon name (optional)
+- `title` (string): Card header
+- `variant` (string): Visual style. Options:
+  - `info` (default): Light background, thick left border
+  - `warning`: Accent-colored background/border
+  - `outlined-info`: White background, thin primary border
+  - `outlined-warning`: White background, thin accent border
+  - `clean`: Transparent, no border
+
+**Example:**
+![IconCard Component](./docs/images/icon-card.png)
+```tsx
+<IconCard icon="lightbulb" title="Key Concept" variant="info">
+  <p>This is a highlighted concept box.</p>
+</IconCard>
+```
+
+### `SlideHeader`
+Consistent title block that automatically handles the sticky positioning and gradient background.
+
+**Props:**
+- `title` (node): Main heading
+- `subtitle` (node): Optional secondary text
+
+**Example:**
+![SlideHeader Component](./docs/images/slide-header.png)
+```tsx
+<SlideHeader
+  title="Chapter 1"
+  subtitle="Introduction to the topic"
+/>
+```
+
+### `CodeBlock`
+Syntax-highlighted container for code snippets. Supports dark mode automatically and includes a **"Copy to Clipboard"** button on hover.
+
+**Example:**
+![CodeBlock Component](./docs/images/code-block.png)
+```tsx
+<CodeBlock>
+{`function hello() {
+  console.log("Hello World");
+}`}
+</CodeBlock>
+```
+
+### `CallToAction`
+High-impact banner usually placed at the bottom of a slide.
+
+**Props:**
+- `text` (node): The main message
+- `icon` (string): Optional icon (default: "rocket_launch")
+
+**Example:**
+![CallToAction Component](./docs/images/call-to-action.png)
+```tsx
+<CallToAction
+  text="Ready to start? Click here to begin."
+  icon="arrow_forward"
+/>
+```
+
 ## Technical Stack
 
 -   **Framework**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
@@ -46,8 +114,15 @@ Slides are built using reusable, highly configurable components to ensure consis
 src/
 ├── App.tsx                 # App Shell: Main layout, navigation, and theme state
 ├── main.tsx                # Entry point
+├── hooks/
+│   ├── useTheme.ts         # Theme management logic (colors, dark mode)
+│   └── useSlides.ts        # Slide navigation logic
 ├── components/
-│   ├── Slides.tsx          # Registry: Imports and lists all slide components
+│   ├── Slides.tsx          # Registry: Main container that imports and renders slides
+│   ├── slides/             # Individual Slide Components
+│   │   ├── Portada.tsx
+│   │   ├── Sesion1.tsx
+│   │   └── ...
 │   └── common/             # Reusable UI Kit
 │       ├── SlideLayout.tsx # Standard page wrapper
 │       ├── SlideHeader.tsx # Title/Subtitle component
@@ -66,12 +141,12 @@ npm run dev
 ```
 
 ### 2. Adding New Slides
-1.  Open `src/components/Slides.tsx`.
-2.  Create a new component using the reusable primitives:
+1.  Create a new file in `src/components/slides/` (e.g., `MyNewSlide.tsx`).
+2.  Build the component using the reusable primitives:
     ```tsx
-    import SlideLayout from './common/SlideLayout';
-    import SlideHeader from './common/SlideHeader';
-    import IconCard from './common/IconCard';
+    import SlideLayout from '../common/SlideLayout';
+    import SlideHeader from '../common/SlideHeader';
+    import IconCard from '../common/IconCard';
 
     const MyNewSlide = () => (
         <SlideLayout>
@@ -84,17 +159,10 @@ npm run dev
             </div>
         </SlideLayout>
     );
+
+    export default MyNewSlide;
     ```
-3.  Add it to the `slides` array in the main component:
-    ```tsx
-    const slides = [
-        <Portada />,
-        <Sesion1 />,
-        <MyNewSlide />, // Add your new slide here
-        <Cierre />
-    ];
-    ```
-4.  Update the `slidesCount` constant at the bottom of the file.
+3.  Import it in `src/components/Slides.tsx` and add it to the render logic.
 
 ### 3. Deployment
 Build the project for production (generates static files in `dist/`):
@@ -108,10 +176,9 @@ Deploy the `dist` folder to GitHub Pages, Vercel, or Netlify.
 ### 4. Customizing Colors
 **Interactive Mode**: Click the **Palette Icon** (<i className="material-icons">palette</i>) in the navigation bar to open the color menu. Select any preset to instantly update the theme.
 
-**Changing Defaults**: To modify the default colors used when the app first loads (before any user selection), edit `src/App.tsx`:
+**Changing Defaults**: To modify the default colors used when the app first loads (before any user selection), edit `src/hooks/useTheme.ts` (or `App.tsx` if logic resides there):
 
 ```tsx
-// src/App.tsx
 const [primaryColor, setPrimaryColor] = useState<string>(() => localStorage.getItem('primaryColor') || '#your-default-hex');
 ```
 

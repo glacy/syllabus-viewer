@@ -5,7 +5,7 @@ import IconCard from '../common/IconCard';
 // Slide 4: Sesión 3
 const Sesion3 = () => (
     <SlideLayout>
-        <SlideHeader title="Sesión 3" subtitle="Diseño Semántico de Metadatos" />
+        <SlideHeader title="Sesión 3" subtitle="Diseño semántico de metadatos" />
 
         <div className="flex-grow flex flex-col lg:flex-row px-6 lg:px-16 py-8 lg:py-10 gap-8 lg:gap-10">
             <div className="w-full lg:w-3/5 flex flex-col justify-center gap-6 lg:gap-7">
