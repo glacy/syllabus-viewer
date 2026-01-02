@@ -29,13 +29,35 @@ export function generatePalette(baseHex) {
     };
 }
 
+// Calculate relative luminance for WCAG contrast
+function getLuminance(r, g, b) {
+    const a = [r, g, b].map(v => {
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+}
+
 export function getContrastColor(hexColor) {
     const r = parseInt(hexColor.substr(1, 2), 16);
     const g = parseInt(hexColor.substr(3, 2), 16);
     const b = parseInt(hexColor.substr(5, 2), 16);
-    const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
-    // Increase threshold to prefer white text on medium-colored backgrounds
-    return (yiq >= 160) ? '#0f172a' : '#ffffff';
+
+    const lum = getLuminance(r, g, b);
+
+    // WCAG recommends 4.5:1 for normal text.
+    // L_white = 1, L_black = 0.
+    // Contrast with white: (1 + 0.05) / (lum + 0.05)
+    // Contrast with black: (lum + 0.05) / (0 + 0.05)
+
+    const contrastWhite = 1.05 / (lum + 0.05);
+    const contrastBlack = (lum + 0.05) / 0.05;
+
+    // Prefer white text if contrast is sufficient (>4.5), otherwise black
+    // If both fail, pick the one with higher ratio (usually black for mid-tones unless very dark)
+    // However, for "on-primary" elements (buttons), white is usually preferred aesthetic if >3:1 (large text) or >4.5:1
+
+    return (contrastWhite >= 4.5) ? '#ffffff' : '#0f172a';
 }
 
 export function hexToRgb(hex) {

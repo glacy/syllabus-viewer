@@ -2,6 +2,8 @@ import React from 'react';
 import SlideLayout from './common/SlideLayout';
 import SlideHeader from './common/SlideHeader';
 import IconCard from './common/IconCard';
+import CallToAction from './common/CallToAction';
+import CodeBlock from './common/CodeBlock';
 
 const SlideWrapper = ({ children, isActive }) => (
     <div
@@ -26,7 +28,7 @@ const Portada = () => (
                 <i className="material-icons text-white text-6xl lg:text-[72px] opacity-90">description</i>
             </div>
             <h1 className="title-font text-4xl lg:text-7xl font-bold text-white leading-tight mb-8 lg:mb-10 max-w-5xl tracking-tight">
-                Diseño semántico de<br className="hidden lg:block" />documentos académicos
+                Diseño semántico de documentos académicos
             </h1>
             <div className="w-32 lg:w-64 h-1 mx-auto mb-8 lg:mb-10 bg-gradient-to-r from-transparent via-accent-400 to-transparent"></div>
             <p className="text-xl lg:text-2xl font-light text-primary-100 tracking-wide leading-relaxed max-w-3xl">
@@ -62,7 +64,7 @@ const Sesion1 = () => (
                             "Identificar limitaciones de estructuración puramente visual"
                         ].map((item, i) => (
                             <div key={i} className="flex items-start gap-4">
-                                <i className="material-icons mt-1 text-accent-700 dark:text-orange-700">check_circle</i>
+                                <i className="material-icons mt-1 text-accent-700 dark:text-accent-400">check_circle</i>
                                 <p className="text-lg lg:text-xl leading-relaxed">{item}</p>
                             </div>
                         ))}
@@ -70,7 +72,7 @@ const Sesion1 = () => (
                 </IconCard>
 
                 <div className="flex items-center justify-center p-6 bg-primary-50 dark:bg-slate-800/50 rounded-xl">
-                    <p className="text-xl lg:text-2xl text-primary-600 dark:text-sky-300 text-center italic font-light">"Del documento tipográfico al documento semántico"</p>
+                    <p className="text-xl lg:text-2xl text-primary-600 dark:text-primary-300 text-center italic font-light">"Del documento tipográfico al documento semántico"</p>
                 </div>
             </div>
 
@@ -100,7 +102,7 @@ const Sesion2 = () => (
                         <div className="pl-8 lg:pl-14 space-y-3">
                             {['Nombre y rol del autor', 'Afiliación institucional', 'Taxonomía CRediT (contribuciones específicas)'].map((item, i) => (
                                 <p key={i} className="text-lg lg:text-xl text-gray-700 dark:text-gray-200 flex items-center gap-2">
-                                    <span className="text-[#e65100] dark:text-orange-700">•</span> {item}
+                                    <span className="text-accent-700 dark:text-accent-400">•</span> {item}
                                 </p>
                             ))}
                         </div>
@@ -112,7 +114,7 @@ const Sesion2 = () => (
                         <div className="pl-8 lg:pl-14 space-y-3">
                             {['Universidad / Departamento', 'Proyecto o programa académico'].map((item, i) => (
                                 <p key={i} className="text-lg lg:text-xl text-gray-700 dark:text-gray-200 flex items-center gap-2">
-                                    <span className="text-[#e65100] dark:text-orange-700">•</span> {item}
+                                    <span className="text-accent-700 dark:text-accent-400">•</span> {item}
                                 </p>
                             ))}
                         </div>
@@ -129,9 +131,9 @@ const Sesion2 = () => (
             </div>
 
             <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                <IconCard icon="code" title="Frontmatter académico mínimo" variant="outlined-info" className="bg-[#f0f9ff] dark:bg-slate-800">
-                    <div className="bg-gray-900 rounded-lg p-4 lg:p-6 font-mono text-xs lg:text-sm overflow-x-auto">
-                        <pre style={{ color: '#e2e8f0' }}>{`---
+                <IconCard icon="code" title="Frontmatter académico mínimo" variant="outlined-info" className="bg-primary-50 dark:bg-slate-800">
+                    <CodeBlock>
+                        {`---
 title: "Guía introductoria..."
 authors:
   - name: "Gerardo Lacy Mora"
@@ -143,11 +145,11 @@ keywords:
   - metadatos
   - documentación académica
 license: CC-BY-4.0
----`}</pre>
-                    </div>
+---`}
+                    </CodeBlock>
                     <div className="mt-6 flex items-start gap-2">
-                        <i className="material-icons text-[#0284c7] dark:text-sky-400 text-[20px]">label</i>
-                        <p className="text-base lg:text-lg text-gray-700 dark:text-gray-200"><strong className="text-[#e65100] dark:text-orange-700">Palabras clave (keywords):</strong> permiten indexación temática y búsqueda eficiente</p>
+                        <i className="material-icons text-primary-600 dark:text-primary-300 text-[20px]">label</i>
+                        <p className="text-base lg:text-lg text-gray-700 dark:text-gray-200"><strong className="text-accent-700 dark:text-accent-400">Palabras clave (keywords):</strong> permiten indexación temática y búsqueda eficiente</p>
                     </div>
                 </IconCard>
             </div>
@@ -180,7 +182,7 @@ const Sesion3 = () => (
                             ].map((item, i) => (
                                 <div key={i}>
                                     <div className="flex items-center gap-2 mb-2">
-                                        <i className="material-icons text-[#e65100] dark:text-orange-700 text-[20px]">{item.icon}</i>
+                                        <i className="material-icons text-accent-700 dark:text-accent-400 text-[20px]">{item.icon}</i>
                                         <h4 className="font-bold text-lg text-gray-800 dark:text-white">{item.title}</h4>
                                     </div>
                                     <p className="text-lg text-gray-700 dark:text-gray-200 leading-snug">{item.text}</p>
@@ -195,7 +197,7 @@ const Sesion3 = () => (
                         <div className="pl-8 lg:pl-12 space-y-2">
                             {['Conjunto limitado de valores permitidos', 'Facilita análisis automático y validación'].map((item, i) => (
                                 <p key={i} className="text-lg lg:text-xl text-gray-700 dark:text-gray-200 flex items-center gap-2">
-                                    <span className="text-[#e65100] dark:text-orange-700">•</span> {item}
+                                    <span className="text-accent-700 dark:text-accent-400">•</span> {item}
                                 </p>
                             ))}
                         </div>
@@ -208,7 +210,7 @@ const Sesion3 = () => (
                     <div className="space-y-3">
                         {['Usar sinónimos como equivalentes', 'Cambiar significado de campos', 'Crear campos ad hoc arbitrarios'].map((item, i) => (
                             <p key={i} className="flex items-start gap-2">
-                                <span className="text-[#e65100] dark:text-orange-700">•</span> {item}
+                                <span className="text-accent-700 dark:text-accent-400">•</span> {item}
                             </p>
                         ))}
                     </div>
@@ -229,7 +231,7 @@ const Sesion4 = () => (
                     <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 lg:pl-4">
                         {['Definir una vez', 'Reutilizar', 'Especializar'].map((item, i) => (
                             <div key={i} className="flex items-center gap-2">
-                                <i className="material-icons text-[#e65100] dark:text-orange-700 text-[20px]">radio_button_checked</i>
+                                <i className="material-icons text-accent-700 dark:text-accent-400 text-[20px]">radio_button_checked</i>
                                 <p className="text-lg">{item}</p>
                             </div>
                         ))}
@@ -238,9 +240,13 @@ const Sesion4 = () => (
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                     <IconCard icon="settings" title="Frontmatter base" variant="outlined-info">
-                        <p className="text-lg leading-snug">Metadatos globales en <span className="font-mono text-lg text-[#e65100] dark:text-orange-700">myst.yml</span></p>
+                        <p className="text-lg leading-snug">Metadatos globales en <span className="font-mono text-lg text-accent-700 dark:text-accent-400">myst.yml</span></p>
                         <div className="mt-3 text-lg text-gray-600 dark:text-gray-400">
-                            {['Proyecto', 'Autores', 'Keywords', 'Licencia'].map(i => <p key={i}>• {i}</p>)}
+                            {['Proyecto', 'Autores', 'Keywords', 'Licencia'].map(i => (
+                                <p key={i} className="flex items-center gap-2">
+                                    <span className="text-accent-700 dark:text-accent-300">•</span> {i}
+                                </p>
+                            ))}
                         </div>
                     </IconCard>
 
@@ -248,7 +254,7 @@ const Sesion4 = () => (
                         <div className="space-y-2">
                             {['Coherencia institucional', 'Gestión centralizada', 'Reutilización del curso'].map((item, i) => (
                                 <p key={i} className="text-lg flex items-start gap-2">
-                                    <span className="text-[#e65100] dark:text-orange-700">•</span> {item}
+                                    <span className="text-accent-700 dark:text-accent-400">•</span> {item}
                                 </p>
                             ))}
                         </div>
@@ -260,7 +266,7 @@ const Sesion4 = () => (
                         <div className="pl-4 lg:pl-12 space-y-2">
                             {['Sobrescritura sin contradicción', 'Regla fundamental: no contradecir significado heredado'].map((item, i) => (
                                 <p key={i} className="text-lg lg:text-xl text-gray-700 dark:text-gray-200 flex items-start gap-2">
-                                    <span className="text-[#e65100] dark:text-orange-700">•</span> {item}
+                                    <span className="text-accent-700 dark:text-accent-400">•</span> {item}
                                 </p>
                             ))}
                         </div>
@@ -273,7 +279,7 @@ const Sesion4 = () => (
                     <div className="space-y-3">
                         {['Definir globales en myst.yml', 'Frontmatter mínimo y claro', 'Documentar herencia'].map((item, i) => (
                             <p key={i} className="text-lg flex items-start gap-2">
-                                <span className="text-[#e65100] dark:text-orange-700">•</span> {item}
+                                <span className="text-accent-700 dark:text-accent-400">•</span> {item}
                             </p>
                         ))}
                     </div>
@@ -297,7 +303,11 @@ const Sesion5 = () => (
                     ].map((card, i) => (
                         <IconCard key={i} icon={card.icon} title={card.title} variant="info">
                             <div className="space-y-2 text-lg">
-                                {card.items.map(item => <p key={item}>• {item}</p>)}
+                                {card.items.map(item => (
+                                    <p key={item} className="flex items-start gap-2">
+                                        <span className="text-accent-700 dark:text-accent-300">•</span> {item}
+                                    </p>
+                                ))}
                             </div>
                         </IconCard>
                     ))}
@@ -326,7 +336,11 @@ const Sesion5 = () => (
                     ].map((card, i) => (
                         <IconCard key={i} icon={card.icon} title={card.title} variant="outlined-warning">
                             <div className="space-y-2 text-lg">
-                                {card.items.map(item => <p key={item}>• {item}</p>)}
+                                {card.items.map(item => (
+                                    <p key={item} className="flex items-start gap-2">
+                                        <span className="text-accent-700 dark:text-accent-300">•</span> {item}
+                                    </p>
+                                ))}
                             </div>
                         </IconCard>
                     ))}
@@ -338,7 +352,7 @@ const Sesion5 = () => (
                     <div className="space-y-3">
                         {['Título y logo', 'Template visual', 'Acciones (descargas, enlaces)'].map((item, i) => (
                             <p key={i} className="text-lg flex items-start gap-2">
-                                <span className="text-[#e65100] dark:text-orange-700">•</span> {item}
+                                <span className="text-accent-700 dark:text-accent-400">•</span> {item}
                             </p>
                         ))}
                     </div>
@@ -367,7 +381,11 @@ const Sesion6 = () => (
                     ].map((card, i) => (
                         <IconCard key={i} icon={card.icon} title={card.title} variant="outlined-info">
                             <div className="space-y-1 text-base">
-                                {card.items.map(item => <p key={item}>• {item}</p>)}
+                                {card.items.map(item => (
+                                    <p key={item} className="flex items-start gap-2">
+                                        <span className="text-accent-700 dark:text-accent-300">•</span> {item}
+                                    </p>
+                                ))}
                             </div>
                         </IconCard>
                     ))}
@@ -378,7 +396,7 @@ const Sesion6 = () => (
                         <div className="space-y-2 text-lg">
                             {['Carpeta del proyecto', 'Documento de diseño (racional)'].map((item, i) => (
                                 <p key={i} className="flex items-start gap-2">
-                                    <span className="text-[#e65100] dark:text-orange-700">•</span> {item}
+                                    <span className="text-accent-700 dark:text-accent-400">•</span> {item}
                                 </p>
                             ))}
                         </div>
@@ -393,7 +411,7 @@ const Sesion6 = () => (
                             ].map((row, i) => (
                                 <div key={i} className="flex justify-between items-center">
                                     <span className="text-base text-gray-700 dark:text-gray-200">{row.l}</span>
-                                    <span className="font-bold text-lg text-accent-700 dark:text-orange-700">{row.v}</span>
+                                    <span className="font-bold text-lg text-accent-700 dark:text-accent-400">{row.v}</span>
                                 </div>
                             ))}
                         </div>
@@ -406,7 +424,7 @@ const Sesion6 = () => (
                     <div className="space-y-3 text-lg">
                         {['Intercambio de repositorios entre pares', 'Auditoría cruzada de estructura', 'Realimentación sobre arquitectura'].map((item, i) => (
                             <p key={i} className="flex items-start gap-2">
-                                <span className="text-[#e65100] dark:text-orange-700">{i + 1}.</span>
+                                <span className="text-accent-700 dark:text-accent-400">{i + 1}.</span>
                                 <span>{item}</span>
                             </p>
                         ))}
@@ -434,7 +452,7 @@ const Cierre = () => (
                             'Proyectos reproducibles y semánticos'
                         ].map((item, i) => (
                             <div key={i} className="flex items-start gap-3">
-                                <i className="material-icons text-accent-700 dark:text-orange-700 text-[24px]">check_circle</i>
+                                <i className="material-icons text-accent-700 dark:text-accent-400 text-[24px]">check_circle</i>
                                 <p>{item}</p>
                             </div>
                         ))}
@@ -454,14 +472,14 @@ const Cierre = () => (
                             const url = item.d.startsWith('http') ? item.d : `https://${item.d}`;
                             return (
                                 <div key={i} className="flex items-start gap-3">
-                                    <i className="material-icons text-accent-700 dark:text-orange-700 text-[24px]">{item.icon}</i>
+                                    <i className="material-icons text-accent-700 dark:text-accent-400 text-[24px]">{item.icon}</i>
                                     <div>
                                         <p className="font-bold text-base lg:text-lg text-gray-800 dark:text-white">{item.t}</p>
                                         <a
                                             href={url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-sm lg:text-base text-primary-600 dark:text-sky-400 mt-1 hover:underline hover:text-primary-800 dark:hover:text-sky-300 transition-colors block break-all"
+                                            className="text-sm lg:text-base text-primary-600 dark:text-primary-400 mt-1 hover:underline hover:text-primary-800 dark:hover:text-primary-300 transition-colors block break-all"
                                         >
                                             {item.d}
                                         </a>
@@ -474,12 +492,9 @@ const Cierre = () => (
             </div>
         </div>
 
-        <div className="h-auto lg:h-[100px] flex items-center justify-center px-6 lg:px-16 py-6 lg:py-0 bg-gradient-to-br from-primary-800 to-primary-900 dark:from-sky-900 dark:to-slate-900">
-            <div className="flex flex-col lg:flex-row items-center gap-4 text-center lg:text-left">
-                <i className="material-icons text-white text-4xl lg:text-[36px]">rocket_launch</i>
-                <p className="text-xl lg:text-2xl text-white font-semibold">Aplica estos conceptos en tus proyectos académicos y comparte tus experiencias</p>
-            </div>
-        </div>
+        <CallToAction
+            text="Aplica estos conceptos en tus proyectos académicos y comparte tus experiencias"
+        />
     </SlideLayout>
 );
 

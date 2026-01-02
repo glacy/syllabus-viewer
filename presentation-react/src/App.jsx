@@ -158,6 +158,7 @@ function App() {
                         key={color.name}
                         onClick={() => {
                           setPrimaryColor(color.value);
+                          setAccentColor(color.value); // Sync accent with primary for monochromatic theme
                           setShowPalette(false);
                         }}
                         onKeyDown={handlePaletteKeyDown}
