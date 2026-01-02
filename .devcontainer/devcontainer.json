@@ -2,7 +2,11 @@
     "name": "Frontmatter Academico",
     "image": "mcr.microsoft.com/devcontainers/miniconda:0-3",
     "features": {
-        "ghcr.io/devcontainers/features/github-cli:1": {}
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22",
+            "installNpm": "true"
+        }
     },
     "customizations": {
         "vscode": {

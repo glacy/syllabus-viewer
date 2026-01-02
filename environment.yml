@@ -4,8 +4,7 @@ channels:
 dependencies:
   - python=3.11
   - pandoc
-  - nodejs>=18
-  - npm
+  - nodejs>=20
   - git
   - jupyterlab
   - quarto
