@@ -49,34 +49,41 @@ The most versatile core component for displaying content blocks.
   - `clean`: Transparent, no border
 
 **Example:**
-![IconCard Component](./docs/images/icon-card-info.png)
+
+
 ```tsx
 <IconCard icon="favorite" title="Lovely" variant="info">
   <p>Light background, thick left border.</p>
 </IconCard>
 ```
+![IconCard Component](./docs/images/icon-card-info.png)
 
-![IconCard Component](./docs/images/icon-card-warning.png)
+
 ```tsx
 <IconCard icon="lightbulb" title="Key Concept" variant="warning">
   <p>Accent-colored background/border.</p>
 </IconCard>
 ```
+![IconCard Component](./docs/images/icon-card-warning.png)
 
-
-![IconCard Component](./docs/images/icon-card-outlined-warning.png)
 ```tsx
 <IconCard icon="lightbulb" title="Key Concept" variant="outlined-warning">
   <p>This is a highlighted concept box.</p>
 </IconCard>
 ```
 
-![IconCard Component](./docs/images/icon-card-clean.png)
+
+![IconCard Component](./docs/images/icon-card-outlined-warning.png)
+
+
+
 ```tsx
 <IconCard icon="lightbulb" title="Key Concept" variant="clean">
   <p>Transparent, no border.</p>
 </IconCard>
 ```
+![IconCard Component](./docs/images/icon-card-clean.png)
+
 
 ### `SlideHeader`
 Consistent title block that automatically handles the sticky positioning and gradient background.
@@ -86,19 +93,21 @@ Consistent title block that automatically handles the sticky positioning and gra
 - `subtitle` (node): Optional secondary text
 
 **Example:**
-![SlideHeader Component](./docs/images/slide-header.png)
+
 ```tsx
 <SlideHeader
   title="Chapter 1"
   subtitle="Introduction to the topic"
 />
 ```
+![SlideHeader Component](./docs/images/slide-header.png)
+
 
 ### `CodeBlock`
 Syntax-highlighted container for code snippets. Supports dark mode automatically and includes a **"Copy to Clipboard"** button on hover.
 
 **Example:**
-![CodeBlock Component](./docs/images/code-block.png)
+
 ```tsx
 <CodeBlock>
 {`function hello() {
@@ -106,6 +115,8 @@ Syntax-highlighted container for code snippets. Supports dark mode automatically
 }`}
 </CodeBlock>
 ```
+![CodeBlock Component](./docs/images/code-block.png)
+
 
 ### `CallToAction`
 High-impact banner usually placed at the bottom of a slide.
