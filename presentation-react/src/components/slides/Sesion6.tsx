@@ -8,7 +8,7 @@ const Sesion6 = () => (
         <SlideHeader title="Sesión 6" subtitle="Proyecto integrador" />
 
         <div className="flex-grow flex flex-col lg:flex-row px-6 lg:px-16 py-8 lg:py-8 gap-8 lg:gap-8">
-            <div className="w-full lg:w-3/5 flex flex-col justify-center gap-5">
+            <div className="w-full lg:w-4/6 flex flex-col justify-center gap-5">
                 <IconCard icon="flag" title="Objetivo general" variant="info">
                     <p className="text-lg mt-2 pl-4 lg:pl-12">Diseñar la arquitectura documental de un mini-curso o módulo académico</p>
                 </IconCard>

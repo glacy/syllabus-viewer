@@ -44,15 +44,37 @@ The most versatile core component for displaying content blocks.
 - `variant` (string): Visual style. Options:
   - `info` (default): Light background, thick left border
   - `warning`: Accent-colored background/border
-  - `outlined-info`: White background, thin primary border
-  - `outlined-warning`: White background, thin accent border
+  - `outlined-info`: Light background, thin primary border
+  - `outlined-warning`: Light background, thin accent border
   - `clean`: Transparent, no border
 
 **Example:**
-![IconCard Component](./docs/images/icon-card.png)
+![IconCard Component](./docs/images/icon-card-info.png)
 ```tsx
-<IconCard icon="lightbulb" title="Key Concept" variant="info">
+<IconCard icon="favorite" title="Lovely" variant="info">
+  <p>Light background, thick left border.</p>
+</IconCard>
+```
+
+![IconCard Component](./docs/images/icon-card-warning.png)
+```tsx
+<IconCard icon="lightbulb" title="Key Concept" variant="warning">
+  <p>Accent-colored background/border.</p>
+</IconCard>
+```
+
+
+![IconCard Component](./docs/images/icon-card-outlined-warning.png)
+```tsx
+<IconCard icon="lightbulb" title="Key Concept" variant="outlined-warning">
   <p>This is a highlighted concept box.</p>
+</IconCard>
+```
+
+![IconCard Component](./docs/images/icon-card-clean.png)
+```tsx
+<IconCard icon="lightbulb" title="Key Concept" variant="clean">
+  <p>Transparent, no border.</p>
 </IconCard>
 ```
 

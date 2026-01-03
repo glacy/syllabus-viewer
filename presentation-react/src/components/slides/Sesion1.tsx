@@ -1,6 +1,7 @@
 import SlideLayout from '../common/SlideLayout';
 import SlideHeader from '../common/SlideHeader';
 import IconCard from '../common/IconCard';
+import CodeBlock from '../common/CodeBlock';
 
 
 // Slide 2: Sesión 1
@@ -38,8 +39,6 @@ const Sesion1 = () => (
                     <IconCard icon="label" title="Metadatos" variant="outlined-info">
                         Datos sobre el documento, no el documento mismo
                     </IconCard>
-
-
                 </div>
             </div>
         </div>
