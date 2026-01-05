@@ -31,7 +31,7 @@ Slides are built using reusable, highly configurable components to ensure consis
 -   **`SlideLayout`**: Standardized wrapper handling spacing and responsiveness.
 -   **`SlideHeader`**: Uniform gradient headers with title/subtitle support. Now supports sticky positioning.
 -   **`IconCard`**: Versatile content cards with icon support and semantic variants (`info`, `warning`, `outlined`, `clean`).
--   **`CodeBlock`**: Syntax-highlighted code containers with dark mode support.
+-   **`CodeBlock`**: Code containers with dark mode support.
 -   **`CallToAction`**: High-impact closing banners.
 
 ## Component Reference & Examples
