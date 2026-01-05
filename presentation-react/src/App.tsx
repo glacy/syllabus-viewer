@@ -46,7 +46,7 @@ function App() {
             {/* Contenedor Principal */}
             <div className="w-full max-w-7xl h-full flex flex-col gap-5 p-5">
                 {/* Contenedor de Diapositivas con Scroll Interno */}
-                <div className="w-full relative rounded-xl shadow-2xl flex-1 flex flex-col bg-white dark:bg-slate-900 z-0 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
+                <div className="w-full relative rounded-xl shadow-2xl flex-1 flex flex-col bg-white dark:bg-slate-900 z-0 overflow-hidden">
                     <Slides currentSlide={currentSlide} />
                 </div>
 

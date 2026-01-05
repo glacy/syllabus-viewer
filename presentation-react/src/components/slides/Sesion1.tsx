@@ -3,7 +3,6 @@ import SlideHeader from '../common/SlideHeader';
 import IconCard from '../common/IconCard';
 
 
-
 // Slide 2: Sesión 1
 const Sesion1 = () => (
     <SlideLayout>

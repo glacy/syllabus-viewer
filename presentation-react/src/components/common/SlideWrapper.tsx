@@ -24,7 +24,7 @@ const SlideWrapper: React.FC<SlideWrapperProps> = ({ isActive, children }) => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 }}
                     transition={{ duration: 0.5, ease: 'easeInOut' }}
-                    className="w-full h-full"
+                    className="w-full h-full overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent"
                 >
                     {children}
                 </motion.div>
