@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+"""
+Script to generate a markdown table of all sessions and their learning objectives.
+
+This script scans the 'sessions/' directory for Markdown files, extracts metadata
+(number, title, objectives) from the frontmatter, and generates a 'sessions_table.md'
+file with an HTML-formatted table suitable for the MyST site.
+"""
 import glob
 import yaml
 import re
@@ -15,7 +22,7 @@ print(f"{CYAN}Generando {output_file}...{RESET}")
 try:
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("## Tabla de sesiones y resultados de aprendizaje\n\n")
-        f.write("| Sesión | Título | Resultados de aprendizaje |\n")
+        f.write("| Semana | Título | Resultados de aprendizaje |\n")
         f.write("|--------|--------|---------------------------|\n")
 
         files = sorted(glob.glob("sessions/*.md"))

@@ -1,13 +1,13 @@
-# Diseño semántico de documentos académicos
+# Biotecnología
 
-[![deploy](https://github.com/glacy/frontmatter-academico/actions/workflows/deploy.yml/badge.svg)](https://github.com/glacy/frontmatter-academico/actions/workflows/deploy.yml)
+[![deploy](https://github.com/glacy/biotec/actions/workflows/deploy.yml/badge.svg)](https://github.com/glacy/biotec/actions/workflows/deploy.yml)
 
 
-**Curso introductorio sobre frontmatter, metadatos y publicación reproducible.**
+**FI1105 - Física para Biotecnología.**
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/glacy/frontmatter-academico)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/glacy/biotec)
 
-🚀 **Sitio web oficial (Versión compilada):** [https://glacy.github.io/frontmatter-academico](https://glacy.github.io/frontmatter-academico)
+🚀 **Sitio web oficial (Versión compilada):** [https://glacy.github.io/biotec](https://glacy.github.io/biotec)
 
 ---
 
@@ -45,16 +45,24 @@ Esto validará el frontmatter automáticamente al intentar hacer un commit.
 ## Estructura del proyecto
 
 ```text
-frontmatter-academico/
+biotecnologia/
 ├── assets/                # 🎨 Recursos estáticos (logos, imágenes)
 ├── scripts/               # 🛠️ Scripts de mantenimiento y automatización
 ├── myst.yml               # ⚙️ Configuración del sitio y metadatos globales
-├── index.md               # 🏠 Portada del curso (Home)
+├── programa.md            # 📄 Programa del curso
+├── planeamiento.json      # 📋 Datos estructurados del planeamiento 
 ├── sessions/              # 📚 Contenido del curso (Capítulos)
 ├── examples/              # 🧩 Ejemplos de referencia
 ├── exercises/             # ✍️ Actividades prácticas
+├── syllabus-viewer/       # ⚛️ Aplicación React para visualizar el programa
 └── .github/               # 🤖 Flujos de automatización (CI/CD)
 ```
+
+**Nota sobre la estructura de contenido:**
+El curso sigue una arquitectura modular donde los contenidos prácticos no residen directamente en los archivos de sesión (`sessions/`), sino que se inyectan dinámicamente:
+- **`examples/`**: Contiene ejemplos resueltos y casos de estudio.
+- **`exercises/`**: Contiene los ejercicios propuestos, estructurados semánticamente mediante la directiva `{exercise}` de MyST.
+Esta separación permite reutilizar componentes y facilita el mantenimiento.
 
 
 
@@ -88,13 +96,23 @@ Se incluyen scripts para verificar la integridad del entorno y el contenido:
   ```bash
   python3 scripts/validate_frontmatter.py
   ```
-  Analiza todos los archivos en `sessions/` para asegurar que cumplen con la estructura de metadatos requerida (título, objetivos, keywords, etc.).
+  Analiza todos los archivos en `sessions/` para asegurar que cumplen con la estructura de metadatos requerida. **Emite advertencias (no errores)** para campos opcionales como `activities`, `evaluation` y `references`, permitiendo una validación más flexible.
 
 - **Generar tabla de sesiones:**
   ```bash
   python3 scripts/generate_sessions_table.py
   ```
-  Escanea los archivos en `sessions/` y regenera automáticamente `sessions_table.md` con los títulos y objetivos de aprendizaje. **Nota:** Este paso se ejecuta automáticamente al desplegar el sitio vía GitHub Actions.
+  Escanea los archivos en `sessions/` y regenera automáticamente `sessions_table.md`.
+
+- **Generación de skeleton:**
+  ```bash
+  # Generar todas las sesiones
+  python3 scripts/generate_sessions.py
+
+  # Generar una semana específica (no sobreescribe, crea copia)
+  python3 scripts/generate_sessions.py --week 1
+  ```
+  Script automatizado refactorizado que utiliza `planeamiento.json` como única fuente de verdad (eliminando la dependencia de Excel). Cuenta con **detección de archivos existentes** para evitar la sobreescritura accidental y soporte para argumentos CLI.
 
 
 ### 3. Ejecución del servidor local
@@ -132,6 +150,18 @@ npm run build # Generar build de producción (single-file)
 ```
 
 **Nota:** El pipeline de CI/CD (`deploy.yml`) construye y despliega automáticamente esta presentación en cada push a main.
+
+
+## Asistencia de IA
+
+Este proyecto contó con la asistencia de **Antigravity**, un agente de codificación avanzado desarrollado por el equipo de Google Deepmind. Su papel en el desarrollo incluye:
+
+- **Refactorización y optimización**: Mejora continua de la calidad del código, asegurando consistencia y adherencia a las mejores prácticas en Python, TypeScript y React.
+- **Mantenimiento del entorno**: Gestión de scripts de validación, automatización de flujos de trabajo (CI/CD) y verificación de dependencias.
+- **Documentación dinámica**: Generación y actualización de documentación técnica, como este README, asegurando que refleje el estado actual del proyecto.
+- **Soporte en desarrollo**: Asistencia en tiempo real para la resolución de errores, migración de tecnologías y scaffolding de nuevos componentes.
+- **Prototipado de contenido pedagógico**: Redacción detallada de material instruccional, integrando conceptos físicos con aplicaciones biotecnológicas específicas.
+
 
 ## Licencia
 

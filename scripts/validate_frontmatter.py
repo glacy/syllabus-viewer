@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""
+Script to validate the structure and presence of required fields in YAML frontmatter.
+
+This script iterates through all markdown files in 'sessions/' and checks if they
+contain valid YAML frontmatter with specific required fields (title, learning_objectives, etc).
+It returns exit code 0 if all files are valid, and 1 otherwise (useful for CI/CD).
+"""
+
 import glob
 import sys
 import yaml
@@ -7,6 +15,7 @@ import re
 # ANSI Colors
 CYAN = "\033[96m"
 GREEN = "\033[92m"
+YELLOW = "\033[93m"
 RED = "\033[91m"
 RESET = "\033[0m"
 
@@ -16,13 +25,28 @@ required_fields = [
     "title",
     "session.number",
     "learning_objectives",
-    "keywords",
     "subtitle"
+]
+
+optional_fields = [
+    "activities",
+    "evaluation",
+    "references"
 ]
 
 status = 0
 
 def get_nested(data, path):
+    """
+    Retrieves a value from a nested dictionary using a dot-notation string.
+    
+    Args:
+        data (dict): The dictionary to search.
+        path (str): Dot-separated key path (e.g. 'session.number').
+        
+    Returns:
+        The value if found, or None.
+    """
     keys = path.split('.')
     val = data
     for key in keys:
@@ -69,6 +93,11 @@ for file_path in files:
             if get_nested(frontmatter, field) is None:
                 print(f"  {RED}✗ Falta campo obligatorio: .{field}{RESET}")
                 status = 1
+
+        # Validar campos opcionales (warnings)
+        for field in optional_fields:
+            if get_nested(frontmatter, field) is None:
+                print(f"  {YELLOW}⚠ Falta campo opcional: .{field}{RESET}")
 
     except Exception as e:
         print(f"  {RED}✗ Error leyendo archivo: {e}{RESET}")

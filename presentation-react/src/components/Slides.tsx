@@ -19,8 +19,8 @@ interface SlidesProps {
 const Slides: React.FC<SlidesProps> = ({ currentSlide }) => {
     const slides = [
         <Portada
-            title="Diseño semántico de documentos académicos"
-            subtitle="Curso sobre frontmatter, metadatos y publicación reproducible"
+            title="Física para Biotecnología"
+            subtitle="Curso sobre Física para Biotecnología"
             author="Gerardo Lacy Mora"
             email="gerardolacymora@gmail.com"
             sessionInfo="6 sesiones • 9 horas"

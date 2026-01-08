@@ -1,38 +1,81 @@
 version: 1
 project:
-  title: 'Diseño semántico de documentos académicos'
-  subtitle: "Frontmatter y metadatos en entornos reproducibles"
+  title: FI1105 
+  subtitle: I semestre 2026
   authors:
-    - name: Gerardo Lacy Mora
-  copyright: >
-    © 2025 glacy. Contenido distribuido bajo licencia Creative Commons
-    Atribución 4.0 Internacional (CC BY 4.0).
-  github: glacy/frontmatter-academico
+  - name: Escuela de Física
+  copyright: '© 2026 glacy. Contenido distribuido bajo licencia Creative Commons Atribución
+    4.0 Internacional (CC BY 4.0).'
+  github: glacy/biotec
   toc:
-    - file: index.md
-    - title: "Fundamentos"
+    - file: programa.md
+    - title: Semana 1
       children:
-        - file: sessions/01-introduccion-frontmatter.md
-        - file: sessions/02-frontmatter-academico.md
-    - title: "Diseño semántico"
+      - file: sessions/01-unidades-y-conversiones-de-unidades.md
+      - file: activities/01-taller-fisica-en-la-cocina.md
+    - title: Semana 2
       children:
-        - file: sessions/03-diseno-semantico-metadatos.md
-        - file: sessions/04-herencia-frontmatter.md
-    - title: "Integración y evaluación"
+      - file: sessions/02-cinematica-lineal.md
+      - file: activities/04-rastreo-estroboscopico.md
+    - title: Semana 3
       children:
-        - file: sessions/05-toc-estructura-pedagogica.md
-        - file: sessions/06-proyecto-integrador.md
-    - title: "Recursos"
+      - file: sessions/03-operaciones-vectoriales.md
+    - title: Semana 4
       children:
-        - file: sessions/anexo-sintaxis-yaml.md
-        - file: sessions/anexo-jupyterbook-vs-myst.md
-        - file: sessions/anexo-banco-ejemplos.md
-        - file: sessions/presentacion.md
+      - file: sessions/04-dinamica.md
+      - file: activities/05-diseno-centrifugas.md
+    - title: Semana 5
+      children:
+      - file: sessions/05-energía-mecánica.md
+      - file: activities/06-desafio-ultracentrifuga.md
+    - title: Semana 6
+      children:
+      - file: sessions/06-cantidades-angulares-movimiento-circular-uniforme-y-aceleracion-centripeta.md
+      - file: activities/07-molecu-olimpiadas.md
+    - title: Semana 7
+      children:
+      - file: sessions/07-estatica-equilibrio.md
+      - file: activities/08-estabilidad-proteinas.md
+    - title: Semana 8
+      children:
+      - file: sessions/08-fundamentos-de-estatica-de-fluidos.md
+      - file: activities/09-densimetro-casero.md
+    - title: Semana 9
+      children:
+      - file: sessions/09-dinamica-de-fluidos-ideales.md
+      - file: activities/10-diseno-biorreactor.md
+    - title: Semana 10
+      children:
+      - file: sessions/10-fluidos-reales-viscosidad-turbulencia-y-aplicaciones.md
+      - file: activities/11-debate-fluidos-no-newtonianos.md
+    - title: Semana 11
+      children:
+      - file: sessions/11-fluidos-reales-viscosidad-turbulencia-y-aplicaciones.md
+      - file: activities/12-microfluidica-papel.md
+    - title: Semana 12
+      children:
+      - file: sessions/12-electricidad.md
+      - file: activities/13-membrana-capacitor.md
+    - title: Semana 13
+      children:
+      - file: sessions/13-electricidad.md
+      - file: activities/14-hackeando-potencial-accion.md
+    - title: Semana 14
+      children:
+      - file: sessions/14-magnetismo.md
+      - file: activities/15-fisica-rmn.md
+    - title: Semana 15
+      children:
+      - file: sessions/15-optica-y-fenomenos-luminosos.md
+      - file: activities/16-espectroscopia-casera.md
+    - title: Semana 16
+      children:
+      - file: sessions/16-microscopios.md
+      - file: activities/17-galeria-microscopia.md
 site:
-  title: 'Diseño semántico de documentos académicos'
-  subtitle: "Frontmatter y metadatos en entornos reproducibles"
+  title: FI1105
+  subtitle: I semestre 2026
   options:
-    folders: true
     logo: assets/site_logo.svg
     logo_dark: assets/site_logo_dark.svg
   template: book-theme

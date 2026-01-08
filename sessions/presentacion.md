@@ -15,6 +15,12 @@ learning_objectives:
   - "Visualizar la estructura general del curso de forma gráfica."
 ---
 
+:::{note} Objetivos
+Al completar esta lección, serás capaz de:
+1. Visualizar la estructura general del curso de forma gráfica.
+:::
+
+
 Este recurso proporciona una vista sintética de todas las sesiones.
 
 :::{card} 📽️ Ver Presentación
