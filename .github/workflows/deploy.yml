@@ -51,15 +51,6 @@ jobs:
           pip install pyyaml
       - name: Generate Sessions Table
         run: python3 scripts/generate_sessions_table.py
-      - name: Build Presentation (React)
-        run: |
-          cd presentation-react
-          npm install
-          npm run build
-          mkdir -p ../assets/presentation
-          rm -rf ../assets/presentation/*
-          cp dist/index.html ../assets/presentation/index.html
-          cd ..
       - name: Install MyST
         run: npm install -g mystmd
       - name: Build HTML Assets
