@@ -1,6 +1,6 @@
 ---
 title: Microscopios
-subtitle: Semana 16
+subtitle: Lentes, Resolución y Microscopía Electrónica
 subject: Semana 16
 session:
   number: 16
@@ -11,50 +11,62 @@ authors:
 - name: Gerardo Lacy Mora
 keywords:
 - Microscopios
+- lentes
+- resolución
+- aumento
+- SEM
+- TEM
 learning_objectives:
 - Explicar la formación de imágenes mediante lentes y el aumento angular.
 - Comparar el funcionamiento y resolución del microscopio óptico frente al electrónico.
 - Describir técnicas especiales de microscopía y sus aplicaciones.
-activities: 'Galería virtual de Microscopía: Identificar imágenes de SEM, TEM, Confocal
-  y Campo Claro.'
-evaluation:
-- type: Sumativa
-  description: 'Proyecto final: Presentación de una técnica de microscopía avanzada
-    y su principio físico.'
-references:
-- text: '[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar
-    Flores. https://elibro.net/es/lc/itcr/titulos/124788'
-  pages: Secciones 19.1 a 19.7, pág. 339-347
 ---
 
 :::{note} Objetivos
 Al completar esta lección, serás capaz de:
-1. Explicar la formación de imágenes mediante lentes y el aumento angular.
-2. Comparar el funcionamiento y resolución del microscopio óptico frente al electrónico.
-3. Describir técnicas especiales de microscopía y sus aplicaciones.
+1. Explicar cómo las lentes forman imágenes magnificadas.
+2. Definir el límite de resolución (Difracción) y por qué es una barrera física.
+3. Comparar el Microscopio Óptico con el Microscopio Electrónico (SEM/TEM).
 :::
 
-## Contenidos
+## Introducción
 
-- Microscopios
-- Lentes
-- Aumento angular
-- Microscopio óptico
-- Resolución del microscopio
-- Técnicas especiales de microscopía óptica
-- Microscopio electrónico de transmisión
-- Microscopio electrónico de barrido
-- Microscopio de efecto túnel
+La historia de la biología celular es la historia del microscopio. Desde los lentes simples de Leeuwenhoek hasta los criomicroscopios electrónicos actuales, la capacidad de ver más allá de lo evidente depende de principios ópticos fundamentales. En esta sesión final, entenderemos los límites físicos de la visión humana y artificial.
 
-## Actividades
+## 16.1 Lentes y Formación de Imágenes
 
-Galería virtual de Microscopía: Identificar imágenes de SEM, TEM, Confocal y Campo Claro.
+*   **Lente Convergente (Convexa)**: Enfoca la luz en un punto. Es la base de objetivos y oculares.
+*   **Aumento Total ($M$)**: El producto del aumento del objetivo y del ocular.
+    $$ M_{total} = M_{obj} \times M_{ocular} $$
+    *   Ejemplo: Objetivo 40x $\times$ Ocular 10x = 400x.
 
-## Evaluación
+## 16.2 Resolución y Límite de Difracción
 
-- **Sumativa**: Proyecto final: Presentación de una técnica de microscopía avanzada y su principio físico.
+El aumento no tiene límites (puedes hacer zoom digital infinito). **La resolución SÍ tiene límites**.
+La resolución es la distancia mínima ($d$) para distinguir dos puntos como separados.
 
-## Referencias
+$$ d = \frac{0.61 \lambda}{NA} $$
 
-- [3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788, Secciones 19.1 a 19.7, pág. 339-347
+*   $\lambda$: Longitud de onda de la luz.
+*   $NA$: Apertura Numérica (calidad del lente, máx $\approx 1.4$).
 
+Para luz visible ($\lambda \approx 500 \text{ nm}$), el límite físico es $d \approx 200 \text{ nm}$.
+*   **Consecuencia**: **Nunca** podrás ver un virus ($\approx 50 \text{ nm}$) o la hélice de ADN ($\approx 2 \text{ nm}$) con un microscopio óptico tradicional. Es físicamente imposible debido a la difracción de la luz.
+
+## 16.3 Microscopía Electrónica
+
+Para ver cosas más pequeñas que 200 nm, necesitamos una $\lambda$ más pequeña. Usamos **electrones** en lugar de fotones.
+Según la mecánica cuántica (De Broglie), un electrón acelerado se comporta como una onda con $\lambda$ diminuta ($< 0.01 \text{ nm}$).
+
+### Tipos
+1.  **TEM (Transmisión)**: Los electrones atraviesan la muestra (debe ser ultrafina). Permite ver estructuras internas (orgánulos, capas virales).
+2.  **SEM (Barrido)**: Los electrones rebotan en la superficie recubierta de metal. Crea imágenes 3D espectaculares de la superficie.
+
+## 16.4 Microscopía de Super-Resolución (Nobel 2014)
+
+Nuevas técnicas (STED, PALM) usan trucos fluorescentes para "romper" el límite de difracción, permitiendo ver moléculas individuales con luz. El futuro de la biotecnología está en la nanoscopía.
+
+## ✍️ Ejercicios Propuestos
+
+```{include} ../exercises/16-limite-fisico.md
+```
