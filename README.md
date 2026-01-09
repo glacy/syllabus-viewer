@@ -1,163 +1,168 @@
-# Biotecnología
+# Syllabus Viewer - Física para Biotecnología
 
-[![deploy](https://github.com/glacy/biotec/actions/workflows/deploy.yml/badge.svg)](https://github.com/glacy/biotec/actions/workflows/deploy.yml)
+Aplicación interactiva desarrollada en **React + TypeScript + Vite** para visualizar el planeamiento didáctico y los objetivos de aprendizaje del curso de manera dinámica y atractiva.
 
+## 🚀 Características principales
 
-**FI1105 - Física para Biotecnología.**
+*   **Visualización dinámica**: Renderiza tarjetas interactivas para cada semana del curso basándose en el archivo de datos `planeamiento.json`.
+*   **Filtrado inteligente**: Permite buscar contenidos por título, objetivos de aprendizaje o actividades. Incluye un botón para **limpiar búsqueda** accesible por teclado que gestiona el foco automáticamente.
+*   **Evaluación tipificada**: Distingue visualmente entre evaluaciones formativas (azul) y sumativas (morado).
+*   **Referencias bibliográficas**: Inclusión de fuentes APA para cada sesión.
+*   **Modo oscuro**: Alternancia de temas Claro/Oscuro con persistencia local y adaptación al sistema.
+*   **Interfaz moderna**: Diseño limpio y responsivo utilizando **Tailwind CSS**.
+*   **Animaciones fluidas**: Transiciones de expansión y filtrado implementadas con **Framer Motion**.
+*   **Robustez**: Mapeo seguro de tipos y manejo de errores para datos inconsistentes (strings vs objetos).
+*   **Documentación viva**: Código fuente documentado con JSDoc.
+*   **Accesibilidad (a11y)**:
+    *   **Tipografía legible**: Tamaño de fuente base aumentado a **18px** para mejorar la legibilidad en todas las pantallas.
+    *   **Movimiento reducido**: Respeto a `prefers-reduced-motion` para usuarios que desactivan las animaciones del sistema.
+    *   **Navegación por teclado**: Soporte completo para tabulación y activación con teclado.
+    *   **Focus visible**: Indicadores de foco de alto contraste (`focus-visible`) exclusivos para navegación por teclado.
+    *   **Soporte lector de pantalla**: Iconos decorativos `aria-hidden` y atributos `aria-expanded`/`aria-controls` para estados dinámicos.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/glacy/biotec)
+## 🛠️ Stack tecnológico
 
-🚀 **Sitio web oficial (Versión compilada):** [https://glacy.github.io/biotec](https://glacy.github.io/biotec)
+*   **Core**: [React 18](https://react.dev/), [Vite](https://vitejs.dev/), [TypeScript](https://www.typescriptlang.org/)
+*   **Estilos**: [Tailwind CSS v3](https://tailwindcss.com/)
+*   **Animaciones**: [Framer Motion](https://www.framer.com/motion/)
+*   **Iconos**: [Lucide React](https://lucide.dev/)
+*   **Utilidades**: `clsx`, `tailwind-merge`
 
----
-
-## Sobre este repositorio
-
-Este repositorio contiene el **código fuente** del curso. A diferencia del sitio web (pensado para estudiantes), este `README` está dirigido a quienes deseen **auditar, replicar o contribuir** al proyecto.
-
-El curso está construido con **MyST Markdown** y demuestra principios de:
-- **Estructura semántica:** Uso intensivo de frontmatter YAML.
-- **Reproducibilidad:** Entorno controlado y despliegue automatizado.
-- **Documentación como código:** CI/CD con GitHub Actions.
-
-## Ejecución en la nube (recomendado)
-
-La forma más sencilla de ejecutar este curso es utilizando **GitHub Codespaces**.
-1. Haga clic en el botón "Open in GitHub Codespaces" de arriba.
-2. Espere a que el entorno se construya (instalará automáticamente todas las dependencias).
-3. Una vez lista la terminal, el entorno `frontmatter-academico` estará activo.
-
-### Buenas prácticas (pre-commit)
-
-Si clonas el repositorio localmente, se recomienda instalar los hooks de git para validación automática:
-
-```bash
-# Una vez activado el entorno conda
-pre-commit install
-```
-Esto validará el frontmatter automáticamente al intentar hacer un commit.
-
-> **Nota:** Si necesitas omitir estas validaciones en una emergencia:
-> - **Omitir en un commit:** `git commit -n` (o `--no-verify`)
-> - **Desinstalar hooks:** `pre-commit uninstall`
-> - **Desactivar configuración:** Renombra el archivo: `mv .pre-commit-config.yaml .pre-commit-config.yaml.disabled`
-
-## Estructura del proyecto
+## 📂 Estructura del proyecto
 
 ```text
-biotecnologia/
-├── assets/                # 🎨 Recursos estáticos (logos, imágenes)
-├── scripts/               # 🛠️ Scripts de mantenimiento y automatización
-├── tests/                 # 🧪 Pruebas unitarias para los scripts
-├── myst.yml               # ⚙️ Configuración del sitio y metadatos globales
-├── programa.md            # 📄 Programa del curso
-├── planeamiento.json      # 📋 Datos estructurados del planeamiento 
-├── sessions/              # 📚 Contenido del curso (Capítulos)
-├── examples/              # 🧩 Ejemplos de referencia
-├── exercises/             # ✍️ Actividades prácticas
-├── syllabus-viewer/       # ⚛️ Aplicación React para visualizar el programa
-└── .github/               # 🤖 Flujos de automatización (CI/CD)
+syllabus-viewer/
+├── src/
+│   ├── components/
+│   │   ├── Header.tsx          # Título y presentación
+│   │   ├── SearchBar.tsx       # Barra de búsqueda
+│   │   ├── ThemeToggle.tsx     # Botón de cambio de tema
+│   │   ├── TimelineGrid.tsx    # Grilla principal de tarjetas
+│   │   ├── WeekCard.tsx        # Contenedor de la tarjeta semanal
+│   │   ├── WeekActivities.tsx  # Sección de actividades
+│   │   ├── WeekEvaluation.tsx  # Sección de evaluaciones
+│   │   ├── WeekObjectives.tsx  # Sección de objetivos
+│   │   └── WeekReferences.tsx  # Sección de referencias
+│   ├── context/
+│   │   └── ThemeContext.tsx    # Contexto para manejo del tema (claro/oscuro)
+│   ├── data/
+│   │   └── planeamiento.json   # Fuente de verdad (sincronizada desde MD)
+│   ├── App.tsx                 # Orquestador principal
+│   ├── main.tsx                # Punto de entrada de la aplicación
+│   └── types.ts                # Definiciones de tipos TypeScript
+├── public/                     # Assets estáticos
+└── index.html                  # Template HTML base
 ```
 
-**Nota sobre la estructura de contenido:**
-El curso sigue una arquitectura modular donde los contenidos prácticos no residen directamente en los archivos de sesión (`sessions/`), sino que se inyectan dinámicamente:
-- **`examples/`**: Contiene ejemplos resueltos y casos de estudio.
-- **`exercises/`**: Contiene los ejercicios propuestos, estructurados semánticamente mediante la directiva `{exercise}` de MyST.
-Esta separación permite reutilizar componentes y facilita el mantenimiento.
+## 🧠 Gestión de datos (`planeamiento.json`)
 
-**Nota sobre la estructura de contenido:**
-El curso opera como un "Template Starter" impulsado por datos. **`planeamiento.json`** es la única fuente de verdad para:
-1.  **Metadatos del sitio:** Título, autores, semestre y copyright en `myst.yml` (sincronizados vía `scripts/sync_myst.py`).
-2.  **Contenido de las sesiones:** Los archivos en `sessions/` se generan inyectando metadatos del JSON (objetivos, actividades, referencias) en el frontmatter.
-3.  **Visualizador Web:** La aplicación React en `syllabus-viewer/` consume el mismo JSON para renderizar la interfaz.
+El archivo `src/data/planeamiento.json` actúa como la **única fuente de verdad** para el contenido del curso. Esta separación entre datos y lógica de presentación permite:
+1.  **Mantenibilidad**: Actualizar el contenido del syllabus (temas, objetivos, evaluaciones) sin tocar código React.
+2.  **Escalabilidad**: La aplicación escala automáticamente para renderizar cualquier número de semanas definidas en el JSON.
+3.  **Tipado Seguro**: Aunque los datos son JSON, se castean a la interfaz `SyllabusEntry` en tiempo de ejecución para garantizar la integridad de los datos en toda la aplicación.
 
-Para modificar información del curso, edite `planeamiento.json` y ejecute los scripts de actualización.
+### Estructura de Datos
 
+El archivo `planeamiento.json` ahora cuenta con una estructura raíz que incluye `metadata` y `weeks`:
 
-## Reproducibilidad y configuración local
+#### Metadata
+Información global del curso que alimenta tanto al Header/Footer de la aplicación como a la configuración de MyST:
+*   `title`, `semester`, `university`, `description`
+*   `authors`: Lista de autores.
 
-Para garantizar un entorno de desarrollo consistente, este proyecto utiliza Anaconda/Miniconda.
+#### Weeks
+Cada entrada en el array `weeks` representa una semana de clases y contiene:
 
-### 1. Configuración del entorno
+*   `week`: Número secuencial de la semana.
+*   `content`: Lista de temas a cubrir.
+*   `objectives`: Objetivos de aprendizaje específicos.
+*   `activities`: Descripción de actividades dinámicas (laboratorios, talleres).
+*   `evaluation`: Array de objetos que define el tipo (`Formativa`/`Sumativa`) y la descripción de la evaluación.
+*   `references`: Lista de citas bibliográficas en formato APA simplificado.
+
+```json
+{
+    "week": 1,
+    "content": [
+      "Unidades y conversión de unidades",
+      "unidades del SI",
+      "análisis dimensional",
+      "conversiones"
+    ],
+    "objectives": [
+      "Distinguir entre unidades estándar y sistemas de unidades.",
+      "Enumerar las unidades fundamentales del Sistema Internacional de Unidades.",
+      "Emplear múltiplos y prefijos de unidades métricas.",
+      "Utilizar factores de conversión para convertir unidades dentro de un sistema o de un sistema de unidades a otro."
+    ],
+    "activities": "Taller 'Física en la cocina': Estimar y convertir cantidades de recetas complejas a unidades SI.",
+    "evaluation": [
+      {
+        "type": "Formativa",
+        "description": "Trabajo en clase: Resolución colaborativa de problemas de conversión dimensional complejos."
+      }
+    ],
+    "references": [
+      {
+        "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
+        "pages": "Secciones 1.1 a 1.5, pág. 23-25"
+      }
+    ]
+}
+```
+
+### Ejemplo de renderización
+
+![Renderización de la Semana 1](public/example-week.png)
+
+## 🤖 Asistencia de IA (Antigravity)
+
+Este proyecto fue desarrollado con la asistencia activa de **Antigravity**, un agente de IA de Google Deepmind.
+
+### Rol de la IA en el desarrollo
+1.  **Scaffolding**: Inicialización del proyecto Vite y configuración de herramientas de desarrollo (ESLint, PostCSS).
+2.  **Arquitectura de componentes**: Refactorización de `App.tsx` monolítico a una arquitectura modular (`Header`, `SearchBar`, `TimelineGrid`).
+3.  **Diseño instruccional**: Generación de actividades y evaluaciones innovadoras y centradas en el estudiante para las 16 semanas.
+4.  **Refactorización de datos**: Migración de campos de texto planos a estructuras tipadas (e.g., evaluaciones formativas vs sumativas).
+5.  **Modo Oscuro**: Implementación completa de cambio de tema (Claro/Oscuro) usando `ThemeContext` y clases `dark:` de Tailwind.
+6.  **Documentación**: Generación automática de JSDoc y mantenimiento del README.
+
+## 📝 Notas de desarrollo
+
+### Configuración de TypeScript
+El proyecto tiene habilitada la opción `verbatimModuleSyntax: true` en `tsconfig.json`. Esto significa que todos los imports de **tipos** deben usar explícitamente la sintaxis `type`.
+
+**Incorrecto:**
+```typescript
+import { ReactNode } from 'react';
+```
+
+**Correcto:**
+```typescript
+import { type ReactNode } from 'react';
+```
+
+## 🏃 Cómo ejecutar
+
+### Desarrollo local
 ```bash
-# Crear el entorno desde el archivo de configuración
-conda env create -f environment.yml
+# Instalar dependencias
+npm install
 
-# Activar el entorno
-conda activate frontmatter-academico
+# Iniciar servidor de desarrollo (puerto 5173 por defecto)
+npm run dev
 ```
 
-### 2. Verificación y validación
-Se incluyen scripts para verificar la integridad del entorno y el contenido:
+### Construcción para producción (Single-File)
 
-- **Verificar entorno técnico:**
-  ```bash
-  # Linux / macOS / WSL
-  ./scripts/verify_env.sh
-
-  # Windows (PowerShell)
-  .\scripts\verify_env.ps1
-  ```
-  Comprueba que todas las herramientas necesarias (MyST, Pandoc, Python, etc.) estén instaladas y accesibles.
-
-- **Validar frontmatter:**
-  ```bash
-  python3 scripts/validate_frontmatter.py
-  ```
-  Analiza todos los archivos en `sessions/` para asegurar que cumplen con la estructura de metadatos requerida. **Emite advertencias (no errores)** para campos opcionales como `activities`, `evaluation` y `references`, permitiendo una validación más flexible.
-
-- **Generar tabla de sesiones:**
-  ```bash
-  python3 scripts/generate_sessions_table.py
-  ```
-  Escanea los archivos en `sessions/` y regenera automáticamente `sessions_table.md`.
-
-- **Generación de skeleton:**
-  ```bash
-  # Sincronizar myst.yml y generar sesiones
-  python3 scripts/sync_myst.py
-  python3 scripts/generate_sessions.py
-
-  # Generar una semana específica
-  python3 scripts/generate_sessions.py --week 1
-  ```
-  Script automatizado que utiliza `planeamiento.json` como única fuente de verdad. El flujo de trabajo recomendado es:
-  1. Modificar `planeamiento.json`.
-  2. Ejecutar `python3 scripts/sync_myst.py` para actualizar metadata.
-  3. Ejecutar `python3 scripts/generate_sessions.py` para regenerar contenido.
-  4. Ejecutar `python3 scripts/update_toc.py` para corregir enlaces en el índice.
-  4. Ejecutar `python3 scripts/update_toc.py` para corregir enlaces en el índice.
-
-- **Inyección de Badges en Actividades:**
-  ```bash
-  python3 scripts/inject_activity_header.py
-  ```
-  Inyecta "badges" visuales (imágenes Shields.io) al inicio de cada archivo de actividad (`activities/*.md`) basándose en los metadatos del frontmatter (`duration`, `modality`, `difficulty`). Útil para exponer estos datos en la versión publicada.
-
-
-### 3. Ejecución del servidor local
-
-Una vez configurado y verificado el entorno, puedes iniciar el servidor de desarrollo:
+El proyecto utiliza **`vite-plugin-singlefile`** para empaquetar todo el código (HTML, JS, CSS) en un único archivo HTML. Esto permite ejecutar la aplicación localmente sin necesidad de un servidor web, evitando problemas de **CORS** con el protocolo `file://`.
 
 ```bash
-myst start
+# Generar archivo portable en /dist/index.html
+npm run build
 ```
-El sitio estará disponible en `http://localhost:3000`.
 
+Una vez construido, el archivo `dist/index.html` es completamente autónomo y puede abrirse directamente en cualquier navegador.
 
-## Asistencia de IA
-
-Este proyecto contó con la asistencia de **Antigravity**, un agente de codificación avanzado desarrollado por el equipo de Google Deepmind. Su papel en el desarrollo incluye:
-
-- **Refactorización y optimización**: Mejora continua de la calidad del código, asegurando consistencia y adherencia a las mejores prácticas en Python, TypeScript y React.
-- **Mantenimiento del entorno**: Gestión de scripts de validación, automatización de flujos de trabajo (CI/CD) y verificación de dependencias.
-- **Documentación dinámica**: Generación y actualización de documentación técnica, como este README, asegurando que refleje el estado actual del proyecto.
-- **Soporte en desarrollo**: Asistencia en tiempo real para la resolución de errores, migración de tecnologías y scaffolding de nuevos componentes.
-- **Prototipado de contenido pedagógico**: Redacción detallada de material instruccional, integrando conceptos físicos con aplicaciones biotecnológicas específicas.
-
-
-## Licencia
-
-Este material es abierto.
-- **Contenido:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- **Código:** MIT
+---
+&copy; 2026 gerardolacymora

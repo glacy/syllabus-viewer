@@ -1,0 +1,381 @@
+[
+    {
+        "week": 1,
+        "content": [
+            "Unidades y  conversión de unidades",
+            "Unidades del SI",
+            "Análisis dimensional",
+            "Conversiones"
+        ],
+        "objectives": [
+            "Distinguir entre unidades estándar y sistemas de unidades.",
+            "Enumerar las unidades fundamentales del Sistema Internacional de Unidades.",
+            "Emplear múltiplos y prefijos de unidades métricas.",
+            "Utilizar factores de conversión para convertir unidades dentro de un sistema o de un sistema de unidades a otro."
+        ],
+        "activities": "Taller 'Física en la Cocina': Estimar y convertir cantidades de recetas complejas a unidades SI. Juegos de roles: 'El Desastre de la Mars Climate Orbiter' (análisis de errores de conversión).",
+        "evaluation": [
+            {
+                "type": "Formativa",
+                "description": "Trabajo en clase: Resolución colaborativa de problemas de conversión dimensional complejos."
+            }
+        ],
+        "references": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall."
+    },
+    {
+        "week": 2,
+        "content": [
+            "Cinemática lineal",
+            "escalares",
+            "distancia",
+            "rapidez",
+            "vectoriales: desplazamiento, velocidad, aceleración",
+            "Ecuaciones de cinemática"
+        ],
+        "objectives": [
+            "Definir distancia y calcular rapidez.",
+            "Explicar qué es una cantidad escalar.",
+            "Definir desplazamiento y calcular velocidad.",
+            "Explicar la diferencia entre cantidades escalares y vectoriales.",
+            "Interpretar gráficas de posición-tiempo y velocidad-tiempo para objetos en MRU y MRUA."
+        ],
+        "activities": "Rastreo de Movimiento Celular: Uso de software (ImageJ/Fiji) para analizar videos de microscopía de células móviles y graficar su posición/velocidad vs tiempo. Simulación de carrera de proteínas en un gel virtual.",
+        "evaluation": [
+            {
+                "type": "Formativa",
+                "description": "VideoQuiz: Interpretación de gráficas de movimiento."
+            },
+            {
+                "type": "Sumativa",
+                "description": "Quiz rápido sobre conceptos de cinemática."
+            }
+        ],
+        "references": "[2] Jou Mirabent, D. (2009). Física para ciencias de la vida (2.ª ed.). McGraw-Hill España. https://elibro.net/es/lc/itcr/titulos/50165"
+    },
+    {
+        "week": 3,
+        "content": [
+            "Operaciones vectoriales y Dinámica",
+            "Componentes y operaciones vectoriales",
+            "Concepto de fuerza y fuerza neta"
+        ],
+        "objectives": [
+            "Descomponer un vector en sus componentes y realizar operaciones vectoriales (suma, resta, producto por escalar).",
+            "Explicar el concepto de fuerza y calcular la fuerza neta sobre un objeto."
+        ],
+        "activities": "Caza del Tesoro Vectorial: Los estudiantes siguen instrucciones vectoriales (pasos y ángulos) para encontrar 'muestras' ocultas en el campus. Simulación interactiva Phet: Suma de vectores.",
+        "evaluation": [
+            {
+                "type": "Formativa",
+                "description": "Hoja de Trabajo: Descomposición vectorial aplicada a fuerzas musculares."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 4,
+        "content": [
+            "Operaciones vectoriales y Dinámica",
+            "Fuerzas: tensión, peso, normal, fricción",
+            "Leyes de Newton",
+            "Diagrama de Cuerpo Libre"
+        ],
+        "objectives": [
+            "Identificar y representar las fuerzas comunes: tensión, peso, fuerza normal y fricción.",
+            "Enunciar y aplicar las Leyes de Newton en situaciones físicas relevantes.",
+            "Construir diagramas de cuerpo libre para analizar sistemas físicos"
+        ],
+        "activities": "Diseño de Centrífugas: Análisis de fuerzas en un tubo de ensayo giratorio. Taller de Diagrama de Cuerpo Libre (DCL): Dibujar DCLs de proteínas en electroforesis, bacterias nadando y gotas en micropipetas.",
+        "evaluation": [
+            {
+                "type": "Formativa",
+                "description": "Reto de Pizarra: Dibujar el DCL correcto para sistemas biológicos propuestos al azar."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 5,
+        "content": [
+            "Energía Mecánica",
+            "Trabajo de una fuerza constante",
+            "Energía cinética y trabajo",
+            "Energía potencial",
+            "Conservación de la energía",
+            "Potencia"
+        ],
+        "objectives": [
+            "Calcular el trabajo realizado por una fuerza constante en un desplazamiento.",
+            "Relacionar el trabajo con el cambio en la energía cinética.",
+            "Explicar el concepto de energía potencial y sus diferentes formas.",
+            "Aplicar el principio de conservación de la energía mecánica a sistemas físicos.",
+            "Definir y calcular la potencia mecánica en procesos físicos."
+        ],
+        "activities": "Molecu-Olimpiadas: Calcular el trabajo y potencia de motores moleculares (Kinesina/Miosina) vs motores macroscópicos. Análisis de eficiencia energética en el bombeo cardiaco.",
+        "evaluation": [
+            {
+                "type": "Sumativa",
+                "description": "Problemario: Cálculo de gasto energético en procesos biológicos."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 6,
+        "content": [
+            "Cantidades angulares, movimiento circular uniforme y aceleración centrípeta",
+            "Posición y desplazamiento angular",
+            "Rapidez, velocidad y aceleración angular",
+            "Movimiento circular uniforme",
+            "Aplicación: la centrífuga"
+        ],
+        "objectives": [
+            "Definir las unidades de medida angulares",
+            "Describir y calcular la rapidez y la velocidad angulares y su relación con la rapidez tangencial",
+            "Describir el movimiento circular uniforme",
+            "Calcular la aceleración centrípeta"
+        ],
+        "activities": "Desafío de la Ultracentrífuga: Calcular RPM vs g para protocolos de separación de orgánulos reales. Visita al laboratorio para identificar rotores y radios de giro.",
+        "evaluation": [
+            {
+                "type": "Sumativa",
+                "description": "Informe Técnico: Validación de protocolo de centrifugación (cálculos de fuerza g)."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 7,
+        "content": [
+            "Estática: equilibrio",
+            "Cuerpo rígido",
+            "Momento de fuerza",
+            "Equilibrio y estabilidad con aplicación en sistemas biológicos"
+        ],
+        "objectives": [
+            "Distinguir entre los movimientos traslacionales puros y rotacionales puros de los cuerpos rígidos",
+            "Definir momento de fuerza",
+            "Describir la relación entre la ubicación del centro de gravedad y la estabilidad."
+        ],
+        "activities": "Biomecánica de Laboratorio: Análisis ergonómico del pipeteo y levantamiento de cargas. Modelado de proteínas como cuerpos rígidos para entender su estabilidad conformacional.",
+        "evaluation": [
+            {
+                "type": "Formativa",
+                "description": "Estudio de Caso: Análisis de fallas ergonómicas o estructurales en equipos."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 8,
+        "content": [
+            "Fundamentos de estática de fluidos",
+            "Densidad",
+            "Presión y profundidad",
+            "Principio de Arquímedes (flotación)",
+            "Principio de Pascal",
+            "Tensión superficial y capilaridad"
+        ],
+        "objectives": [
+            "Definir los conceptos de esfuerzo y esfuerzo de deformación",
+            "Explicar la relación profundidad y presión",
+            "Describir el principio de Pascal y su uso en aplicaciones prácticas",
+            "Relacionar la fuerza de flotabilidad con el principio de Arquímedes",
+            "Describir el origen de la tensión superficial"
+        ],
+        "activities": "Reto del Densímetro Casero: Construir un densímetro para medir concentración de azúcar en soluciones de fermentación. Experimentos de tensión superficial con surfactantes pulmonares simulados.",
+        "evaluation": [
+            {
+                "type": "Formativa",
+                "description": "Demostración Práctica: Medición correcta de densidades y tensión superficial (Checklist)."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 9,
+        "content": [
+            "Dinámica de fluidos ideales",
+            "Fluido ideal",
+            "Ecuación de continuidad",
+            "Ecuación de Bernoulli"
+        ],
+        "objectives": [
+            "Usar la ecuación de continuidad y la ecuación de Bernoulli para explicar los efectos comunes de flujo de fluido ideal."
+        ],
+        "activities": "Diseño de Biorreactor: Calcular caudales y diámetros de tuberías usando la ecuación de continuidad. Simulación de flujo sanguíneo a través de una estenosis (estrechamiento arterial) usando Bernoulli.",
+        "evaluation": [
+            {
+                "type": "Sumativa",
+                "description": "Proyecto de Diseño (Fase 1): Esquema básico de flujo en un biorreactor y cálculos asociados."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 10,
+        "content": [
+            "Fluidos reales: viscosidad, turbulencia y aplicaciones",
+            "Viscosidad y viscosidad aparente",
+            "Comportamiento reológico: fluidos newtonianos y no newtonianos",
+            "Ley de Poiseuille"
+        ],
+        "objectives": [
+            "Describir la viscosidad de un fluido real",
+            "Describir el comportamiento de un fluido viscoso con base en la Ley de Poiseuille."
+        ],
+        "activities": "Catarata de Viscosidad: Experimento comparativo de velocidad de flujo de agua, glicerol y 'sangre' sintética. Debate sobre fluidos No-Newtonianos en la industria alimentaria y biológica (e.g., moco, citoplasma).",
+        "evaluation": [
+            {
+                "type": "Sumativa",
+                "description": "Reporte de Laboratorio: Determinación de viscosidad experimental."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 11,
+        "content": [
+            "Fluidos reales: viscosidad, turbulencia y aplicaciones",
+            "Flujo laminar y turbulencia",
+            "Número de Reynolds",
+            "Fuerza de arrastre",
+            "Transporte a través de membrana biológica"
+        ],
+        "objectives": [
+            "Describir los tipos de flujo laminar y turbulento, por medio del número de Reynols.",
+            "Explicar el concepto de fuerza de arrastre y su relación con el transporte a través de membrana biológica"
+        ],
+        "activities": "Microfluídica en papel: Observación de flujo laminar vs turbulento mediante inyección de tinta en canales de diferentes tamaños. Cálculo del número de Reynolds para una bacteria vs una ballena.",
+        "evaluation": [
+            {
+                "type": "Formativa",
+                "description": "Exposición: Importancia del Número de Reynolds en diferentes escalas biológicas."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 12,
+        "content": [
+            "Electricidad",
+            "Interacción entre cargas, ley de Coulomb, potencial",
+            "Dipolo eléctrico",
+            "Condensadores",
+            "Circuitos eléctricos y ley de Ohm"
+        ],
+        "objectives": [
+            "Describir la interacción entre cargas eléctricas mediante la Ley de Coulomb.",
+            "Explicar el concepto de potencial eléctrico y dipolo eléctrico.",
+            "Definir la función de un condensador en un circuito."
+        ],
+        "activities": "Simulación de Electroforesis: Predecir la migración de ADN/Proteínas basándose en su carga y tamaño. Modelado de la membrana celular como un capacitor biológico.",
+        "evaluation": [
+            {
+                "type": "Formativa",
+                "description": "Resolución de Problemas: Interacciones electrostáticas en biomoléculas."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 13,
+        "content": [
+            "Electricidad",
+            "Circuitos complicados (ejemplo biológico)",
+            "Descarga de condensador",
+            "Circuito eléctrico equivalente a la membrana",
+            "Transporte de iones a través de membrana"
+        ],
+        "objectives": [
+            "Analizar circuitos eléctricos básicos utilizando la Ley de Ohm.",
+            "Relacionar los circuitos RC con la membrana celular y el transporte de iones.",
+            "Describir el modelo eléctrico equivalente de una membrana biológica."
+        ],
+        "activities": "Hackeando el Potencial de Acción: Uso de simuladores neuronales (e.g., Neurona de Hodgkin-Huxley simplificada) para manipular canales iónicos (resistencias) y ver el efecto en el voltaje de membrana.",
+        "evaluation": [
+            {
+                "type": "Sumativa",
+                "description": "Taller Evaluado: Análisis de circuitos equivalentes de membrana."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 14,
+        "content": [
+            "Magnetismo",
+            "Magnetismo.",
+            "Fuerza magnética sobre una partícula",
+            "Fuerza magnética sobre una corriente.",
+            "Campo producido por una corriente",
+            "Magnetograma",
+            "Magnetismo en los seres vivos"
+        ],
+        "objectives": [
+            "Describir la fuerza magnética sobre partículas cargadas y corrientes.",
+            "Explicar el origen del campo magnético producido por corrientes.",
+            "Discutir ejemplos de magnetismo en sistemas biológicos."
+        ],
+        "activities": "Bacterias Magnéticas: Observación de videos de bacterias magnetotácticas y discusión sobre su mecanismo de navegación. Principios físicos detrás de la Resonancia Magnética Nuclear (RMN).",
+        "evaluation": [
+            {
+                "type": "Formativa",
+                "description": "Mapa Mental Colaborativo: Aplicaciones del magnetismo en biotecnología y medicina."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 15,
+        "content": [
+            "Óptica y fenómenos luminosos",
+            "Naturaleza de la luz",
+            "Reflexión y refracción",
+            "Refracción total interna",
+            "Espectroscopía",
+            "Bioluminiscencia",
+            "Efecto Emerson"
+        ],
+        "objectives": [
+            "Distinguir las propiedades ondulatorias y corpusculares de la luz.",
+            "Aplicar las leyes de reflexión y refracción a fenómenos ópticos.",
+            "Relacionar fenómenos luminosos con aplicaciones biológicas como la bioluminiscencia."
+        ],
+        "activities": "Espectroscopía Casera: Construcción de un espectroscopio simple con un CD para analizar fuentes de luz. Análisis de curvas de absorbancia de ADN y proteínas para determinar pureza (Ratio 260/280).",
+        "evaluation": [
+            {
+                "type": "Sumativa",
+                "description": "Cuestionario en lìnea: Fundamentos físicos de la espectroscopía UV-Vis."
+            }
+        ],
+        "references": ""
+    },
+    {
+        "week": 16,
+        "content": [
+            "Microscopios",
+            "Lentes",
+            "Aumento angular",
+            "Microscopio óptico",
+            "Resolución del microscopio",
+            "Técnicas especiales de microscopía óptica",
+            "Microscopio electrónico de transmisión",
+            "Microscopio electrónico de barrido",
+            "Microscopio de efecto túnel"
+        ],
+        "objectives": [
+            "Explicar la formación de imágenes mediante lentes y el aumento angular.",
+            "Comparar el funcionamiento y resolución del microscopio óptico frente al electrónico.",
+            "Describir técnicas especiales de microscopía y sus aplicaciones."
+        ],
+        "activities": "El Límite de Abbe: Simulación interactiva sobre cómo la apertura numérica y la longitud de onda afectan la resolución. Galería Virtual de Microscopía: Identificar imágenes de SEM, TEM, Confocal y Campo Claro.",
+        "evaluation": [
+            {
+                "type": "Sumativa",
+                "description": "Proyecto Final: Presentación de una técnica de microscopía avanzada y su principio físico."
+            }
+        ],
+        "references": ""
+    }
+]
