@@ -11,7 +11,7 @@ project:
     - file: programa.md
     - title: Semana 1
       children:
-      - file: sessions/01-unidades-y-conversiones-de-unidades.md
+      - file: sessions/01-unidades-y-conversion-de-unidades.md
       - file: activities/01-taller-fisica-en-la-cocina.md
     - title: Semana 2
       children:
@@ -22,15 +22,15 @@ project:
       - file: sessions/03-operaciones-vectoriales.md
     - title: Semana 4
       children:
-      - file: sessions/04-dinamica.md
+      - file: sessions/04-dinamica-y-leyes-de-newton.md
       - file: activities/05-diseno-centrifugas.md
     - title: Semana 5
       children:
-      - file: sessions/05-energía-mecánica.md
+      - file: sessions/05-cantidades-angulares-movimiento-circular-uniforme-y-aceleracion-centripeta.md
       - file: activities/06-desafio-ultracentrifuga.md
     - title: Semana 6
       children:
-      - file: sessions/06-cantidades-angulares-movimiento-circular-uniforme-y-aceleracion-centripeta.md
+      - file: sessions/06-energia-mecanica.md
       - file: activities/07-molecu-olimpiadas.md
     - title: Semana 7
       children:

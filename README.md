@@ -122,9 +122,10 @@ Se incluyen scripts para verificar la integridad del entorno y el contenido:
   python3 scripts/generate_sessions.py --week 1
   ```
   Script automatizado que utiliza `planeamiento.json` como única fuente de verdad. El flujo de trabajo recomendado es:
-  1. Modificar `planeamiento.json` (metadata o contenido semanal).
-  2. Ejecutar `python3 scripts/sync_myst.py` para actualizar `myst.yml`.
-  3. Ejecutar `python3 scripts/generate_sessions.py` para actualizar los archivos Markdown.
+  1. Modificar `planeamiento.json`.
+  2. Ejecutar `python3 scripts/sync_myst.py` para actualizar metadata.
+  3. Ejecutar `python3 scripts/generate_sessions.py` para regenerar contenido.
+  4. Ejecutar `python3 scripts/update_toc.py` para corregir enlaces en el índice.
 
 
 ### 3. Ejecución del servidor local

@@ -1,12 +1,13 @@
+#!/usr/bin/env python3
 """
-Script to update the Table of Contents in 'myst.yml'.
+Script to synchronize session filenames in 'myst.yml'.
 
-This script automatically synchronizes the 'toc' section in 'myst.yml' with the actual
-session files present in the 'sessions/' directory. It ensures that any new session
-added is reflected in the site navigation under the 'project' configuration.
+This script scans the 'sessions/' directory for files matching 'XX-*.md'.
+It then updates the corresponding links in 'myst.yml' ensuring that the
+Table of Contents points to the correct (sanitized) filenames on disk.
+It uses regex to preserve the existing structure (comments, other children like activities).
 """
 
-import yaml
 import glob
 import re
 import os
@@ -14,65 +15,62 @@ import os
 MYST_FILE = 'myst.yml'
 SESSIONS_DIR = 'sessions'
 
-def get_title(filepath):
-    """
-    Extracts the 'title' from the YAML frontmatter of a markdown file.
-    
-    Args:
-        filepath (str): Path to the markdown file.
-        
-    Returns:
-        str: The title string, or basename if not found.
-    """
-    with open(filepath, 'r', encoding='utf-8') as f:
-        content = f.read()
-    match = re.search(r'^title:\s*(.*)', content, re.MULTILINE)
-    if match:
-        title = match.group(1).strip()
-        # Remove quotes if present
-        if (title.startswith('"') and title.endswith('"')) or (title.startswith("'") and title.endswith("'")):
-            title = title[1:-1]
-        return title.strip()
-    return os.path.basename(filepath)
-
 def main():
+    if not os.path.exists(MYST_FILE):
+        print(f"Error: {MYST_FILE} not found.")
+        return
+
     with open(MYST_FILE, 'r', encoding='utf-8') as f:
-        data = yaml.safe_load(f)
+        content = f.read()
 
-    # Preserve the first item if it's not a session (e.g. 'programa.md') in project.toc
-    current_toc = data.get('project', {}).get('toc', [])
-    new_toc = []
+    print(f"Scanning {SESSIONS_DIR} for updates...")
     
-    # Check if there's a preserved query/file at start (like 'programa.md')
-    if current_toc and isinstance(current_toc[0], dict) and 'file' in current_toc[0]:
-         if 'sessions/' not in current_toc[0]['file']:
-             new_toc.append(current_toc[0])
+    updated_count = 0
     
-    session_files = sorted(glob.glob(os.path.join(SESSIONS_DIR, '[0-9]*.md')))
+    # Iterate through potential weeks (1 to 20 to be safe)
+    # Or just glob all files in sessions
+    session_files = sorted(glob.glob(os.path.join(SESSIONS_DIR, '[0-9][0-9]-*.md')))
     
-    for filepath in session_files:
-        title = get_title(filepath)
-        entry = {
-            'title': title,
-            'children': [
-                {'file': filepath}
-            ]
-        }
-        new_toc.append(entry)
-
-    # Assign to project.toc
-    if 'project' not in data:
-        data['project'] = {}
-    data['project']['toc'] = new_toc
-    
-    # Remove root-level toc if I accidentally created it before
-    if 'toc' in data:
-        del data['toc']
-
-    with open(MYST_FILE, 'w', encoding='utf-8') as f:
-        yaml.dump(data, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
-    
-    print(f"Updated {MYST_FILE} with {len(session_files)} sessions.")
+    for file_path in session_files:
+        basename = os.path.basename(file_path)
+        # Extract metadata from filename: "01-my-title.md" -> prefix "01-"
+        match = re.match(r'^(\d{2})-', basename)
+        if not match:
+            continue
+            
+        prefix = match.group(1) # e.g., "01"
+        
+        # Regex to find the existing entry in myst.yml
+        # Looking for: "file: sessions/01-old-name.md"
+        # We match "file: sessions/01-.*\.md"
+        
+        # Note: We use forward slashes for paths in YAML usually
+        pattern = fr'(file:\s*sessions/{prefix}-).*\.md'
+        
+        # Check if it needs update
+        # We replace the whole filename part
+        replacement = f'\\1{basename[3:]}' # \1 is "file: sessions/01-", basename[3:] is "new-name.md"
+        
+        # Or simpler: replace strict group
+        # pattern: (file:\s*sessions/)(01-.*\.md)
+        # repl: \1basename
+        
+        pattern = fr'(file:\s*sessions/)({prefix}-.*\.md)'
+        
+        # Perform replacement
+        new_content = re.sub(pattern, f'\\g<1>{basename}', content)
+        
+        if new_content != content:
+            print(f"Updating Week {prefix}: {basename}")
+            content = new_content
+            updated_count += 1
+        
+    if updated_count > 0:
+        with open(MYST_FILE, 'w', encoding='utf-8') as f:
+            f.write(content)
+        print(f"Successfully updated {updated_count} links in {MYST_FILE}.")
+    else:
+        print("No changes needed in myst.yml.")
 
 if __name__ == "__main__":
     main()
