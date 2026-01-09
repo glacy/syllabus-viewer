@@ -24,6 +24,10 @@ keywords:
 #     title: 07-molecu-olimpiadas.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Taller_de_cálculo-orange) ![](https://img.shields.io/badge/Duración-45_min-yellow) ![](https://img.shields.io/badge/Modalidad-Parejas-blue) ![](https://img.shields.io/badge/Dificultad-Avanzado-red)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción
 
 Bienvenidos a las **Molecu-olimpiadas**, donde enfrentaremos a dos competidores de pesos muy diferentes para determinar quién es la máquina más potente libra por libra:

@@ -25,6 +25,10 @@ keywords:
 #     title: 16-espectroscopia-casera.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Laboratorio_Práctico_("Maker")-orange) ![](https://img.shields.io/badge/Duración-60_min-yellow) ![](https://img.shields.io/badge/Modalidad-Grupal-blue) ![](https://img.shields.io/badge/Dificultad-Fácil-green)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción
 
 La espectroscopía es la herramienta fundamental de la biotecnología analítica. Nos permite medir concentraciones de ADN, identificar proteínas y analizar estructuras químicas. En esta actividad, desmitificaremos estos costosos aparatos construyendo uno nosotros mismos usando "basura" común.

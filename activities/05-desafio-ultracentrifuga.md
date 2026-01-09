@@ -24,6 +24,10 @@ keywords:
 #     title: 06-desafio-ultracentrifuga.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Taller_de_Cálculo-orange) ![](https://img.shields.io/badge/Duración-45_min-yellow) ![](https://img.shields.io/badge/Modalidad-Grupal-blue) ![](https://img.shields.io/badge/Dificultad-Intermedio-yellow)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción
 
 La reproducibilidad en la ciencia es fundamental. Sin embargo, muchos artículos científicos antiguos (o mal escritos) reportan las condiciones de centrifugación solo en **RPM** (revoluciones por minuto), sin especificar el rotor utilizado. Esto hace imposible replicar el experimento exactamente.

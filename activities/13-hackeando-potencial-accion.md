@@ -25,6 +25,10 @@ keywords:
 #     title: 14-hackeando-potencial-accion.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Simulación_Virtual-orange) ![](https://img.shields.io/badge/Duración-45_min-yellow) ![](https://img.shields.io/badge/Modalidad-Individual-blue) ![](https://img.shields.io/badge/Dificultad-Intermedio-yellow)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción
 
 Una neurona no es más que un circuito eléctrico complejo y húmedo. En esta actividad, dejarás de ver "canales" y "membranas" para pensar en "resistencias variables" y "condensadores". Usaremos un simulador interactivo para manipular estos componentes y "hackear" la señal nerviosa.

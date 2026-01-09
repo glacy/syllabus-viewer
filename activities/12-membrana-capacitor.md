@@ -25,6 +25,10 @@ keywords:
 #     title: 13-membrana-capacitor.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Taller_de_Cálculo-orange) ![](https://img.shields.io/badge/Duración-50_min-yellow) ![](https://img.shields.io/badge/Modalidad-Individual-blue) ![](https://img.shields.io/badge/Dificultad-Avanzado-red)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción
 
 La membrana celular es una maravilla de la ingeniería eléctrica natural. Actúa como un aislante extremadamente delgado (dieléctrico) que separa dos medios conductores (el citoplasma y el fluido extracelular). Esta estructura permite almacenar carga y energía, funcionando efectivamente como un **condensador (capacitor)**.

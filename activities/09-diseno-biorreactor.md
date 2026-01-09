@@ -25,6 +25,10 @@ keywords:
 #     title: 10-diseno-biorreactor.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Taller_de_Diseño-orange) ![](https://img.shields.io/badge/Duración-50_min-yellow) ![](https://img.shields.io/badge/Modalidad-Grupal-blue) ![](https://img.shields.io/badge/Dificultad-Intermedio-yellow)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción del caso
 
 Su equipo de ingeniería metabólica está escalando un proceso de producción de anticuerpos monoclonales desde el matraz al reactor de tanque agitado continuo (CSTR).

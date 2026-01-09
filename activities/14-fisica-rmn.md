@@ -25,6 +25,10 @@ keywords:
 #     title: 15-fisica-rmn.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Taller_Teórico-orange) ![](https://img.shields.io/badge/Duración-45_min-yellow) ![](https://img.shields.io/badge/Modalidad-Individual-blue) ![](https://img.shields.io/badge/Dificultad-Avanzado-red)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción
 
 La Resonancia Magnética (MRI) es la aplicación más impresionante del magnetismo cuántico en la medicina. Nos permite ver dentro del cuerpo sin usar radiación ionizante (como los rayos X). ¿Cómo funciona? Convirtiendo los protones de tu cuerpo en diminutos transmisores de radio.

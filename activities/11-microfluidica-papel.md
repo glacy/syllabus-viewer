@@ -24,6 +24,10 @@ keywords:
 #     title: 12-microfluidica-papel.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Laboratorio_Práctico-orange) ![](https://img.shields.io/badge/Duración-60_min-yellow) ![](https://img.shields.io/badge/Modalidad-Grupal-blue) ![](https://img.shields.io/badge/Dificultad-Intermedio-yellow)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción
 
 El comportamiento de los fluidos cambia drásticamente según la escala. Un río caudaloso es un caos de remolinos (turbulencia), pero en el interior de una aguja hipodérmica o un canal microfluídico, el agua fluye ordenada en capas paralelas (flujo laminar).

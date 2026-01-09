@@ -26,6 +26,10 @@ keywords:
 #     title: 11-debate-fluidos-no-newtonianos.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Seminario_/_Debate-orange) ![](https://img.shields.io/badge/Duración-45_min-yellow) ![](https://img.shields.io/badge/Modalidad-Grupal-blue) ![](https://img.shields.io/badge/Dificultad-Intermedio-yellow)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción
 
 La mayoría de los fluidos biológicos NO son como el agua. Su viscosidad cambia dependiendo de qué tan rápido se muevan o de cuánta fuerza se les aplique. En esta actividad, cuatro equipos defenderán por qué su "comportamiento extraño" es una ventaja evolutiva o industrial.

@@ -25,6 +25,10 @@ keywords:
 #     title: 08-estabilidad-proteinas.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Taller_de_Cálculo-orange) ![](https://img.shields.io/badge/Duración-50_min-yellow) ![](https://img.shields.io/badge/Modalidad-Grupal-blue) ![](https://img.shields.io/badge/Dificultad-Avanzado-red)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción
 
 Para aplicar las leyes de la estática (equilibrio) a biomoléculas, a menudo las simplificamos como **cuerpos rígidos**. En esta actividad, modelaremos un anticuerpo IgG[^Icg] (forma de "Y") fijado a una superficie (como en un ensayo ELISA o un biosensor) para determinar si las fuerzas de flujo dañarán el ensayo.

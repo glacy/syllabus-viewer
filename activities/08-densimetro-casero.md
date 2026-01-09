@@ -25,6 +25,10 @@ keywords:
 #     title: 09-densimetro-casero.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Laboratorio_Práctico-orange) ![](https://img.shields.io/badge/Duración-60_min-yellow) ![](https://img.shields.io/badge/Modalidad-Grupal-blue) ![](https://img.shields.io/badge/Dificultad-Intermedio-yellow)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción
 
 En biotecnología industrial, conocer la densidad de un caldos de cultivo es vital. A medida que las levaduras consumen azúcar (alta densidad) y producen etanol (baja densidad), la densidad total de la mezcla disminuye. Esta actividad te reta a construir un instrumento de bajo costo para medir este cambio.

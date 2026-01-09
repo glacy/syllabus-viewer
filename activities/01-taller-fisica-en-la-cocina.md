@@ -15,6 +15,10 @@ keywords:
 - Taller
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Taller-orange) ![](https://img.shields.io/badge/Duración-80_min-yellow) ![](https://img.shields.io/badge/Modalidad-Grupal-blue) ![](https://img.shields.io/badge/Dificultad-Intermedio-yellow)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción de la Actividad
 En este taller, los estudiantes analizarán una receta de cocina "compleja" (que utilice unidades del sistema imperial o medidas no estándar como tazas, cucharadas, onzas, °F) y realizarán un proceso sistemático de estimación física y conversión rigurosa al Sistema Internacional de Unidades (SI).
 

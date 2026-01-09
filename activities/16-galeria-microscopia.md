@@ -25,6 +25,10 @@ keywords:
 #     title: 17-galeria-microscopia.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Taller_de_análisis_de_imagen-orange) ![](https://img.shields.io/badge/Duración-45_min-yellow) ![](https://img.shields.io/badge/Modalidad-Individual-blue) ![](https://img.shields.io/badge/Dificultad-Fácil-green)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción
 
 Como profesional en biotecnología, a menudo tendrá que elegir la herramienta adecuada para ver su muestra. ¿Qué tipo de imagen requiere ver la superficie de un polen? ¿Las mitocondrias dentro de una célula? ¿O una proteína fluorescente viva?

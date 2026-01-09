@@ -15,6 +15,10 @@ keywords:
 - Brújula
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Trabajo_de_Campo-orange) ![](https://img.shields.io/badge/Duración-90_min-yellow) ![](https://img.shields.io/badge/Modalidad-Grupal_(3--4_personas)-blue) ![](https://img.shields.io/badge/Dificultad-Intermedio-yellow)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción de la Actividad
 En esta actividad, los estudiantes saldrán del aula para aplicar conceptos de operaciones vectoriales en el mundo real. Cada equipo recibirá un "Mapa del Tesoro" codificado como una serie de desplazamientos vectoriales sucesivos (magnitud y dirección).
 El objetivo es encontrar ubicaciones específicas ("muestras biológicas perdidas") en el campus sumando gráficamente y/o analíticamente los vectores de desplazamiento.

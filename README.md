@@ -126,6 +126,13 @@ Se incluyen scripts para verificar la integridad del entorno y el contenido:
   2. Ejecutar `python3 scripts/sync_myst.py` para actualizar metadata.
   3. Ejecutar `python3 scripts/generate_sessions.py` para regenerar contenido.
   4. Ejecutar `python3 scripts/update_toc.py` para corregir enlaces en el índice.
+  4. Ejecutar `python3 scripts/update_toc.py` para corregir enlaces en el índice.
+
+- **Inyección de Badges en Actividades:**
+  ```bash
+  python3 scripts/inject_activity_header.py
+  ```
+  Inyecta "badges" visuales (imágenes Shields.io) al inicio de cada archivo de actividad (`activities/*.md`) basándose en los metadatos del frontmatter (`duration`, `modality`, `difficulty`). Útil para exponer estos datos en la versión publicada.
 
 
 ### 3. Ejecución del servidor local

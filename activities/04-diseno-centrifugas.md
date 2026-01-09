@@ -24,6 +24,10 @@ keywords:
 #     title: 05-diseno-centrifugas.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Estudio_de_Caso-orange) ![](https://img.shields.io/badge/Duración-60_min-yellow) ![](https://img.shields.io/badge/Modalidad-Grupal-blue) ![](https://img.shields.io/badge/Dificultad-Intermedio-yellow)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción del caso
 
 Una *startup* de biotecnología está diseñando un nuevo rotor para una microcentrífuga de alta velocidad. Han detectado que, a ciertas velocidades, el fondo de los tubos de plástico (donde se acumula el *pellet* celular) se rompe, causando pérdida de muestras valiosas.

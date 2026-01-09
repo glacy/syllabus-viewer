@@ -24,6 +24,10 @@ keywords:
 #     title: 04-rastreo-estroboscopico.pdf
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Taller_corto-orange) ![](https://img.shields.io/badge/Duración-45_min-yellow) ![](https://img.shields.io/badge/Modalidad-Individual-blue) ![](https://img.shields.io/badge/Dificultad-Intermedio-yellow)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción de la actividad
 
 En esta actividad, simplificaremos el proceso de rastreo de movimiento utilizando una **imagen estroboscópica**. Una imagen estroboscópica muestra múltiples "instantáneas" de un objeto en movimiento superpuestas en una sola imagen, como si se tomara una foto con flash múltiples veces mientras el obturador de la cámara permanece abierto.

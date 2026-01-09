@@ -16,6 +16,10 @@ keywords:
 - Velocidad
 ---
 
+<!-- ACTIVITY-BADGES -->
+![](https://img.shields.io/badge/Tipo-Laboratorio_Computacional-orange) ![](https://img.shields.io/badge/Duración-90_min-yellow) ![](https://img.shields.io/badge/Modalidad-Individual_o_Parejas-blue) ![](https://img.shields.io/badge/Dificultad-Avanzado-red)
+<!-- ACTIVITY-BADGES -->
+
 ### Descripción de la actividad
 
 En este laboratorio computacional, los estudiantes utilizarán **Fiji (ImageJ)**, el software estándar de código abierto para procesamiento de imágenes biológicas, para analizar videos reales de microscopía. El objetivo es rastrear la trayectoria de células móviles (ej. bacterias, espermatozoides o células inmunes), obtener coordenadas $(x, y)$ en función del tiempo y calcular parámetros cinemáticos como velocidad promedio y velocidad instantánea.
