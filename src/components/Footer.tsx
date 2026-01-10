@@ -1,5 +1,5 @@
 import { type ReactElement } from 'react';
-import { Copyright } from 'lucide-react';
+import { Copyright, Github } from 'lucide-react';
 /**
  * Footer component displaying copyright information.
  *
@@ -18,7 +18,7 @@ import { Copyright } from 'lucide-react';
 interface FooterProps {
     /**
      * Text to display in the footer.
-     * Defaults to "Instituto Tecnológico de Costa Rica".
+     * Defaults to "gerardolacymora".
      */
     text?: string;
 }
@@ -30,11 +30,22 @@ interface FooterProps {
  * @param {FooterProps} props Component props
  * @returns {ReactElement} The rendered Footer component.
  */
-export function Footer({ text = "Instituto Tecnológico de Costa Rica" }: FooterProps): ReactElement {
+export function Footer({ text = "gerardolacymora" }: FooterProps): ReactElement {
     return (
-        <footer className="flex items-center justify-center gap-2 text-sm text-slate-400 pt-12 pb-6">
-            <Copyright className="w-4 h-4" />
-            <span>{new Date().getFullYear()} {text}</span>
+        <footer className="flex flex-col items-center justify-center gap-2 text-sm text-slate-400 pt-12 pb-6">
+            <div className="flex items-center gap-2">
+                <Copyright className="w-4 h-4" />
+                <span>{new Date().getFullYear()} {text}</span>
+            </div>
+            <a
+                href="https://github.com/glacy/syllabus-viewer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 hover:text-slate-600 transition-colors"
+                aria-label="View source on GitHub"
+            >
+                <Github className="w-5 h-5" />
+            </a>
         </footer>
     );
 }
