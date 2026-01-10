@@ -56,18 +56,19 @@ syllabus-viewer/
 
 ## 🧠 Gestión de datos (`planeamiento.json`)
 
-El archivo `src/data/planeamiento.json` actúa como la **única fuente de verdad** para el contenido del curso.
+El archivo `src/data/planeamiento.json` sirve como la **fuente de datos predeterminada** para la aplicación.
+
 > [!NOTE]
-> Este archivo es un **enlace simbólico** al archivo `planeamiento.json` ubicado en la raíz del repositorio (`../../planeamiento.json`). Esto garantiza que cualquier cambio realizado en la planificación general del curso se refleje automáticamente en la aplicación de visualización sin necesidad de duplicar datos.
+> Este repositorio incluye un archivo `planeamiento.json` de ejemplo para demostrar las capacidades de la aplicación. Para utilizar este visor en tu propio curso, simplemente reemplaza el contenido de `src/data/planeamiento.json` con los datos de tu planeamiento siguiendo la estructura requerida.
 
 Esta separación entre datos y lógica de presentación permite:
 1.  **Mantenibilidad**: Actualizar el contenido del syllabus (temas, objetivos, evaluaciones) sin tocar código React.
 2.  **Escalabilidad**: La aplicación escala automáticamente para renderizar cualquier número de semanas definidas en el JSON.
-3.  **Tipado Seguro**: Aunque los datos son JSON, se castean a la interfaz `SyllabusEntry` en tiempo de ejecución para garantizar la integridad de los datos en toda la aplicación.
+3.  **Tipado seguro**: Aunque los datos son JSON, se castean a la interfaz `SyllabusEntry` en tiempo de ejecución para garantizar la integridad de los datos en toda la aplicación.
 
-### Estructura de Datos
+### Estructura de datos
 
-El archivo `planeamiento.json` ahora cuenta con una estructura raíz que incluye `metadata` y `weeks`:
+El archivo `planeamiento.json` debe tener una estructura raíz que incluye `metadata` y `weeks`:
 
 #### Metadata
 Información global del curso que alimenta tanto al Header/Footer de la aplicación como a la configuración de MyST:

@@ -1,4 +1,4 @@
-# Syllabus Viewer - Physics for Biotechnology
+# Syllabus Viewer
 
 Interactive application developed in **React + TypeScript + Vite** to visualize the didactic planning and learning objectives of the course in a dynamic and attractive way.
 
@@ -56,9 +56,10 @@ syllabus-viewer/
 
 ## 🧠 Data Management (`planeamiento.json`)
 
-The file `src/data/planeamiento.json` acts as the **single source of truth** for the course content.
+The file `src/data/planeamiento.json` serves as the **default data source** for the application.
+
 > [!NOTE]
-> This file is a **symbolic link** to the `planeamiento.json` file located in the repository root (`../../planeamiento.json`). This ensures that any change made to the general course planning is automatically reflected in the visualization application without the need to duplicate data.
+> This repository includes a sample `planeamiento.json` to demonstrate the application's capabilities. To use this viewer for your own course, simply replace the content of `src/data/planeamiento.json` with your own syllabus data following the required structure.
 
 This separation between data and presentation logic allows for:
 1.  **Maintainability**: Updating the syllabus content (topics, objectives, evaluations) without touching React code.
