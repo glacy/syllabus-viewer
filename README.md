@@ -1,105 +1,109 @@
-# Syllabus Viewer - Física para Biotecnología
+# Syllabus Viewer - Physics for Biotechnology
 
-Aplicación interactiva desarrollada en **React + TypeScript + Vite** para visualizar el planeamiento didáctico y los objetivos de aprendizaje del curso de manera dinámica y atractiva.
+Interactive application developed in **React + TypeScript + Vite** to visualize the didactic planning and learning objectives of the course in a dynamic and attractive way.
 
-## 🚀 Características principales
+## 🚀 Key Features
 
-*   **Visualización dinámica**: Renderiza tarjetas interactivas para cada semana del curso basándose en el archivo de datos `planeamiento.json`.
-*   **Filtrado inteligente**: Permite buscar contenidos por título, objetivos de aprendizaje o actividades. Incluye un botón para **limpiar búsqueda** accesible por teclado que gestiona el foco automáticamente.
-*   **Evaluación tipificada**: Distingue visualmente entre evaluaciones formativas (azul) y sumativas (morado).
-*   **Referencias bibliográficas**: Inclusión de fuentes APA para cada sesión.
-*   **Modo oscuro**: Alternancia de temas Claro/Oscuro con persistencia local y adaptación al sistema.
-*   **Interfaz moderna**: Diseño limpio y responsivo utilizando **Tailwind CSS**.
-*   **Animaciones fluidas**: Transiciones de expansión y filtrado implementadas con **Framer Motion**.
-*   **Robustez**: Mapeo seguro de tipos y manejo de errores para datos inconsistentes (strings vs objetos).
-*   **Documentación viva**: Código fuente documentado con JSDoc.
-*   **Accesibilidad (a11y)**:
-    *   **Tipografía legible**: Tamaño de fuente base aumentado a **18px** para mejorar la legibilidad en todas las pantallas.
-    *   **Movimiento reducido**: Respeto a `prefers-reduced-motion` para usuarios que desactivan las animaciones del sistema.
-    *   **Navegación por teclado**: Soporte completo para tabulación y activación con teclado.
-    *   **Focus visible**: Indicadores de foco de alto contraste (`focus-visible`) exclusivos para navegación por teclado.
-    *   **Soporte lector de pantalla**: Iconos decorativos `aria-hidden` y atributos `aria-expanded`/`aria-controls` para estados dinámicos.
+*   **Dynamic Visualization**: Renders interactive cards for each week of the course based on the `planeamiento.json` data file.
+*   **Smart Filtering**: Allows searching contents by title, learning objectives, or activities. Includes a keyboard-accessible **clear search** button that manages focus automatically.
+*   **Categorized Evaluation**: Visually distinguishes between formative (blue) and summative (purple) evaluations.
+*   **Bibliographic References**: Inclusion of APA sources for each session.
+*   **Dark Mode**: Light/Dark theme toggling with local persistence and system adaptation.
+*   **Modern Interface**: Clean and responsive design using **Tailwind CSS**.
+*   **Fluid Animations**: Expansion and filtering transitions implemented with **Framer Motion**.
+*   **Robustness**: Safe type mapping and error handling for inconsistent data (strings vs objects).
+*   **Living Documentation**: Source code documented with JSDoc.
+*   **Accessibility (a11y)**:
+    *   **Readable Typography**: Base font size increased to **18px** to improve readability on all screens.
+    *   **Reduced Motion**: Respects `prefers-reduced-motion` for users who disable system animations.
+    *   **Keyboard Navigation**: Full support for tabbing and keyboard activation.
+    *   **Visible Focus**: High contrast focus indicators (`focus-visible`) exclusively for keyboard navigation.
+    *   **Screen Reader Support**: Decorative icons `aria-hidden` and `aria-expanded`/`aria-controls` attributes for dynamic states.
 
-## 🛠️ Stack tecnológico
+## 🛠️ Tech Stack
 
 *   **Core**: [React 18](https://react.dev/), [Vite](https://vitejs.dev/), [TypeScript](https://www.typescriptlang.org/)
-*   **Estilos**: [Tailwind CSS v3](https://tailwindcss.com/)
-*   **Animaciones**: [Framer Motion](https://www.framer.com/motion/)
-*   **Iconos**: [Lucide React](https://lucide.dev/)
-*   **Utilidades**: `clsx`, `tailwind-merge`
+*   **Styles**: [Tailwind CSS v3](https://tailwindcss.com/)
+*   **Animations**: [Framer Motion](https://www.framer.com/motion/)
+*   **Icons**: [Lucide React](https://lucide.dev/)
+*   **Utilities**: `clsx`, `tailwind-merge`
 
-## 📂 Estructura del proyecto
+## 📂 Project Structure
 
 ```text
 syllabus-viewer/
 ├── src/
 │   ├── components/
-│   │   ├── Header.tsx          # Título y presentación
-│   │   ├── SearchBar.tsx       # Barra de búsqueda
-│   │   ├── ThemeToggle.tsx     # Botón de cambio de tema
-│   │   ├── TimelineGrid.tsx    # Grilla principal de tarjetas
-│   │   ├── WeekCard.tsx        # Contenedor de la tarjeta semanal
-│   │   ├── WeekActivities.tsx  # Sección de actividades
-│   │   ├── WeekEvaluation.tsx  # Sección de evaluaciones
-│   │   ├── WeekObjectives.tsx  # Sección de objetivos
-│   │   └── WeekReferences.tsx  # Sección de referencias
+│   │   ├── Header.tsx          # Title and introduction
+│   │   ├── SearchBar.tsx       # Search bar
+│   │   ├── ThemeToggle.tsx     # Theme toggle button
+│   │   ├── TimelineGrid.tsx    # Main card grid
+│   │   ├── WeekCard.tsx        # Container for the weekly card
+│   │   ├── WeekActivities.tsx  # Activities section
+│   │   ├── WeekEvaluation.tsx  # Evaluations section
+│   │   ├── WeekObjectives.tsx  # Objectives section
+│   │   └── WeekReferences.tsx  # References section
 │   ├── context/
-│   │   └── ThemeContext.tsx    # Contexto para manejo del tema (claro/oscuro)
+│   │   └── ThemeContext.tsx    # Context for handling theme (light/dark)
 │   ├── data/
-│   │   └── planeamiento.json   # Fuente de verdad (sincronizada desde MD)
-│   ├── App.tsx                 # Orquestador principal
-│   ├── main.tsx                # Punto de entrada de la aplicación
-│   └── types.ts                # Definiciones de tipos TypeScript
-├── public/                     # Assets estáticos
-└── index.html                  # Template HTML base
+│   │   └── planeamiento.json   # Source of truth (synchronized from root)
+│   ├── App.tsx                 # Main orchestrator
+│   ├── main.tsx                # Application entry point
+│   └── types.ts                # TypeScript type definitions
+├── public/                     # Static assets
+└── index.html                  # Base HTML template
 ```
 
-## 🧠 Gestión de datos (`planeamiento.json`)
+## 🧠 Data Management (`planeamiento.json`)
 
-El archivo `src/data/planeamiento.json` actúa como la **única fuente de verdad** para el contenido del curso. Esta separación entre datos y lógica de presentación permite:
-1.  **Mantenibilidad**: Actualizar el contenido del syllabus (temas, objetivos, evaluaciones) sin tocar código React.
-2.  **Escalabilidad**: La aplicación escala automáticamente para renderizar cualquier número de semanas definidas en el JSON.
-3.  **Tipado Seguro**: Aunque los datos son JSON, se castean a la interfaz `SyllabusEntry` en tiempo de ejecución para garantizar la integridad de los datos en toda la aplicación.
+The file `src/data/planeamiento.json` acts as the **single source of truth** for the course content.
+> [!NOTE]
+> This file is a **symbolic link** to the `planeamiento.json` file located in the repository root (`../../planeamiento.json`). This ensures that any change made to the general course planning is automatically reflected in the visualization application without the need to duplicate data.
 
-### Estructura de Datos
+This separation between data and presentation logic allows for:
+1.  **Maintainability**: Updating the syllabus content (topics, objectives, evaluations) without touching React code.
+2.  **Scalability**: The application scales automatically to render any number of weeks defined in the JSON.
+3.  **Type Safety**: Although data is JSON, it is cast to the `SyllabusEntry` interface at runtime to ensure data integrity throughout the application.
 
-El archivo `planeamiento.json` ahora cuenta con una estructura raíz que incluye `metadata` y `weeks`:
+### Data Structure
+
+The `planeamiento.json` file now features a root structure that includes `metadata` and `weeks`:
 
 #### Metadata
-Información global del curso que alimenta tanto al Header/Footer de la aplicación como a la configuración de MyST:
+Global course information that feeds both the application Header/Footer and MyST configuration:
 *   `title`, `semester`, `university`, `description`
-*   `authors`: Lista de autores.
+*   `authors`: List of authors.
 
 #### Weeks
-Cada entrada en el array `weeks` representa una semana de clases y contiene:
+Each entry in the `weeks` array represents a week of classes and contains:
 
-*   `week`: Número secuencial de la semana.
-*   `content`: Lista de temas a cubrir.
-*   `objectives`: Objetivos de aprendizaje específicos.
-*   `activities`: Descripción de actividades dinámicas (laboratorios, talleres).
-*   `evaluation`: Array de objetos que define el tipo (`Formativa`/`Sumativa`) y la descripción de la evaluación.
-*   `references`: Lista de citas bibliográficas en formato APA simplificado.
+*   `week`: Sequential week number.
+*   `content`: List of topics to cover.
+*   `objectives`: Specific learning objectives.
+*   `activities`: Description of dynamic activities (labs, workshops).
+*   `evaluation`: Array of objects defining the type (`Formativa`/`Sumativa`) and description of the assessment.
+*   `references`: List of bibliographic citations in simplified APA format.
 
 ```json
 {
     "week": 1,
     "content": [
-      "Unidades y conversión de unidades",
-      "unidades del SI",
-      "análisis dimensional",
-      "conversiones"
+      "Units and unit conversion",
+      "SI units",
+      "dimensional analysis",
+      "conversions"
     ],
     "objectives": [
-      "Distinguir entre unidades estándar y sistemas de unidades.",
-      "Enumerar las unidades fundamentales del Sistema Internacional de Unidades.",
-      "Emplear múltiplos y prefijos de unidades métricas.",
-      "Utilizar factores de conversión para convertir unidades dentro de un sistema o de un sistema de unidades a otro."
+      "Distinguish between standard units and systems of units.",
+      "List the fundamental units of the International System of Units.",
+      "Employ multiples and prefixes of metric units.",
+      "Use conversion factors to convert units within a system or from one system of units to another."
     ],
-    "activities": "Taller 'Física en la cocina': Estimar y convertir cantidades de recetas complejas a unidades SI.",
+    "activities": "Workshop 'Physics in the Kitchen': Estimate and convert quantities from complex recipes to SI units.",
     "evaluation": [
       {
         "type": "Formativa",
-        "description": "Trabajo en clase: Resolución colaborativa de problemas de conversión dimensional complejos."
+        "description": "Classwork: Collaborative resolution of complex dimensional conversion problems."
       }
     ],
     "references": [
@@ -111,58 +115,58 @@ Cada entrada en el array `weeks` representa una semana de clases y contiene:
 }
 ```
 
-### Ejemplo de renderización
+### Rendering Example
 
-![Renderización de la Semana 1](public/example-week.png)
+![Week 1 Rendering](public/example-week.png)
 
-## 🤖 Asistencia de IA (Antigravity)
+## 🤖 AI Assistance (Antigravity)
 
-Este proyecto fue desarrollado con la asistencia activa de **Antigravity**, un agente de IA de Google Deepmind.
+This project was developed with the active assistance of **Antigravity**, an AI agent from Google Deepmind.
 
-### Rol de la IA en el desarrollo
-1.  **Scaffolding**: Inicialización del proyecto Vite y configuración de herramientas de desarrollo (ESLint, PostCSS).
-2.  **Arquitectura de componentes**: Refactorización de `App.tsx` monolítico a una arquitectura modular (`Header`, `SearchBar`, `TimelineGrid`).
-3.  **Diseño instruccional**: Generación de actividades y evaluaciones innovadoras y centradas en el estudiante para las 16 semanas.
-4.  **Refactorización de datos**: Migración de campos de texto planos a estructuras tipadas (e.g., evaluaciones formativas vs sumativas).
-5.  **Modo Oscuro**: Implementación completa de cambio de tema (Claro/Oscuro) usando `ThemeContext` y clases `dark:` de Tailwind.
-6.  **Documentación**: Generación automática de JSDoc y mantenimiento del README.
+### AI Role in Development
+1.  **Scaffolding**: Initialization of the Vite project and configuration of development tools (ESLint, PostCSS).
+2.  **Component Architecture**: Refactoring of monolithic `App.tsx` into a modular architecture (`Header`, `SearchBar`, `TimelineGrid`).
+3.  **Instructional Design**: Generation of innovative and student-centered activities and evaluations for the 16 weeks.
+4.  **Data Refactoring**: Migration from flat text fields to typed structures (e.g., formative vs summative evaluations).
+5.  **Dark Mode**: Complete implementation of theme toggling (Light/Dark) using `ThemeContext` and Tailwind `dark:` classes.
+6.  **Documentation**: Automatic generation of JSDoc and maintenance of the README.
 
-## 📝 Notas de desarrollo
+## 📝 Development Notes
 
-### Configuración de TypeScript
-El proyecto tiene habilitada la opción `verbatimModuleSyntax: true` en `tsconfig.json`. Esto significa que todos los imports de **tipos** deben usar explícitamente la sintaxis `type`.
+### TypeScript Configuration
+The project has `verbatimModuleSyntax: true` enabled in `tsconfig.json`. This means all **type** imports must explicitly use the `type` syntax.
 
-**Incorrecto:**
+**Incorrect:**
 ```typescript
 import { ReactNode } from 'react';
 ```
 
-**Correcto:**
+**Correct:**
 ```typescript
 import { type ReactNode } from 'react';
 ```
 
-## 🏃 Cómo ejecutar
+## 🏃 How to Run
 
-### Desarrollo local
+### Local Development
 ```bash
-# Instalar dependencias
+# Install dependencies
 npm install
 
-# Iniciar servidor de desarrollo (puerto 5173 por defecto)
+# Start development server (default port 5173)
 npm run dev
 ```
 
-### Construcción para producción (Single-File)
+### Production Build (Single-File)
 
-El proyecto utiliza **`vite-plugin-singlefile`** para empaquetar todo el código (HTML, JS, CSS) en un único archivo HTML. Esto permite ejecutar la aplicación localmente sin necesidad de un servidor web, evitando problemas de **CORS** con el protocolo `file://`.
+The project uses **`vite-plugin-singlefile`** to bundle all code (HTML, JS, CSS) into a single HTML file. This allows running the application locally without needing a web server, avoiding **CORS** issues with the `file://` protocol.
 
 ```bash
-# Generar archivo portable en /dist/index.html
+# Generate portable file in /dist/index.html
 npm run build
 ```
 
-Una vez construido, el archivo `dist/index.html` es completamente autónomo y puede abrirse directamente en cualquier navegador.
+Once built, the `dist/index.html` file is completely standalone and can be opened directly in any browser.
 
 ---
 &copy; 2026 gerardolacymora
