@@ -8,6 +8,7 @@ Aplicación interactiva desarrollada en **React + TypeScript + Vite** para visua
 *   **Filtrado inteligente**: Permite buscar contenidos por título, objetivos de aprendizaje o actividades. Incluye un botón para **limpiar búsqueda** accesible por teclado que gestiona el foco automáticamente.
 *   **Evaluación tipificada**: Distingue visualmente entre evaluaciones formativas (azul) y sumativas (morado).
 *   **Referencias bibliográficas**: Inclusión de fuentes APA para cada sesión.
+*   **Modo Edición**: Interfaz conmutable para modificar el contenido del sílabo directamente (para desarrollo/usuarios autorizados).
 *   **Modo oscuro**: Alternancia de temas Claro/Oscuro con persistencia local y adaptación al sistema.
 *   **Interfaz moderna**: Diseño limpio y responsivo utilizando **Tailwind CSS**.
 *   **Animaciones fluidas**: Transiciones de expansión y filtrado implementadas con **Framer Motion**.
@@ -36,6 +37,8 @@ syllabus-viewer/
 │   ├── components/
 │   │   ├── Header.tsx          # Título y presentación
 │   │   ├── SearchBar.tsx       # Barra de búsqueda
+│   │   ├── FloatingControls.tsx # Contenedor de controles flotantes
+│   │   ├── EditToggle.tsx      # Botón de modo edición
 │   │   ├── ThemeToggle.tsx     # Botón de cambio de tema
 │   │   ├── TimelineGrid.tsx    # Grilla principal de tarjetas
 │   │   ├── WeekCard.tsx        # Contenedor de la tarjeta semanal
@@ -44,6 +47,7 @@ syllabus-viewer/
 │   │   ├── WeekObjectives.tsx  # Sección de objetivos
 │   │   └── WeekReferences.tsx  # Sección de referencias
 │   ├── context/
+│   │   ├── EditModeContext.tsx # Contexto para manejo del modo edición
 │   │   └── ThemeContext.tsx    # Contexto para manejo del tema (claro/oscuro)
 │   ├── data/
 │   │   └── planeamiento.json   # Fuente de verdad (sincronizada desde MD)

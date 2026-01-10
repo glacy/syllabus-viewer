@@ -8,6 +8,7 @@ Interactive application developed in **React + TypeScript + Vite** to visualize 
 *   **Smart Filtering**: Allows searching contents by title, learning objectives, or activities. Includes a keyboard-accessible **clear search** button that manages focus automatically.
 *   **Categorized Evaluation**: Visually distinguishes between formative (blue) and summative (purple) evaluations.
 *   **Bibliographic References**: Inclusion of APA sources for each session.
+*   **Edit Mode**: Toggleable interface for modifying syllabus content directly (for authorized users/development).
 *   **Dark Mode**: Light/Dark theme toggling with local persistence and system adaptation.
 *   **Modern Interface**: Clean and responsive design using **Tailwind CSS**.
 *   **Fluid Animations**: Expansion and filtering transitions implemented with **Framer Motion**.
@@ -36,6 +37,8 @@ syllabus-viewer/
 │   ├── components/
 │   │   ├── Header.tsx          # Title and introduction
 │   │   ├── SearchBar.tsx       # Search bar
+│   │   ├── FloatingControls.tsx # Container for floating UI controls
+│   │   ├── EditToggle.tsx      # Edit mode toggle button
 │   │   ├── ThemeToggle.tsx     # Theme toggle button
 │   │   ├── TimelineGrid.tsx    # Main card grid
 │   │   ├── WeekCard.tsx        # Container for the weekly card
@@ -44,6 +47,7 @@ syllabus-viewer/
 │   │   ├── WeekObjectives.tsx  # Objectives section
 │   │   └── WeekReferences.tsx  # References section
 │   ├── context/
+│   │   ├── EditModeContext.tsx # Context for handling edit mode
 │   │   └── ThemeContext.tsx    # Context for handling theme (light/dark)
 │   ├── data/
 │   │   └── planeamiento.json   # Source of truth (synchronized from root)
