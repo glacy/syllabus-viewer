@@ -17,7 +17,11 @@ export interface CourseMetadata {
 export interface SyllabusEntry {
     /** The week number (1-16) */
     week: number;
-    /** List of topics covered. The first item is typically treated as the Title. */
+    /** The title of the session */
+    title: string;
+    /** The subtitle of the session (e.g. "Semana 1") */
+    subtitle: string;
+    /** List of topics covered. */
     content: string[];
     /** List of learning objectives. Can contain strings or single-key objects. */
     objectives: string[];
