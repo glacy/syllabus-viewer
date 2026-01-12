@@ -2,12 +2,14 @@ import React from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import clsx from 'clsx';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * A toggle button to switch between light and dark modes.
  */
 export const ThemeToggle: React.FC = () => {
     const { isDark, toggleTheme } = useTheme();
+    const { t } = useLanguage();
 
     return (
         <button
@@ -18,8 +20,8 @@ export const ThemeToggle: React.FC = () => {
                     ? "bg-slate-800 text-yellow-400 hover:bg-slate-700"
                     : "bg-white text-slate-400 hover:text-indigo-600 hover:bg-slate-50 border border-slate-200"
             )}
-            aria-label={isDark ? "Activar modo claro" : "Activar modo oscuro"}
-            title={isDark ? "Activar modo claro" : "Activar modo oscuro"}
+            aria-label={t.theme}
+            title={t.theme}
         >
             {isDark ? <Sun size={20} aria-hidden="true" /> : <Moon size={20} aria-hidden="true" />}
         </button>

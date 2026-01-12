@@ -8,7 +8,11 @@ Interactive application developed in **React + TypeScript + Vite** to visualize 
 *   **Smart Filtering**: Allows searching contents by title, learning objectives, or activities. Includes a keyboard-accessible **clear search** button that manages focus automatically.
 *   **Categorized Evaluation**: Visually distinguishes between formative (blue) and summative (purple) evaluations.
 *   **Bibliographic References**: Inclusion of APA sources for each session.
+*   **Internationalization (i18n)**: One-click toggling between **English** and **Spanish** (`en`/`es`) for the entire interface.
 *   **Edit Mode**: Toggleable interface for modifying syllabus content directly (for authorized users/development).
+    *   **Week Reordering**: Move weeks up and down with automatic re-indexing.
+    *   **Drag & Drop**: Intuitive drag-and-drop support for reordering weeks.
+    *   **Live Editing**: Edit titles, objectives, activities, and evaluations in place.
 *   **Dark Mode**: Light/Dark theme toggling with local persistence and system adaptation.
 *   **Modern Interface**: Clean and responsive design using **Tailwind CSS**.
 *   **Fluid Animations**: Expansion and filtering transitions implemented with **Framer Motion**.
@@ -18,8 +22,10 @@ Interactive application developed in **React + TypeScript + Vite** to visualize 
     *   **Readable Typography**: Base font size increased to **18px** to improve readability on all screens.
     *   **Reduced Motion**: Respects `prefers-reduced-motion` for users who disable system animations.
     *   **Keyboard Navigation**: Full support for tabbing and keyboard activation.
+    *   **Interactive Cards**: Expand/collapse week cards using `Enter` or `Space` keys.
     *   **Visible Focus**: High contrast focus indicators (`focus-visible`) exclusively for keyboard navigation.
     *   **Screen Reader Support**: Decorative icons `aria-hidden` and `aria-expanded`/`aria-controls` attributes for dynamic states.
+    *   **Semantic HTML**: Proper use of `<button>` and `<input>` elements for native accessibility.
 
 ## 🛠️ Tech Stack
 
@@ -35,20 +41,27 @@ Interactive application developed in **React + TypeScript + Vite** to visualize 
 syllabus-viewer/
 ├── src/
 │   ├── components/
-│   │   ├── Header.tsx          # Title and introduction
-│   │   ├── SearchBar.tsx       # Search bar
-│   │   ├── FloatingControls.tsx # Container for floating UI controls
 │   │   ├── EditToggle.tsx      # Edit mode toggle button
+│   │   ├── ExportExcelButton.tsx # Component to export data to Excel
+│   │   ├── ExportJsonButton.tsx # Component to export data to JSON
+│   │   ├── FloatingControls.tsx # Container for floating UI controls
+│   │   ├── Footer.tsx          # Page footer
+│   │   ├── Header.tsx          # Title and introduction
+│   │   ├── LanguageToggle.tsx  # Language switch button
+│   │   ├── SearchBar.tsx       # Search bar
+│   │   ├── SortableWeekCard.tsx # Draggable wrapper for WeekCard
 │   │   ├── ThemeToggle.tsx     # Theme toggle button
 │   │   ├── TimelineGrid.tsx    # Main card grid
-│   │   ├── WeekCard.tsx        # Container for the weekly card
 │   │   ├── WeekActivities.tsx  # Activities section
+│   │   ├── WeekCard.tsx        # Container for the weekly card
 │   │   ├── WeekEvaluation.tsx  # Evaluations section
 │   │   ├── WeekObjectives.tsx  # Objectives section
 │   │   └── WeekReferences.tsx  # References section
 │   ├── context/
 │   │   ├── EditModeContext.tsx # Context for handling edit mode
-│   │   └── ThemeContext.tsx    # Context for handling theme (light/dark)
+│   │   ├── LanguageContext.tsx # Context for handling internationalization
+│   │   ├── ThemeContext.tsx    # Context for handling theme (light/dark)
+│   │   └── translations.ts     # Translation strings dictionary
 │   ├── data/
 │   │   └── planeamiento.json   # Source of truth (synchronized from root)
 │   ├── App.tsx                 # Main orchestrator

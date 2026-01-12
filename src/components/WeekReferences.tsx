@@ -1,6 +1,7 @@
 import React from 'react';
-import { Library } from 'lucide-react';
+import { Library, X } from 'lucide-react';
 import type { SyllabusEntry } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * Props for WeekReferences component.
@@ -25,6 +26,7 @@ interface WeekReferencesProps {
  * @returns {React.ReactElement | null} The rendered references block or null if empty.
  */
 export const WeekReferences: React.FC<WeekReferencesProps> = ({ references, isEditing, onUpdate }) => {
+    const { t } = useLanguage();
     const isEmpty = !references || (Array.isArray(references) && references.length === 0) || (typeof references === 'string' && references.trim() === '');
     if (isEmpty && !isEditing) return null;
 
@@ -55,10 +57,10 @@ export const WeekReferences: React.FC<WeekReferencesProps> = ({ references, isEd
     return (
         <div className="space-y-2">
             <h4 className="flex items-center gap-2 text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider justify-between">
-                <span className="flex items-center gap-2"><Library size={16} aria-hidden="true" /> References</span>
+                <span className="flex items-center gap-2"><Library size={16} aria-hidden="true" /> {t.references}</span>
                 {isEditing && (
                     <button onClick={handleAdd} className="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200">
-                        + Add
+                        {t.addReference}
                     </button>
                 )}
             </h4>
@@ -83,8 +85,12 @@ export const WeekReferences: React.FC<WeekReferencesProps> = ({ references, isEd
                                             placeholder="Pages (optional)"
                                         />
                                     </div>
-                                    <button onClick={() => handleRemove(i)} className="text-red-400 hover:text-red-600">
-                                        &times;
+                                    <button
+                                        onClick={() => handleRemove(i)}
+                                        className="mt-1 p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                                        aria-label="Remove reference"
+                                    >
+                                        <X size={16} />
                                     </button>
                                 </div>
                             ) : (

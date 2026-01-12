@@ -1,5 +1,6 @@
 import React from 'react';
-import { Target, CheckCircle } from 'lucide-react';
+import { Target, CheckCircle, X } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * Props for WeekObjectives component.
@@ -23,6 +24,7 @@ interface WeekObjectivesProps {
  * @returns {React.ReactElement | null} The rendered list or null if empty.
  */
 export const WeekObjectives: React.FC<WeekObjectivesProps> = ({ objectives, isEditing, onUpdate }) => {
+    const { t } = useLanguage();
     if ((!objectives || objectives.length === 0) && !isEditing) return null;
 
     const handleAdd = () => {
@@ -49,10 +51,10 @@ export const WeekObjectives: React.FC<WeekObjectivesProps> = ({ objectives, isEd
     return (
         <div className="space-y-3 mt-4">
             <h4 className="flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider justify-between">
-                <span className="flex items-center gap-2"><Target size={16} aria-hidden="true" /> Objectives</span>
+                <span className="flex items-center gap-2"><Target size={16} aria-hidden="true" /> {t.objectives}</span>
                 {isEditing && (
                     <button onClick={handleAdd} className="text-xs bg-indigo-50 text-indigo-600 px-2 py-1 rounded hover:bg-indigo-100">
-                        + Add
+                        {t.addObjective}
                     </button>
                 )}
             </h4>
@@ -67,8 +69,12 @@ export const WeekObjectives: React.FC<WeekObjectivesProps> = ({ objectives, isEd
                                     value={typeof obj === 'string' ? obj : JSON.stringify(obj)}
                                     onChange={(e) => handleChange(i, e.target.value)}
                                 />
-                                <button onClick={() => handleRemove(i)} className="text-red-400 hover:text-red-600">
-                                    &times;
+                                <button
+                                    onClick={() => handleRemove(i)}
+                                    className="p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                                    aria-label="Remove objective"
+                                >
+                                    <X size={16} />
                                 </button>
                             </div>
                         ) : (

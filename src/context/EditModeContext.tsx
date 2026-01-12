@@ -13,13 +13,18 @@ interface EditModeContextType {
     addWeek: () => void;
     removeWeek: (weekIndex: number) => void;
     updateMetadata: (key: keyof CourseMetadata, value: string) => void;
+    moveWeek: (weekNumber: number, direction: 'up' | 'down') => void;
+    reorderWeeks: (startIndex: number, endIndex: number) => void;
 }
 
 const EditModeContext = createContext<EditModeContextType | undefined>(undefined);
 
+import { useLanguage } from './LanguageContext';
+
 export function EditModeProvider({ children }: { children: ReactNode }) {
     const [isEditing, setIsEditing] = useState(false);
     const [syllabus, setSyllabus] = useState<SyllabusData>(initialData);
+    const { t } = useLanguage();
 
     const toggleEditMode = () => setIsEditing(prev => !prev);
 
@@ -49,7 +54,7 @@ export function EditModeProvider({ children }: { children: ReactNode }) {
             const nextWeekNum = prev.weeks.length > 0 ? Math.max(...prev.weeks.map(w => Number(w.week))) + 1 : 1;
             const newWeek: SyllabusEntry = {
                 week: nextWeekNum,
-                title: "New Session",
+                title: t.newSession,
                 subtitle: `Week ${nextWeekNum}`,
                 content: [],
                 objectives: [],
@@ -66,7 +71,12 @@ export function EditModeProvider({ children }: { children: ReactNode }) {
 
     const removeWeek = (weekNumber: number) => {
         setSyllabus(prev => {
-            const newWeeks = prev.weeks.filter(w => w.week != weekNumber);
+            const filteredWeeks = prev.weeks.filter(w => w.week != weekNumber);
+            const newWeeks = filteredWeeks.map((week, index) => ({
+                ...week,
+                week: index + 1
+            }));
+
             return {
                 ...prev,
                 weeks: newWeeks
@@ -74,8 +84,52 @@ export function EditModeProvider({ children }: { children: ReactNode }) {
         });
     };
 
+    const moveWeek = (weekNumber: number, direction: 'up' | 'down') => {
+        setSyllabus(prev => {
+            const index = prev.weeks.findIndex(w => w.week == weekNumber);
+            if (index === -1) return prev;
+            if (direction === 'up' && index === 0) return prev;
+            if (direction === 'down' && index === prev.weeks.length - 1) return prev;
+
+            const newWeeks = [...prev.weeks];
+            const targetIndex = direction === 'up' ? index - 1 : index + 1;
+
+            // Swap
+            [newWeeks[index], newWeeks[targetIndex]] = [newWeeks[targetIndex], newWeeks[index]];
+
+            // Re-index all to be safe
+            const reindexedWeeks = newWeeks.map((week, idx) => ({
+                ...week,
+                week: idx + 1
+            }));
+
+            return {
+                ...prev,
+                weeks: reindexedWeeks
+            };
+        });
+    };
+
+    const reorderWeeks = (startIndex: number, endIndex: number) => {
+        setSyllabus(prev => {
+            const result = Array.from(prev.weeks);
+            const [removed] = result.splice(startIndex, 1);
+            result.splice(endIndex, 0, removed);
+
+            const reindexedWeeks = result.map((week, idx) => ({
+                ...week,
+                week: idx + 1
+            }));
+
+            return {
+                ...prev,
+                weeks: reindexedWeeks
+            };
+        });
+    };
+
     return (
-        <EditModeContext.Provider value={{ isEditing, toggleEditMode, syllabus, updateWeek, addWeek, removeWeek, updateMetadata }}>
+        <EditModeContext.Provider value={{ isEditing, toggleEditMode, syllabus, updateWeek, addWeek, removeWeek, updateMetadata, moveWeek, reorderWeeks }}>
             {children}
         </EditModeContext.Provider>
     );

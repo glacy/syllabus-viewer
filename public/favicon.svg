@@ -1,0 +1,25 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 100 100"
+  width="64"
+  height="64"
+  fill="none"
+>
+  <!-- Segmento superior -->
+  <polygon
+    points="20,20 70,20 80,30 30,30"
+    fill="currentColor"
+  />
+
+  <!-- Segmento central -->
+  <polygon
+    points="30,40 70,40 60,60 20,60"
+    fill="currentColor"
+  />
+
+  <!-- Segmento inferior -->
+  <polygon
+    points="20,70 70,70 80,80 30,80"
+    fill="currentColor"
+  />
+</svg>

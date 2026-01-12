@@ -4,6 +4,7 @@ import { SearchBar } from './components/SearchBar';
 import { TimelineGrid } from './components/TimelineGrid';
 import { Footer } from './components/Footer';
 import { EditModeProvider, useEditMode } from './context/EditModeContext';
+import { LanguageProvider } from './context/LanguageContext';
 import { FloatingControls } from './components/FloatingControls';
 
 function SyllabusContent() {
@@ -49,9 +50,11 @@ function SyllabusContent() {
 
 function App() {
   return (
-    <EditModeProvider>
-      <SyllabusContent />
-    </EditModeProvider>
+    <LanguageProvider>
+      <EditModeProvider>
+        <SyllabusContent />
+      </EditModeProvider>
+    </LanguageProvider>
   );
 }
 

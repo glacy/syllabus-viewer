@@ -1,5 +1,6 @@
 import React from 'react';
 import { Activity } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * Props for WeekActivities component.
@@ -19,12 +20,13 @@ interface WeekActivitiesProps {
  * @returns {React.ReactElement | null} The rendered activity block or null if empty.
  */
 export const WeekActivities: React.FC<WeekActivitiesProps> = ({ activities, isEditing, onUpdate }) => {
+    const { t } = useLanguage();
     if (!activities && !isEditing) return null;
 
     return (
         <div className="space-y-2">
             <h4 className="flex items-center gap-2 text-sm font-semibold text-amber-600 dark:text-amber-500 uppercase tracking-wider">
-                <Activity size={16} aria-hidden="true" /> Activities
+                <Activity size={16} aria-hidden="true" /> {t.activities}
             </h4>
             {isEditing ? (
                 <textarea

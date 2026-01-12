@@ -1,127 +1,510 @@
 {
   "metadata": {
-    "code": "SD101",
-    "title": "Semantic Design of Academic Documents",
-    "semester": "Fall 2024 (Example)",
-    "university": "Open Academic Institute",
-    "description": "A comprehensive course on structuring, authoring, and preserving academic knowledge using modern semantic tools.",
+    "code": "FI1105",
+    "title": "Física para Biotecnología",
+    "semester": "I Semestre 2026",
+    "university": "Instituto Tecnológico de Costa Rica",
+    "description": "Planeamiento didáctico: objetivos de aprendizaje, actividades, evaluación y referencias.",
     "authors": [
-      "Syllabus Viewer Demo"
+      "Escuela de Física"
     ]
   },
   "weeks": [
     {
       "week": 1,
-      "title": "Introduction to Semantic Writing",
-      "subtitle": "Week 1",
       "content": [
-        "History of academic publishing",
-        "What is semantic text?",
-        "Separation of content and form",
-        "Introduction to plain text formats"
+        "unidades del SI",
+        "análisis dimensional",
+        "conversiones"
       ],
       "objectives": [
-        "Define semantic writing and distinguish it from visual formatting.",
-        "Explain the importance of machine-readable academic documents.",
-        "Identify the core components of an academic paper."
+        "Distinguir entre unidades estándar y sistemas de unidades.",
+        "Enumerar las unidades fundamentales del Sistema Internacional de Unidades.",
+        "Emplear múltiplos y prefijos de unidades métricas.",
+        "Utilizar factores de conversión para convertir unidades dentro de un sistema o de un sistema de unidades a otro."
       ],
-      "activities": "Deconstruct a PDF paper into its semantic components (Abstract, Keywords, Sections, References) using a plain text editor.",
+      "activities": "Taller 'Física en la cocina': Estimar y convertir cantidades de recetas complejas a unidades SI.",
       "evaluation": [
         {
-          "type": "Formative",
-          "description": "Class Discussion: The longevity of PDF vs. HTML."
+          "type": "Formativa",
+          "description": "Trabajo en clase: Resolución colaborativa de problemas de conversión dimensional complejos."
         }
       ],
       "references": [
         {
-          "text": "Berners-Lee, T. (2001). The Semantic Web.",
-          "pages": "Scientific American"
+          "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
+          "pages": "Secciones 1.1 a 1.5, pág. 23-25"
         }
-      ]
+      ],
+      "title": "Unidades y conversión de unidades",
+      "subtitle": "Semana 1"
     },
     {
       "week": 2,
-      "title": "Markdown & Structured Text",
-      "subtitle": "Week 2",
       "content": [
-        "Markdown syntax basics",
-        "Extended syntax (tables, footnotes)",
-        "Document structure: Headers and hierarchy",
-        "Lists and logical grouping"
+        "escalares",
+        "distancia",
+        "rapidez",
+        "vectores",
+        "desplazamiento",
+        "velocidad",
+        "aceleración"
       ],
       "objectives": [
-        "Write a complete academic essay using valid Markdown syntax.",
-        "and logical heading hierarchies.",
-        "Implement complex content structures like nested lists and blockquotes."
+        "Definir distancia y calcular rapidez.",
+        "Explicar qué es una cantidad escalar.",
+        "Definir desplazamiento, rapidez, velocidad y aceleración.",
+        "Explicar las ecuaciones de cinemática para aceleración constante."
       ],
-      "activities": "Lab: Convert a legacy Word document into clean, semantic Markdown.",
+      "activities": "Rastreo de movimiento celular: Uso de software (ImageJ/Fiji) para analizar células móviles y graficar sus trayectorias.",
       "evaluation": [
         {
-          "type": "Summative",
-          "description": "Assignment 1: Submit your first semantic draft."
+          "type": "Sumativa",
+          "description": "Quiz sobre conceptos de cinemática."
         }
       ],
       "references": [
         {
-          "text": "Gruber, J. (2004). Daring Fireball: Markdown Syntax Documentation."
+          "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
+          "pages": "Secciones 2.1 a 2.4, pág. 32-49"
         }
-      ]
+      ],
+      "title": "Cinemática lineal",
+      "subtitle": "Semana 2"
     },
     {
       "week": 3,
-      "title": "Metadata & Frontmatter",
-      "subtitle": "Week 3",
       "content": [
-        "YAML Header structure",
-        "Defining authorship and affiliation",
-        "Keywords and classification",
-        "Linking external assets"
+        "componentes vectoriales",
+        "suma vectorial",
+        "resta vectorial",
+        "producto vectorial"
       ],
       "objectives": [
-        "Embed rich metadata into documents using YAML frontmatter.",
-        "Standardize author information for citation systems.",
-        "Manage document versioning through metadata fields."
+        "Descomponer un vector en sus componentes",
+        "Realizar operaciones vectoriales (suma, resta, producto por escalar)."
       ],
-      "activities": "Workshop: Creating a unified metadata schema for a class journal.",
+      "activities": "Caza del tesoro vectorial: El estudiantado sigue instrucciones vectoriales (pasos y ángulos) para encontrar 'muestras' ocultas en el campus.",
       "evaluation": [
         {
-          "type": "Formative",
-          "description": "Peer Review: Check metadata completeness of partner's document."
+          "type": "Formativa",
+          "description": "Hoja de trabajo: Descomposición vectorial aplicada a fuerzas musculares."
         }
       ],
       "references": [
         {
-          "text": "The Dublin Core Metadata Initiative."
+          "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
+          "pages": "Sección 3.2, pág. 73-80"
         }
-      ]
+      ],
+      "title": "Operaciones vectoriales",
+      "subtitle": "Semana 3"
     },
     {
       "week": 4,
-      "title": "Digital Preservation & Export",
-      "subtitle": "Week 4",
       "content": [
-        "Pandoc and document conversion",
-        "Archival formats (PDF/A, XML)",
-        "Accessibility in semantic documents",
-        "Future-proofing research"
+        "Fuerzas: tensión, peso, normal, fricción",
+        "Leyes de Newton",
+        "Diagrama de Cuerpo Libre"
       ],
       "objectives": [
-        "Convert semantic source files into various publication formats.",
-        "Ensure documents meet accessibility standards (WCAG) automatically.",
-        "Discuss strategies for long-term digital preservation."
+        "Explicar el concepto de fuerza y calcular la fuerza neta sobre un objeto.",
+        "Identificar y representar las fuerzas comunes: tensión, peso, fuerza normal y fricción.",
+        "Enunciar y aplicar las Leyes de Newton en situaciones físicas relevantes.",
+        "Construir diagramas de cuerpo libre para analizar sistemas físicos"
       ],
-      "activities": "Final Project: Build a multi-format export pipeline for a thesis chapter.",
+      "activities": "Diseño de centrífugas: Análisis de fuerzas en un tubo de ensayo giratorio.",
       "evaluation": [
         {
-          "type": "Summative",
-          "description": "Final Exam: Theoretical concepts and practical conversion tasks."
+          "type": "Formativa",
+          "description": "Reto de pizarra: Dibujar el DCL correcto para sistemas biológicos propuestos al azar."
         }
       ],
       "references": [
         {
-          "text": "Library of Congress. Sustainability of Digital Formats."
+          "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
+          "pages": "Secciones 4.1 a 4.6, pág. 103-127"
         }
-      ]
+      ],
+      "title": "Dinámica y Leyes de Newton",
+      "subtitle": "Semana 4"
+    },
+    {
+      "week": 5,
+      "content": [
+        "Posición y desplazamiento angular",
+        "Rapidez, velocidad y aceleración angular",
+        "Movimiento circular uniforme",
+        "Aplicación: la centrífuga"
+      ],
+      "objectives": [
+        "Definir las unidades de medida angulares",
+        "Describir y calcular la rapidez y la velocidad angulares y su relación con la rapidez tangencial",
+        "Describir el movimiento circular uniforme",
+        "Calcular la aceleración centrípeta"
+      ],
+      "activities": "Desafío de la ultracentrífuga: Calcular RPM vs g para protocolos de separación de orgánulos reales.",
+      "evaluation": [
+        {
+          "type": "Sumativa",
+          "description": "Informe técnico: Validación de protocolo de centrifugación (cálculos de fuerza g)."
+        }
+      ],
+      "references": [
+        {
+          "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
+          "pages": "Secciones 5.1 a 5.6, pág. 140-167"
+        }
+      ],
+      "title": "Cantidades angulares, movimiento circular uniforme y aceleración centrípeta",
+      "subtitle": "Semana 5"
+    },
+    {
+      "week": 6,
+      "content": [
+        "trabajo",
+        "energía cinética",
+        "energía potencial",
+        "conservación de la energía",
+        "potencia"
+      ],
+      "objectives": [
+        "Calcular el trabajo realizado por una fuerza constante en un desplazamiento.",
+        "Relacionar el trabajo con el cambio en la energía cinética.",
+        "Explicar el concepto de energía potencial y sus diferentes formas.",
+        "Aplicar el principio de conservación de la energía mecánica a sistemas físicos.",
+        "Definir y calcular la potencia mecánica en procesos físicos."
+      ],
+      "activities": "Molecu-olimpiadas: Calcular el trabajo y potencia de motores moleculares (Kinesina/Miosina) vs motores macroscópicos.",
+      "evaluation": [
+        {
+          "type": "Sumativa",
+          "description": "Problemario: Cálculo de gasto energético en procesos biológicos."
+        }
+      ],
+      "references": [
+        {
+          "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
+          "pages": "Secciones 7.1 a 7.4, pág. 217-231"
+        }
+      ],
+      "title": "Energía mecánica",
+      "subtitle": "Semana 6"
+    },
+    {
+      "week": 7,
+      "content": [
+        "Cuerpo rígido",
+        "Momento de fuerza",
+        "Equilibrio y estabilidad con aplicación en sistemas biológicos"
+      ],
+      "objectives": [
+        "Distinguir entre los movimientos traslacionales puros y rotacionales puros de los cuerpos rígidos",
+        "Definir momento de fuerza",
+        "Describir la relación entre la ubicación del centro de gravedad y la estabilidad."
+      ],
+      "activities": "Modelado de proteínas como cuerpos rígidos para entender su estabilidad conformacional.",
+      "evaluation": [
+        {
+          "type": "Formativa",
+          "description": "Estudio de caso: Análisis de fallas ergonómicas o estructurales en equipos."
+        }
+      ],
+      "references": [
+        {
+          "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
+          "pages": "Secciones 8.1 a 8.2, pág. 256-269"
+        }
+      ],
+      "title": "Estática: equilibrio",
+      "subtitle": "Semana 7"
+    },
+    {
+      "week": 8,
+      "content": [
+        "Densidad",
+        "Presión y profundidad",
+        "Principio de Arquímedes (flotación)",
+        "Principio de Pascal",
+        "Tensión superficial y capilaridad"
+      ],
+      "objectives": [
+        "Definir los conceptos de esfuerzo y esfuerzo de deformación",
+        "Explicar la relación profundidad y presión",
+        "Describir el principio de Pascal y su uso en aplicaciones prácticas",
+        "Relacionar la fuerza de flotabilidad con el principio de Arquímedes",
+        "Describir el origen de la tensión superficial"
+      ],
+      "activities": "Reto del densímetro casero: Construir un densímetro para medir concentración de azúcar en soluciones de fermentación.",
+      "evaluation": [
+        {
+          "type": "Formativa",
+          "description": "Demostración práctica: Medición correcta de densidades y tensión superficial (checklist)."
+        }
+      ],
+      "references": [
+        {
+          "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
+          "pages": "Secciones 9.1 a 9.3 y 9.5, pág. 297-319; 324-328"
+        },
+        {
+          "text": "[2] Jou Mirabent, D. (2009). Física para ciencias de la vida (2.ª ed.). McGraw-Hill España. https://elibro.net/es/lc/itcr/titulos/50165",
+          "pages": "Secciones 3.1 a 3.4 p 89-97"
+        }
+      ],
+      "title": "Fundamentos de estática de fluidos",
+      "subtitle": "Semana 8"
+    },
+    {
+      "week": 9,
+      "content": [
+        "Fluido ideal",
+        "Ecuación de continuidad",
+        "Ecuación de Bernoulli"
+      ],
+      "objectives": [
+        "Usar la ecuación de continuidad y la ecuación de Bernoulli para explicar los efectos comunes de flujo de fluido ideal."
+      ],
+      "activities": "Diseño de Biorreactor: Calcular caudales y diámetros de tuberías usando la ecuación de continuidad.",
+      "evaluation": [
+        {
+          "type": "Sumativa",
+          "description": "Proyecto de Diseño (Fase 1): Esquema básico de flujo en un biorreactor y cálculos asociados."
+        }
+      ],
+      "references": [
+        {
+          "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
+          "pages": "Sección 9.4, pág. 319-324"
+        },
+        {
+          "text": "[2] Jou Mirabent, D. (2009). Física para ciencias de la vida (2.ª ed.). McGraw-Hill España. https://elibro.net/es/lc/itcr/titulos/50165",
+          "pages": "Ejemplos 3.4, 3.5 y 3.6"
+        }
+      ],
+      "title": "Dinámica de fluidos ideales",
+      "subtitle": "Semana 9"
+    },
+    {
+      "week": 10,
+      "content": [
+        "viscosidad",
+        "viscosidad aparente",
+        "comportamiento reológico",
+        "fluidos newtonianos y no newtonianos",
+        "Ley de Poiseuille"
+      ],
+      "objectives": [
+        "Describir la viscosidad de un fluido real",
+        "Describir el comportamiento de un fluido viscoso con base en la Ley de Poiseuille."
+      ],
+      "activities": "Debate sobre fluidos No-Newtonianos en la industria alimentaria y biológica (e.g., moco, citoplasma).",
+      "evaluation": [
+        {
+          "type": "Sumativa",
+          "description": "Reporte de Laboratorio: Determinación de viscosidad experimental."
+        }
+      ],
+      "references": [
+        {
+          "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
+          "pages": "Secciones 8.3 a 8.4, pág. 123-128"
+        }
+      ],
+      "title": "Fluidos reales: viscosidad, turbulencia y aplicaciones",
+      "subtitle": "Semana 10"
+    },
+    {
+      "week": 11,
+      "content": [
+        "Flujo laminar y turbulencia",
+        "Número de Reynolds",
+        "Fuerza de arrastre",
+        "Transporte a través de membrana biológica"
+      ],
+      "objectives": [
+        "Describir los tipos de flujo laminar y turbulento, por medio del número de Reynols.",
+        "Explicar el concepto de fuerza de arrastre y su relación con el transporte a través de membrana biológica"
+      ],
+      "activities": "Microfluídica en papel: Observación de flujo laminar vs turbulento mediante inyección de tinta en canales de diferentes tamaños.",
+      "evaluation": [
+        {
+          "type": "Formativa",
+          "description": "Exposición: Importancia del Número de Reynolds en diferentes escalas biológicas."
+        }
+      ],
+      "references": [
+        {
+          "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
+          "pages": "Secciones 8.5 a 8.7, pág. 129-133"
+        },
+        {
+          "text": "[2] Jou Mirabent, D. (2009). Física para ciencias de la vida (2.ª ed.). McGraw-Hill España. https://elibro.net/es/lc/itcr/titulos/50165",
+          "pages": "Sección 3.8, pág. 115-126"
+        }
+      ],
+      "title": "Fluidos reales: viscosidad, turbulencia y aplicaciones",
+      "subtitle": "Semana 11"
+    },
+    {
+      "week": 12,
+      "content": [
+        "Interacción entre cargas, ley de Coulomb, potencial",
+        "Dipolo eléctrico",
+        "Condensadores",
+        "Circuitos eléctricos y ley de Ohm"
+      ],
+      "objectives": [
+        "Describir la interacción entre cargas eléctricas mediante la Ley de Coulomb.",
+        "Explicar el concepto de potencial eléctrico y dipolo eléctrico.",
+        "Definir la función de un condensador en un circuito."
+      ],
+      "activities": "Modelado de la membrana celular como un capacitor biológico.",
+      "evaluation": [
+        {
+          "type": "Formativa",
+          "description": "Resolución de problemas: Interacciones electrostáticas en biomoléculas."
+        }
+      ],
+      "references": [
+        {
+          "text": "[2] Jou Mirabent, D. (2009). Física para ciencias de la vida (2.ª ed.). McGraw-Hill España. https://elibro.net/es/lc/itcr/titulos/50165",
+          "pages": "Secciones 6.1 a 6.4, pág. 263-278"
+        },
+        {
+          "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
+          "pages": "Secciones 13.1 a 13.6, pág. 233-246"
+        }
+      ],
+      "title": "Electricidad",
+      "subtitle": "Semana 12"
+    },
+    {
+      "week": 13,
+      "content": [
+        "Circuitos complicados (ejemplo biológico)",
+        "Descarga de condensador",
+        "Circuito eléctrico equivalente a la membrana",
+        "Transporte de iones a través de membrana"
+      ],
+      "objectives": [
+        "Analizar circuitos eléctricos básicos utilizando la Ley de Ohm.",
+        "Relacionar los circuitos RC con la membrana celular y el transporte de iones.",
+        "Describir el modelo eléctrico equivalente de una membrana biológica."
+      ],
+      "activities": "Hackeando el Potencial de Acción: Uso de simuladores neuronales (e.g., Neurona de Hodgkin-Huxley simplificada) para manipular canales iónicos (resistencias) y ver el efecto en el voltaje de membrana.",
+      "evaluation": [
+        {
+          "type": "Sumativa",
+          "description": "Taller Evaluado: Análisis de circuitos equivalentes de membrana."
+        }
+      ],
+      "references": [
+        {
+          "text": "[2] Jou Mirabent, D. (2009). Física para ciencias de la vida (2.ª ed.). McGraw-Hill España. https://elibro.net/es/lc/itcr/titulos/50165",
+          "pages": "Secciones 6.6 a 6.8, pág. 281-297"
+        },
+        {
+          "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
+          "pages": "Secciones 14.1 a 14.4, pág. 253-259"
+        }
+      ],
+      "title": "Electricidad",
+      "subtitle": "Semana 13"
+    },
+    {
+      "week": 14,
+      "content": [
+        "Fuerza magnética sobre una partícula",
+        "Fuerza magnética sobre una corriente.",
+        "Campo producido por una corriente",
+        "Magnetograma",
+        "Magnetismo en los seres vivos"
+      ],
+      "objectives": [
+        "Describir la fuerza magnética sobre partículas cargadas y corrientes.",
+        "Explicar el origen del campo magnético producido por corrientes.",
+        "Discutir ejemplos de magnetismo en sistemas biológicos."
+      ],
+      "activities": "Principios físicos detrás de la Resonancia Magnética Nuclear (RMN).",
+      "evaluation": [
+        {
+          "type": "Formativa",
+          "description": "Mapa Mental Colaborativo: Aplicaciones del magnetismo en biotecnología y medicina."
+        }
+      ],
+      "references": [
+        {
+          "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
+          "pages": "Secciones 15.1 a 15.8, pág. 267-280"
+        }
+      ],
+      "title": "Magnetismo",
+      "subtitle": "Semana 14"
+    },
+    {
+      "week": 15,
+      "content": [
+        "Naturaleza de la luz",
+        "Reflexión y refracción",
+        "Refracción total interna",
+        "Espectroscopía",
+        "Bioluminiscencia",
+        "Efecto Emerson"
+      ],
+      "objectives": [
+        "Distinguir las propiedades ondulatorias y corpusculares de la luz.",
+        "Aplicar las leyes de reflexión y refracción a fenómenos ópticos.",
+        "Relacionar fenómenos luminosos con aplicaciones biológicas como la bioluminiscencia."
+      ],
+      "activities": "Espectroscopía casera: Construcción de un espectroscopio simple con un CD para analizar fuentes de luz.",
+      "evaluation": [
+        {
+          "type": "Sumativa",
+          "description": "Cuestionario en línea: Fundamentos físicos de la espectroscopía UV-Vis."
+        }
+      ],
+      "references": [
+        {
+          "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
+          "pages": "Secciones 17.1 a 17.3, pág. 303-307"
+        }
+      ],
+      "title": "Óptica y fenómenos luminosos",
+      "subtitle": "Semana 15"
+    },
+    {
+      "week": 16,
+      "content": [
+        "Lentes",
+        "Aumento angular",
+        "Microscopio óptico",
+        "Resolución del microscopio",
+        "Técnicas especiales de microscopía óptica",
+        "Microscopio electrónico de transmisión",
+        "Microscopio electrónico de barrido",
+        "Microscopio de efecto túnel"
+      ],
+      "objectives": [
+        "Explicar la formación de imágenes mediante lentes y el aumento angular.",
+        "Comparar el funcionamiento y resolución del microscopio óptico frente al electrónico.",
+        "Describir técnicas especiales de microscopía y sus aplicaciones."
+      ],
+      "activities": "Galería virtual de Microscopía: Identificar imágenes de SEM, TEM, Confocal y Campo Claro.",
+      "evaluation": [
+        {
+          "type": "Sumativa",
+          "description": "Proyecto final: Presentación de una técnica de microscopía avanzada y su principio físico."
+        }
+      ],
+      "references": [
+        {
+          "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
+          "pages": "Secciones 19.1 a 19.7, pág. 339-347"
+        }
+      ],
+      "title": "Microscopios",
+      "subtitle": "Semana 16"
     }
   ]
 }

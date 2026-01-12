@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Trash2 } from 'lucide-react';
+import { ChevronDown, Trash2, X } from 'lucide-react';
 import type { SyllabusEntry } from '../types';
 import clsx from 'clsx';
 import { useEditMode } from '../context/EditModeContext';
@@ -31,10 +32,11 @@ interface WeekCardProps {
  */
 export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const { isEditing, updateWeek, removeWeek } = useEditMode();
+    const { isEditing, updateWeek, removeWeek, moveWeek } = useEditMode();
+    const { t } = useLanguage();
 
     // Use explicit title fields, or fallback
-    const title = entry.title || (entry.content.length > 0 ? entry.content[0] : `Unit ${entry.week}`);
+    const title = entry.title || (entry.content.length > 0 ? entry.content[0] : `Unit ${entry.week} `);
     // If title is explicit, content[0] might still be content. But for the viewer we assume title is separate now.
     // If we are using the new schema, 'entry.content' are just list items.
     // However, if we are in Legacy mode where content[0] WAS the title, we should handle that.
@@ -48,7 +50,7 @@ export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
 
     const handleDelete = (e: React.MouseEvent) => {
         e.stopPropagation();
-        if (confirm('Are you sure you want to delete this week?')) {
+        if (confirm(t.confirmDelete)) {
             removeWeek(entry.week);
         }
     };
@@ -85,9 +87,20 @@ export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
                     "rounded-xl"
                 )}
             >
-                <div className="flex gap-4 w-full cursor-pointer" onClick={() => (isEditing || !isEditing) && setIsExpanded(!isExpanded)}>
+                <div
+                    className="flex gap-4 w-full cursor-pointer"
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            setIsExpanded(!isExpanded);
+                        }
+                    }}
+                >
                     <div className="flex flex-col items-center justify-center bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 w-16 h-16 rounded-lg font-bold shrink-0 border border-transparent dark:border-indigo-500/20">
-                        <span className="text-xs uppercase tracking-wider text-indigo-400 dark:text-indigo-400">Week</span>
+                        <span className="text-xs uppercase tracking-wider text-indigo-400 dark:text-indigo-400">{t.week}</span>
                         <span className="text-2xl">{entry.week}</span>
                     </div>
                     <div className="flex-1">
@@ -98,7 +111,7 @@ export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
                                     value={title}
                                     onChange={handleTitleChange}
                                     className="w-full text-lg font-bold text-slate-800 dark:text-slate-100 bg-slate-100 dark:bg-slate-700 border-none rounded px-2 py-1 focus:ring-2 focus:ring-indigo-500"
-                                    placeholder="Session Title"
+                                    placeholder={t.sessionTitle}
                                     onClick={(e) => e.stopPropagation()}
                                 />
                                 <div className="flex flex-wrap gap-2 mt-2">
@@ -110,15 +123,16 @@ export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
                                                     e.stopPropagation();
                                                     updateWeek(entry.week, { ...entry, content: entry.content.filter((_, idx) => idx !== i) });
                                                 }}
-                                                className="hover:text-red-500"
+                                                className="p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors absolute right-2 top-2 opacity-0 group-hover:opacity-100"
+                                                title="Remove topic"
                                             >
-                                                &times;
+                                                <X size={16} />
                                             </button>
                                         </span>
                                     ))}
                                     <input
                                         className="text-xs bg-transparent border-b border-slate-300 dark:border-slate-600 focus:border-indigo-500 outline-none min-w-[100px] text-slate-600 dark:text-slate-300 placeholder:text-slate-400"
-                                        placeholder="+ Add topic"
+                                        placeholder={t.addTopic}
                                         onKeyDown={(e) => {
                                             if (e.key === 'Enter') {
                                                 const val = (e.target as HTMLInputElement).value.trim();
@@ -148,10 +162,34 @@ export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
 
                 <div className="flex items-center gap-2">
                     {isEditing && (
+                        <div className="flex bg-slate-100 dark:bg-slate-700 rounded-lg p-1 mr-2">
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    moveWeek(entry.week, 'up');
+                                }}
+                                className="p-1 hover:bg-white dark:hover:bg-slate-600 rounded text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                                title={t.moveUp}
+                            >
+                                <ChevronDown className="rotate-180" size={18} />
+                            </button>
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    moveWeek(entry.week, 'down');
+                                }}
+                                className="p-1 hover:bg-white dark:hover:bg-slate-600 rounded text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                                title={t.moveDown}
+                            >
+                                <ChevronDown size={18} />
+                            </button>
+                        </div>
+                    )}
+                    {isEditing && (
                         <button
                             onClick={handleDelete}
                             className="text-red-500 hover:text-red-700 p-2 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-full transition-colors"
-                            title="Delete Week"
+                            title={t.deleteWeek}
                         >
                             <Trash2 size={20} />
                         </button>
@@ -169,7 +207,7 @@ export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
             <AnimatePresence>
                 {isExpanded && (
                     <motion.div
-                        id={`week-content-${entry.week}`}
+                        id={`week - content - ${entry.week} `}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}

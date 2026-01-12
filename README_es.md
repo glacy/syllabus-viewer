@@ -8,7 +8,11 @@ Aplicación interactiva desarrollada en **React + TypeScript + Vite** para visua
 *   **Filtrado inteligente**: Permite buscar contenidos por título, objetivos de aprendizaje o actividades. Incluye un botón para **limpiar búsqueda** accesible por teclado que gestiona el foco automáticamente.
 *   **Evaluación tipificada**: Distingue visualmente entre evaluaciones formativas (azul) y sumativas (morado).
 *   **Referencias bibliográficas**: Inclusión de fuentes APA para cada sesión.
+*   **Internacionalización (i18n)**: Cambio instantáneo entre **Inglés** y **Español** (`en`/`es`) para toda la interfaz.
 *   **Modo Edición**: Interfaz conmutable para modificar el contenido del sílabo directamente (para desarrollo/usuarios autorizados).
+    *   **Reordenamiento de semanas**: Mover semanas arriba y abajo con reindexación automática.
+    *   **Drag & Drop**: Arrastrar y soltar para reordenar las semanas intuitivamente.
+    *   **Edición en vivo**: Editar títulos, objetivos, actividades y evaluaciones directamente.
 *   **Modo oscuro**: Alternancia de temas Claro/Oscuro con persistencia local y adaptación al sistema.
 *   **Interfaz moderna**: Diseño limpio y responsivo utilizando **Tailwind CSS**.
 *   **Animaciones fluidas**: Transiciones de expansión y filtrado implementadas con **Framer Motion**.
@@ -18,8 +22,10 @@ Aplicación interactiva desarrollada en **React + TypeScript + Vite** para visua
     *   **Tipografía legible**: Tamaño de fuente base aumentado a **18px** para mejorar la legibilidad en todas las pantallas.
     *   **Movimiento reducido**: Respeto a `prefers-reduced-motion` para usuarios que desactivan las animaciones del sistema.
     *   **Navegación por teclado**: Soporte completo para tabulación y activación con teclado.
+    *   **Tarjetas interactivas**: Expandir/contraer tarjetas de semana usando las teclas `Enter` o `Espacio`.
     *   **Focus visible**: Indicadores de foco de alto contraste (`focus-visible`) exclusivos para navegación por teclado.
     *   **Soporte lector de pantalla**: Iconos decorativos `aria-hidden` y atributos `aria-expanded`/`aria-controls` para estados dinámicos.
+    *   **HTML Semántico**: Uso adecuado de elementos `<button>` e `<input>` para accesibilidad nativa.
 
 ## 🛠️ Stack tecnológico
 
@@ -35,22 +41,29 @@ Aplicación interactiva desarrollada en **React + TypeScript + Vite** para visua
 syllabus-viewer/
 ├── src/
 │   ├── components/
-│   │   ├── Header.tsx          # Título y presentación
-│   │   ├── SearchBar.tsx       # Barra de búsqueda
-│   │   ├── FloatingControls.tsx # Contenedor de controles flotantes
 │   │   ├── EditToggle.tsx      # Botón de modo edición
+│   │   ├── ExportExcelButton.tsx # Componente para exportar datos a Excel
+│   │   ├── ExportJsonButton.tsx # Componente para exportar datos a JSON
+│   │   ├── FloatingControls.tsx # Contenedor de controles flotantes
+│   │   ├── Footer.tsx          # Pie de página
+│   │   ├── Header.tsx          # Título y presentación
+│   │   ├── LanguageToggle.tsx  # Botón de cambio de idioma
+│   │   ├── SearchBar.tsx       # Barra de búsqueda
+│   │   ├── SortableWeekCard.tsx # Contenedor arrastrable para WeekCard
 │   │   ├── ThemeToggle.tsx     # Botón de cambio de tema
 │   │   ├── TimelineGrid.tsx    # Grilla principal de tarjetas
-│   │   ├── WeekCard.tsx        # Contenedor de la tarjeta semanal
 │   │   ├── WeekActivities.tsx  # Sección de actividades
+│   │   ├── WeekCard.tsx        # Contenedor de la tarjeta semanal
 │   │   ├── WeekEvaluation.tsx  # Sección de evaluaciones
 │   │   ├── WeekObjectives.tsx  # Sección de objetivos
 │   │   └── WeekReferences.tsx  # Sección de referencias
 │   ├── context/
 │   │   ├── EditModeContext.tsx # Contexto para manejo del modo edición
-│   │   └── ThemeContext.tsx    # Contexto para manejo del tema (claro/oscuro)
+│   │   ├── LanguageContext.tsx # Contexto para manejo de internacionalización
+│   │   ├── ThemeContext.tsx    # Contexto para manejo del tema (claro/oscuro)
+│   │   └── translations.ts     # Diccionario de cadenas de traducción
 │   ├── data/
-│   │   └── planeamiento.json   # Fuente de verdad (sincronizada desde MD)
+│   │   └── planeamiento.json   # Fuente de verdad (sincronizada desde raíz)
 │   ├── App.tsx                 # Orquestador principal
 │   ├── main.tsx                # Punto de entrada de la aplicación
 │   └── types.ts                # Definiciones de tipos TypeScript
