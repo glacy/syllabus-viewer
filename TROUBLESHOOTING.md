@@ -153,4 +153,26 @@ Al borrar el texto de un objetivo o referencia, a veces quedaba el ítem vacío 
 
 ---
 
+## 9. Propiedad 'theme' inexistente en ThemeContext
+
+**Error:**
+> Property 'theme' does not exist on type 'ThemeContextType'.
+
+**Causa:**
+El contexto de tema (`ThemeContext`) expone una propiedad booleana `isDark`, pero se estaba intentando acceder a una propiedad `theme` (string) que no existe en la definición del tipo.
+
+**Solución:**
+Utilizar la propiedad destructurada `isDark` proporcionada por el hook `useTheme()`.
+
+```typescript
+// Antes
+const { theme } = useTheme();
+const isDark = theme === 'dark';
+
+// Después
+const { isDark } = useTheme();
+```
+
+---
+
 *Este documento se actualizará a medida que encontremos y resolvamos nuevos problemas.*

@@ -7,13 +7,15 @@ import { SyllabusDataSchema } from '../schemas';
 import { z } from 'zod';
 import { ConfirmationModal } from './ConfirmationModal';
 
+import clsx from 'clsx';
+
 /**
  * A button that allows users to import a syllabus JSON file.
  * Validates the file structure using Zod schemas before importing.
  * 
  * @component
  */
-export const ImportJsonButton = () => {
+export const ImportJsonButton = ({ showLabel = false }: { showLabel?: boolean }) => {
     const { setSyllabus } = useEditMode();
     const { t } = useLanguage();
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -21,6 +23,7 @@ export const ImportJsonButton = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+        // ... (rest of logic same) ...
         const file = event.target.files?.[0];
         if (!file) return;
 
@@ -77,11 +80,17 @@ export const ImportJsonButton = () => {
             />
             <button
                 onClick={() => fileInputRef.current?.click()}
-                className="p-2 rounded-full text-slate-400 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+                className={clsx(
+                    "rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 flex items-center gap-2",
+                    showLabel
+                        ? "p-2 px-3 w-full justify-start hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400 rounded-lg"
+                        : "p-2 text-slate-400 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
+                )}
                 title={t.importJson || "Upload JSON"}
                 aria-label={t.importJson || "Upload JSON"}
             >
                 <Upload size={20} />
+                {showLabel && <span className="text-sm font-medium">{t.importJson}</span>}
             </button>
 
             <ConfirmationModal

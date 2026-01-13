@@ -38,7 +38,7 @@ export const Footer = ({ text }: FooterProps): ReactElement => {
                 href="https://github.com/glacy/syllabus-viewer"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 hover:text-slate-600 transition-colors"
+                className="flex items-center gap-1 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 aria-label="View source on GitHub"
             >
                 <Github className="w-5 h-5" />

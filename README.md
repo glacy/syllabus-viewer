@@ -8,13 +8,14 @@ Interactive application developed in **React + TypeScript + Vite** to visualize 
 *   **Smart Filtering**: Allows searching contents by title, learning objectives, or activities. Includes a keyboard-accessible **clear search** button that manages focus automatically.
 *   **Categorized Evaluation**: Visually distinguishes between formative (blue) and summative (purple) evaluations.
 *   **Bibliographic References**: Inclusion of APA sources for each session.
-*   **Internationalization (i18n)**: One-click toggling between **English** and **Spanish** (`en`/`es`) for the entire interface.
+*   **Internationalization (i18n)**: Switch between **English** and **Spanish** (`en`/`es`) via the Settings menu.
 *   **Edit Mode**: Toggleable interface for modifying syllabus content directly (for authorized users/development).
     *   **Week Reordering**: Move weeks up and down with automatic re-indexing.
     *   **Drag & Drop**: Intuitive drag-and-drop support for reordering weeks.
     *   **Live Editing**: Edit titles, objectives, activities, and evaluations in place.
     *   **Auto-Save**: Changes are automatically saved to local storage.
     *   **Import/Export**: detailed JSON import/export with schema validation.
+    *   **Export to HTML**: Generate a standalone, offline-ready HTML version of the syllabus for sharing.
     *   **Unit Configuration**: Customizable unit label (e.g., "Week", "Session") via Settings.
     *   **Keyboard Shortcuts**: Press `?` to view a list of all available shortcuts (toggle Edit Mode, expand cards, etc.).
 *   **Dark Mode**: Light/Dark theme toggling with local persistence and system adaptation.
@@ -181,6 +182,10 @@ import { ReactNode } from 'react';
 ```typescript
 import { type ReactNode } from 'react';
 ```
+
+### Troubleshooting
+For a list of common errors and their solutions, please refer to [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+
 
 ## 🏃 How to Run
 

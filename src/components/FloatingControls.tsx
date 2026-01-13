@@ -4,12 +4,14 @@ import { ThemeToggle } from './ThemeToggle';
 import { EditToggle } from './EditToggle';
 import { ExportExcelButton } from './ExportExcelButton';
 import { ExportJsonButton } from './ExportJsonButton';
+import { ExportHtmlButton } from './ExportHtmlButton';
 import { ImportJsonButton } from './ImportJsonButton';
 import { ResetButton } from './ResetButton';
-import { LanguageToggle } from './LanguageToggle';
+
 import { SettingsModal } from './SettingsModal';
 import { ShortcutsModal } from './ShortcutsModal';
 import { useEditMode } from '../context/EditModeContext';
+import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import clsx from 'clsx';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -55,37 +57,55 @@ export const FloatingControls = () => {
      * @param {Object} props
      * @param {'horizontal' | 'vertical'} [props.orientation='horizontal'] - Layout direction for the divider.
      */
-    const ControlsList = ({ orientation = 'horizontal' }: { orientation?: 'horizontal' | 'vertical' }) => (
-        <>
-            <ResetButton />
-            <ImportJsonButton />
-            <ExportExcelButton />
-            <ExportJsonButton />
-            <div className={clsx(
-                "bg-slate-200 dark:bg-slate-700 mx-1",
-                orientation === 'horizontal' ? "w-px h-6" : "h-px w-6 my-1"
-            )}></div>
-            <LanguageToggle />
-            <button
-                onClick={() => setIsShortcutsOpen(true)}
-                className="p-2 text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
-                title="Keyboard Shortcuts"
-            >
-                <Keyboard size={20} />
-            </button>
-            {isEditing && (
+    const ControlsList = ({ orientation = 'horizontal' }: { orientation?: 'horizontal' | 'vertical' }) => {
+        const showLabel = orientation === 'vertical';
+        const { t } = useLanguage(); // Need translations here for inline buttons if not present
+
+        return (
+            <>
+                <ResetButton showLabel={showLabel} />
+                <ImportJsonButton showLabel={showLabel} />
+                <ExportExcelButton showLabel={showLabel} />
+                <ExportJsonButton showLabel={showLabel} />
+                <ExportHtmlButton showLabel={showLabel} />
+                <div className={clsx(
+                    "bg-slate-200 dark:bg-slate-700 mx-1",
+                    orientation === 'horizontal' ? "w-px h-6" : "h-px w-full my-1"
+                )}></div>
+
                 <button
-                    onClick={() => setIsSettingsOpen(true)}
-                    className="p-2 text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
-                    title="Settings"
+                    onClick={() => setIsShortcutsOpen(true)}
+                    className={clsx(
+                        "transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 flex items-center gap-2",
+                        showLabel
+                            ? "p-2 px-3 w-full justify-start hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 rounded-lg"
+                            : "p-2 text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                    )}
+                    title={t.shortcuts.title}
                 >
-                    <Settings size={20} />
+                    <Keyboard size={20} />
+                    {showLabel && <span className="text-sm font-medium">{t.shortcuts.title}</span>}
                 </button>
-            )}
-            <EditToggle />
-            <ThemeToggle />
-        </>
-    );
+                {isEditing && (
+                    <button
+                        onClick={() => setIsSettingsOpen(true)}
+                        className={clsx(
+                            "transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 flex items-center gap-2",
+                            showLabel
+                                ? "p-2 px-3 w-full justify-start hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 rounded-lg"
+                                : "p-2 text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                        )}
+                        title={t.settings}
+                    >
+                        <Settings size={20} />
+                        {showLabel && <span className="text-sm font-medium">{t.settings}</span>}
+                    </button>
+                )}
+                <EditToggle showLabel={showLabel} />
+                <ThemeToggle showLabel={showLabel} />
+            </>
+        );
+    };
 
     return (
         <>
@@ -112,7 +132,7 @@ export const FloatingControls = () => {
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.95, y: -10 }}
                                 transition={{ duration: 0.2 }}
-                                className="flex flex-col items-center gap-3 bg-white/90 dark:bg-slate-900/95 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800"
+                                className="flex flex-col items-stretch gap-1 bg-white/90 dark:bg-slate-900/95 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 min-w-[200px]"
                             >
                                 <ControlsList orientation="vertical" />
                             </motion.div>

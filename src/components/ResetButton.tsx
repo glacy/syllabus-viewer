@@ -3,6 +3,7 @@ import { RotateCcw } from 'lucide-react';
 import { useEditMode } from '../context/EditModeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { ConfirmationModal } from './ConfirmationModal';
+import clsx from 'clsx';
 
 /**
  * A button that resets the syllabus data to the default state (from 'planeamiento.json').
@@ -10,7 +11,7 @@ import { ConfirmationModal } from './ConfirmationModal';
  * 
  * @component
  */
-export const ResetButton = () => {
+export const ResetButton = ({ showLabel = false }: { showLabel?: boolean }) => {
     const { resetSyllabus } = useEditMode();
     const { t } = useLanguage();
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,11 +25,17 @@ export const ResetButton = () => {
         <>
             <button
                 onClick={() => setIsModalOpen(true)}
-                className="p-2 rounded-full text-slate-400 hover:text-red-600 dark:text-slate-400 dark:hover:text-red-400 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+                className={clsx(
+                    "rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 flex items-center gap-2",
+                    showLabel
+                        ? "p-2 px-3 w-full justify-start hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 hover:text-red-600 dark:text-slate-300 dark:hover:text-red-400 rounded-lg"
+                        : "p-2 text-slate-400 hover:text-red-600 dark:text-slate-400 dark:hover:text-red-400"
+                )}
                 title={t.resetData || "Reset to Default"}
                 aria-label={t.resetData || "Reset to Default"}
             >
                 <RotateCcw size={20} />
+                {showLabel && <span className="text-sm font-medium">{t.resetData}</span>}
             </button>
 
             <ConfirmationModal

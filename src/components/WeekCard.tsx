@@ -100,12 +100,12 @@ export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
             >
                 <div
                     className={clsx(
-                        "w-full text-left p-6 gap-4 flex items-start justify-between focus:outline-none transition-all duration-200",
+                        "w-full text-left p-6 gap-4 flex flex-col sm:flex-row items-start justify-between focus:outline-none transition-all duration-200",
                         "rounded-xl"
                     )}
                 >
                     <div
-                        className="flex gap-4 w-full cursor-pointer"
+                        className="flex gap-4 w-full sm:flex-1 cursor-pointer"
                         onClick={() => setIsExpanded(!isExpanded)}
                         role="button"
                         tabIndex={0}
@@ -200,7 +200,7 @@ export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
                         {isEditing && (
                             <div className="flex bg-slate-100 dark:bg-slate-700 rounded-lg p-1 mr-2">
                                 <button

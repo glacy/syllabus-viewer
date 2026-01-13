@@ -5,8 +5,17 @@ interface ThemeContextType {
     toggleTheme: () => void;
 }
 
+/**
+ * Context that holds the current theme state (light/dark) and a toggle function.
+ */
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+/**
+ * Provider component that wraps the app and manages the theme class on the document element.
+ * It persists the theme preference in localStorage and respects system preference.
+ * 
+ * @param children - Child components
+ */
 export function ThemeProvider({ children }: { children: ReactNode }) {
     const [isDark, setIsDark] = useState<boolean>(() => {
         if (typeof window !== 'undefined') {
@@ -42,6 +51,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     );
 }
 
+/**
+ * Hook to access the theme context.
+ * 
+ * @returns An object containing `isDark` boolean and `toggleTheme` function.
+ * @throws Error if used outside of a ThemeProvider
+ */
 export function useTheme() {
     const context = useContext(ThemeContext);
     if (context === undefined) {

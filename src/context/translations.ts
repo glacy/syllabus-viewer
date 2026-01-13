@@ -30,6 +30,9 @@ export interface Translations {
     subtitle: string;
     subtitlePlaceholder: string;
     importJson: string;
+    exportExcel: string;
+    exportJson: string;
+    exportHtml: string;
     resetData: string;
     confirmReset: string;
     confirmImport: string;
@@ -87,6 +90,9 @@ export const translations: Record<Language, Translations> = {
         subtitle: "Subtitle / Topic",
         subtitlePlaceholder: "Enter topic subtitle...",
         importJson: "Import JSON",
+        exportExcel: "Export Excel",
+        exportJson: "Export JSON",
+        exportHtml: "Export HTML",
         resetData: "Reset Data (Clear Local Changes)",
         confirmReset: "Are you sure you want to reset all data? ALL LOCAL CHANGES WILL BE LOST and it will revert to the default syllabus.",
         confirmImport: "Load syllabus \"{title}\"? This will overwrite your current changes.",
@@ -142,6 +148,9 @@ export const translations: Record<Language, Translations> = {
         subtitle: "Subtítulo / Tema",
         subtitlePlaceholder: "Ingrese el subtítulo del tema...",
         importJson: "Importar JSON",
+        exportExcel: "Exportar Excel",
+        exportJson: "Exportar JSON",
+        exportHtml: "Exportar HTML",
         resetData: "Resetear Datos (Borrar cambios locales)",
         confirmReset: "¿Seguro que desea resetear? SE PERDERÁN TODOS LOS CAMBIOS LOCALES y se volverá al plan original.",
         confirmImport: "¿Cargar el syllabus \"{title}\"? Esto sobrescribirá sus cambios actuales.",

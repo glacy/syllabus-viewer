@@ -182,6 +182,10 @@ import { ReactNode } from 'react';
 import { type ReactNode } from 'react';
 ```
 
+### Solución de Problemas
+Para una lista de errores comunes y sus soluciones, por favor consulta [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+
+
 ## 🏃 Cómo ejecutar
 
 ### Desarrollo local

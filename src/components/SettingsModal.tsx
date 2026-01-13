@@ -23,7 +23,7 @@ interface SettingsModalProps {
  */
 
 export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose }) => {
-    const { t } = useLanguage();
+    const { t, language, setLanguage } = useLanguage();
     const { syllabus, updateConfig } = useEditMode();
 
     if (!isOpen) return null;
@@ -68,6 +68,32 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                         <p className="text-xs text-slate-500 dark:text-slate-400">
                             {t.unitLabelHelp}
                         </p>
+                    </div>
+                </div>
+
+                <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-700">
+                    <h3 className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                        {t.language}
+                    </h3>
+                    <div className="flex gap-2">
+                        <button
+                            onClick={() => setLanguage('es')}
+                            className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-colors border ${language === 'es'
+                                ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 border-indigo-200 dark:border-indigo-500/50'
+                                : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600'
+                                }`}
+                        >
+                            Español
+                        </button>
+                        <button
+                            onClick={() => setLanguage('en')}
+                            className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-colors border ${language === 'en'
+                                ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 border-indigo-200 dark:border-indigo-500/50'
+                                : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600'
+                                }`}
+                        >
+                            English
+                        </button>
                     </div>
                 </div>
 
