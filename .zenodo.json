@@ -1,9 +1,8 @@
 {
-    "title": "Syllabus Viewer - Física para Biotecnología",
+    "title": "Syllabus Viewer",
     "description": "Interactive application developed in React + TypeScript + Vite to visualize the didactic planning and learning objectives of the course.",
     "creators": [
         {
-            "name": "Lacy-Mora, Gerardo",
             "name": "Lacy-Mora, Gerardo",
             "orcid": "0000-0003-4361-3758"
         }
