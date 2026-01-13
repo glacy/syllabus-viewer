@@ -31,6 +31,7 @@ Interactive application developed in **React + TypeScript + Vite** to visualize 
     *   **Visible Focus**: High contrast focus indicators (`focus-visible`) exclusively for keyboard navigation.
     *   **Screen Reader Support**: Decorative icons `aria-hidden` and `aria-expanded`/`aria-controls` attributes for dynamic states.
     *   **Semantic HTML**: Proper use of `<button>` and `<input>` elements for native accessibility.
+    *   **Mobile Experience**: Floating action buttons display visible text labels when accessed on mobile devices to improve understanding without tooltips.
 
 ## 🛠️ Tech Stack
 
@@ -39,6 +40,20 @@ Interactive application developed in **React + TypeScript + Vite** to visualize 
 *   **Animations**: [Framer Motion](https://www.framer.com/motion/)
 *   **Icons**: [Lucide React](https://lucide.dev/)
 *   **Utilities**: `clsx`, `tailwind-merge`
+*   **Testing**: [Vitest](https://vitest.dev/), [React Testing Library](https://testing-library.com/)
+
+## 🧪 Testing
+
+The project uses **Vitest** for unit testing.
+
+```bash
+# Run unit tests
+npx vitest run
+```
+
+Current test coverage includes:
+-   **Export Buttons**: Verifies rendering of labels and interactions for export functionality.
+-   **Context Providers**: Verifies logic for Edit Mode and Theme Context.
 
 ## 📂 Project Structure
 

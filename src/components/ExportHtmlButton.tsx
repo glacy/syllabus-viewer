@@ -162,8 +162,8 @@ export const ExportHtmlButton = ({ showLabel = false }: { showLabel?: boolean })
                     ? "p-2 px-3 w-full justify-start hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 hover:text-orange-600 dark:text-slate-300 dark:hover:text-orange-400 rounded-lg"
                     : "p-2 text-slate-400 hover:text-orange-600 dark:text-slate-400 dark:hover:text-orange-400"
             )}
-            title="Download HTML"
-            aria-label="Download HTML"
+            title={t.exportHtml || "Download HTML"}
+            aria-label={t.exportHtml || "Download HTML"}
         >
             <FileCode size={20} />
             {showLabel && <span className="text-sm font-medium">{t.exportHtml}</span>}

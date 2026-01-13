@@ -175,4 +175,36 @@ const { isDark } = useTheme();
 
 ---
 
+
+## 10. Error de Vitest: "TypeError: window.matchMedia is not a function"
+
+**Error:**
+Al ejecutar los tests con `@testing-library/react` que involucran componentes dependientes de medios (como temas o layouts responsivos), los tests fallan con:
+> TypeError: window.matchMedia is not a function
+
+**Causa:**
+`window.matchMedia` no está implementado en el entorno de pruebas JSDOM por defecto.
+
+**Solución:**
+Es necesario "mockear" (simular) la función en el archivo de configuración de tests o en el bloque de configuración del test específico.
+
+```typescript
+// En el archivo de test (ej. src/tests/ExportButtons.test.tsx)
+Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: vi.fn().mockImplementation(query => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: vi.fn(), // deprecated
+        removeListener: vi.fn(), // deprecated
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+    })),
+});
+```
+
+---
+
 *Este documento se actualizará a medida que encontremos y resolvamos nuevos problemas.*

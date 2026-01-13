@@ -30,6 +30,7 @@ Aplicación interactiva desarrollada en **React + TypeScript + Vite** para visua
     *   **Focus visible**: Indicadores de foco de alto contraste (`focus-visible`) exclusivos para navegación por teclado.
     *   **Soporte lector de pantalla**: Iconos decorativos `aria-hidden` y atributos `aria-expanded`/`aria-controls` para estados dinámicos.
     *   **HTML Semántico**: Uso adecuado de elementos `<button>` e `<input>` para accesibilidad nativa.
+    *   **Experiencia Móvil**: Los botones flotantes muestran etiquetas de texto visibles en dispositivos móviles para mejorar la comprensión sin depender de tooltips.
 
 ## 🛠️ Stack tecnológico
 
@@ -38,6 +39,20 @@ Aplicación interactiva desarrollada en **React + TypeScript + Vite** para visua
 *   **Animaciones**: [Framer Motion](https://www.framer.com/motion/)
 *   **Iconos**: [Lucide React](https://lucide.dev/)
 *   **Utilidades**: `clsx`, `tailwind-merge`
+*   **Testing**: [Vitest](https://vitest.dev/), [React Testing Library](https://testing-library.com/)
+
+## 🧪 Pruebas (Testing)
+
+El proyecto utiliza **Vitest** para pruebas unitarias.
+
+```bash
+# Ejecutar pruebas unitarias
+npx vitest run
+```
+
+La cobertura actual incluye:
+-   **Botones de Exportación**: Verifica la renderización de etiquetas y las interacciones de exportación.
+-   **Contextos**: Verifica la lógica del Modo Edición y el Contexto de Tema.
 
 ## 📂 Estructura del proyecto
 
