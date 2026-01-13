@@ -13,6 +13,13 @@ interface SortableWeekCardProps {
 
 import { useLanguage } from '../context/LanguageContext';
 
+/**
+ * A wrapper component for WeekCard that adds drag-and-drop sort functionality.
+ * Uses dnd-kit for handling drag events and animations.
+ * 
+ * @component
+ * @param {SortableWeekCardProps} props
+ */
 export const SortableWeekCard: React.FC<SortableWeekCardProps> = ({ id, entry, isEditing }) => {
     const { t } = useLanguage();
     const {

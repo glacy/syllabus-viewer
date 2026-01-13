@@ -13,7 +13,7 @@
     {
       "week": 1,
       "title": "Introduction to Semantic Writing",
-      "subtitle": "Week 1",
+      "subtitle": "Foundations of Semantic Text",
       "content": [
         "History of academic publishing",
         "What is semantic text?",
@@ -42,7 +42,7 @@
     {
       "week": 2,
       "title": "Markdown & Structured Text",
-      "subtitle": "Week 2",
+      "subtitle": "Syntax and Hierarchy",
       "content": [
         "Markdown syntax basics",
         "Extended syntax (tables, footnotes)",
@@ -70,7 +70,7 @@
     {
       "week": 3,
       "title": "Metadata & Frontmatter",
-      "subtitle": "Week 3",
+      "subtitle": "Describing Data with Metadata",
       "content": [
         "YAML Header structure",
         "Defining authorship and affiliation",
@@ -98,7 +98,7 @@
     {
       "week": 4,
       "title": "Digital Preservation & Export",
-      "subtitle": "Week 4",
+      "subtitle": "Formats and Accessibility",
       "content": [
         "Pandoc and document conversion",
         "Archival formats (PDF/A, XML)",

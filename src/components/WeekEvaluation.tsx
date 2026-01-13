@@ -31,7 +31,7 @@ export const WeekEvaluation: React.FC<WeekEvaluationProps> = ({ evaluation, isEd
 
     const handleAdd = () => {
         if (onUpdate) {
-            onUpdate([...(evaluation || []), { type: 'Formativa', description: 'New evaluation' }]);
+            onUpdate([...(evaluation || []), { type: 'Formativa', description: t.defaultNewEvaluation }]);
         }
     };
 
@@ -81,6 +81,17 @@ export const WeekEvaluation: React.FC<WeekEvaluationProps> = ({ evaluation, isEd
                                     className="flex-1 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded px-2 py-1 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
                                     value={ev.description}
                                     onChange={(e) => handleChange(i, 'description', e.target.value)}
+                                    onBlur={() => {
+                                        if (!ev.description.trim()) {
+                                            handleRemove(i);
+                                        }
+                                    }}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Backspace' && !ev.description) {
+                                            e.preventDefault();
+                                            handleRemove(i);
+                                        }
+                                    }}
                                 />
                                 <button
                                     onClick={() => handleRemove(i)}

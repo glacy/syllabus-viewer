@@ -35,7 +35,7 @@ export const WeekReferences: React.FC<WeekReferencesProps> = ({ references, isEd
 
     const handleAdd = () => {
         if (onUpdate) {
-            onUpdate([...list, { text: "New reference" }]);
+            onUpdate([...list, { text: t.defaultNewReference }]);
         }
     };
 
@@ -76,6 +76,17 @@ export const WeekReferences: React.FC<WeekReferencesProps> = ({ references, isEd
                                             className="w-full bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded px-2 py-1 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400"
                                             value={ref.text}
                                             onChange={(e) => handleChange(i, 'text', e.target.value)}
+                                            onBlur={() => {
+                                                if (!ref.text.trim()) {
+                                                    handleRemove(i);
+                                                }
+                                            }}
+                                            onKeyDown={(e) => {
+                                                if (e.key === 'Backspace' && !ref.text) {
+                                                    e.preventDefault();
+                                                    handleRemove(i);
+                                                }
+                                            }}
                                             placeholder="Reference text..."
                                         />
                                         <input

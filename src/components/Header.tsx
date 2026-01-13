@@ -24,6 +24,14 @@ import { useEditMode } from '../context/EditModeContext';
 
 export const Header: React.FC<HeaderProps> = ({ title, subtitle, description }) => {
     const { isEditing, updateMetadata } = useEditMode();
+    const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+
+    React.useEffect(() => {
+        if (isEditing && textareaRef.current) {
+            textareaRef.current.style.height = 'auto';
+            textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px';
+        }
+    }, [description, isEditing]);
 
     return (
         <div className="text-center space-y-4 relative">
@@ -62,13 +70,15 @@ export const Header: React.FC<HeaderProps> = ({ title, subtitle, description }) 
 
             {isEditing ? (
                 <textarea
+                    ref={textareaRef}
                     value={description}
                     onChange={(e) => updateMetadata('description', e.target.value)}
-                    className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-center bg-transparent border border-indigo-300 dark:border-indigo-700 rounded p-2 focus:outline-none focus:border-indigo-500 w-full min-h-[100px]"
+                    className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-center bg-transparent border border-indigo-300 dark:border-indigo-700 rounded p-2 focus:outline-none focus:border-indigo-500 w-full min-h-[100px] resize-none overflow-hidden break-words"
                     aria-label="Course Description"
+                    rows={1}
                 />
             ) : (
-                <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto whitespace-pre-wrap break-words">
                     {description}
                 </p>
             )}

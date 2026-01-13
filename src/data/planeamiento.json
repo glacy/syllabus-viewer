@@ -37,7 +37,7 @@
         }
       ],
       "title": "Unidades y conversión de unidades",
-      "subtitle": "Semana 1"
+      "subtitle": "Sistema Internacional de Unidades"
     },
     {
       "week": 2,
@@ -70,7 +70,7 @@
         }
       ],
       "title": "Cinemática lineal",
-      "subtitle": "Semana 2"
+      "subtitle": "Desplazamiento, velocidad y aceleración"
     },
     {
       "week": 3,
@@ -98,7 +98,7 @@
         }
       ],
       "title": "Operaciones vectoriales",
-      "subtitle": "Semana 3"
+      "subtitle": "Vectores y definición de fuerza"
     },
     {
       "week": 4,
@@ -127,7 +127,7 @@
         }
       ],
       "title": "Dinámica y Leyes de Newton",
-      "subtitle": "Semana 4"
+      "subtitle": "Leyes de Newton y diagramas de cuerpo libre"
     },
     {
       "week": 5,
@@ -157,7 +157,7 @@
         }
       ],
       "title": "Cantidades angulares, movimiento circular uniforme y aceleración centrípeta",
-      "subtitle": "Semana 5"
+      "subtitle": "Cinemática rotacional y movimiento circular"
     },
     {
       "week": 6,
@@ -189,7 +189,7 @@
         }
       ],
       "title": "Energía mecánica",
-      "subtitle": "Semana 6"
+      "subtitle": "Trabajo, energía mecánica y potencia"
     },
     {
       "week": 7,
@@ -217,7 +217,7 @@
         }
       ],
       "title": "Estática: equilibrio",
-      "subtitle": "Semana 7"
+      "subtitle": "Equilibrio de cuerpos rígidos"
     },
     {
       "week": 8,
@@ -253,7 +253,7 @@
         }
       ],
       "title": "Fundamentos de estática de fluidos",
-      "subtitle": "Semana 8"
+      "subtitle": "Densidad, presión y principio de Arquímedes"
     },
     {
       "week": 9,
@@ -283,7 +283,7 @@
         }
       ],
       "title": "Dinámica de fluidos ideales",
-      "subtitle": "Semana 9"
+      "subtitle": "Ecuación de Bernoulli y fluido ideal"
     },
     {
       "week": 10,
@@ -312,7 +312,7 @@
         }
       ],
       "title": "Fluidos reales: viscosidad, turbulencia y aplicaciones",
-      "subtitle": "Semana 10"
+      "subtitle": "Viscosidad y ley de Poiseuille"
     },
     {
       "week": 11,
@@ -344,7 +344,7 @@
         }
       ],
       "title": "Fluidos reales: viscosidad, turbulencia y aplicaciones",
-      "subtitle": "Semana 11"
+      "subtitle": "Número de Reynolds y fuerza de arrastre"
     },
     {
       "week": 12,
@@ -377,7 +377,7 @@
         }
       ],
       "title": "Electricidad",
-      "subtitle": "Semana 12"
+      "subtitle": "Carga eléctrica y ley de Coulomb"
     },
     {
       "week": 13,
@@ -410,7 +410,7 @@
         }
       ],
       "title": "Electricidad",
-      "subtitle": "Semana 13"
+      "subtitle": "Circuitos eléctricos y potencial de membrana"
     },
     {
       "week": 14,
@@ -440,7 +440,7 @@
         }
       ],
       "title": "Magnetismo",
-      "subtitle": "Semana 14"
+      "subtitle": "Campos magnéticos y biomagnetismo"
     },
     {
       "week": 15,
@@ -471,7 +471,7 @@
         }
       ],
       "title": "Óptica y fenómenos luminosos",
-      "subtitle": "Semana 15"
+      "subtitle": "Reflexión, refracción y espectroscopía"
     },
     {
       "week": 16,
@@ -504,7 +504,7 @@
         }
       ],
       "title": "Microscopios",
-      "subtitle": "Semana 16"
+      "subtitle": "Instrumentos ópticos y resolución"
     }
   ]
 }

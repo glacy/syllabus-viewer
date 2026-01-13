@@ -35,7 +35,7 @@ interface TimelineGridProps {
  * @param {string} props.filter - The current filter term (for empty state message)
  */
 export const TimelineGrid: React.FC<TimelineGridProps> = ({ filteredData, filter }) => {
-    const { isEditing, addWeek, reorderWeeks } = useEditMode();
+    const { isEditing, addWeek, reorderWeeks, syllabus } = useEditMode();
     const { t } = useLanguage();
 
     const sensors = useSensors(
@@ -97,7 +97,7 @@ export const TimelineGrid: React.FC<TimelineGridProps> = ({ filteredData, filter
                     className="w-full py-4 border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl text-slate-500 dark:text-slate-400 hover:border-indigo-500 hover:text-indigo-500 dark:hover:border-indigo-400 dark:hover:text-indigo-400 transition-colors flex items-center justify-center gap-2 font-medium"
                 >
                     <Plus size={20} />
-                    {t.addWeek}
+                    {t.addWeek.replace('{unit}', syllabus.config?.unitLabel || t.week)}
                 </button>
             )}
         </div>

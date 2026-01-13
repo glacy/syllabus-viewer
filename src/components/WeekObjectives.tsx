@@ -29,7 +29,7 @@ export const WeekObjectives: React.FC<WeekObjectivesProps> = ({ objectives, isEd
 
     const handleAdd = () => {
         if (onUpdate) {
-            onUpdate([...(objectives || []), "New objective"]);
+            onUpdate([...(objectives || []), t.defaultNewObjective]);
         }
     };
 
@@ -68,6 +68,17 @@ export const WeekObjectives: React.FC<WeekObjectivesProps> = ({ objectives, isEd
                                     className="flex-1 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded px-2 py-1 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                     value={typeof obj === 'string' ? obj : JSON.stringify(obj)}
                                     onChange={(e) => handleChange(i, e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Backspace' && typeof obj === 'string' && obj === '') {
+                                            e.preventDefault();
+                                            handleRemove(i);
+                                        }
+                                    }}
+                                    onBlur={() => {
+                                        if (typeof obj === 'string' && !obj.trim()) {
+                                            handleRemove(i);
+                                        }
+                                    }}
                                 />
                                 <button
                                     onClick={() => handleRemove(i)}

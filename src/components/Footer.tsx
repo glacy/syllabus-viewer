@@ -6,6 +6,13 @@ interface FooterProps {
     text: string;
 }
 
+/**
+ * Footer component displaying copyright information and a GitHub link.
+ * Allows editing the university/copyright text in Edit Mode.
+ * 
+ * @component
+ * @param {FooterProps} props
+ */
 export const Footer = ({ text }: FooterProps): ReactElement => {
     const { isEditing, updateMetadata } = useEditMode();
     const currentYear = new Date().getFullYear();

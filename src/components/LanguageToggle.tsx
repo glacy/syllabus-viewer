@@ -2,6 +2,11 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import clsx from 'clsx';
 
+/**
+ * A toggle button to switch the application language between English and Spanish.
+ * 
+ * @component
+ */
 export const LanguageToggle: React.FC = () => {
     const { language, setLanguage, t } = useLanguage();
 

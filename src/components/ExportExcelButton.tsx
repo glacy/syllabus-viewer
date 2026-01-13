@@ -3,6 +3,12 @@ import * as XLSX from 'xlsx';
 import { useEditMode } from '../context/EditModeContext';
 import type { SyllabusEntry } from '../types';
 
+/**
+ * A button that triggers the export of the current syllabus data to an Excel (.xlsx) file.
+ * Includes both metadata and syllabus content sheets.
+ * 
+ * @component
+ */
 export const ExportExcelButton = () => {
     const { syllabus } = useEditMode();
 
@@ -54,7 +60,7 @@ export const ExportExcelButton = () => {
     return (
         <button
             onClick={handleExport}
-            className="p-2 rounded-full text-slate-400 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors"
+            className="p-2 rounded-full text-slate-400 hover:text-green-600 dark:text-slate-400 dark:hover:text-green-400 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
             title="Download Excel (.xlsx)"
             aria-label="Download Excel"
         >

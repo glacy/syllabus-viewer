@@ -13,6 +13,10 @@ Aplicación interactiva desarrollada en **React + TypeScript + Vite** para visua
     *   **Reordenamiento de semanas**: Mover semanas arriba y abajo con reindexación automática.
     *   **Drag & Drop**: Arrastrar y soltar para reordenar las semanas intuitivamente.
     *   **Edición en vivo**: Editar títulos, objetivos, actividades y evaluaciones directamente.
+    *   **Autoguardado**: Los cambios se guardan automáticamente en el almacenamiento local.
+    *   **Importar/Exportar**: Importación y exportación de JSON con validación de esquema.
+    *   **Configuración de Unidad**: Etiqueta de unidad personalizable (ej. "Semana", "Sesión") vía Configuración.
+    *   **Atajos de Teclado**: Presiona `?` para ver una lista de todos los atajos disponibles (alternar Modo, expandir tarjetas, etc.).
 *   **Modo oscuro**: Alternancia de temas Claro/Oscuro con persistencia local y adaptación al sistema.
 *   **Interfaz moderna**: Diseño limpio y responsivo utilizando **Tailwind CSS**.
 *   **Animaciones fluidas**: Transiciones de expansión y filtrado implementadas con **Framer Motion**.
@@ -56,7 +60,10 @@ syllabus-viewer/
 │   │   ├── WeekCard.tsx        # Contenedor de la tarjeta semanal
 │   │   ├── WeekEvaluation.tsx  # Sección de evaluaciones
 │   │   ├── WeekObjectives.tsx  # Sección de objetivos
-│   │   └── WeekReferences.tsx  # Sección de referencias
+│   │   ├── WeekReferences.tsx  # Sección de referencias
+│   │   ├── ConfirmationModal.tsx # Modal de confirmación reutilizable
+│   │   ├── ShortcutsModal.tsx  # Modal de ayuda de atajos de teclado
+│   │   └── SettingsModal.tsx   # Modal de configuración global
 │   ├── context/
 │   │   ├── EditModeContext.tsx # Contexto para manejo del modo edición
 │   │   ├── LanguageContext.tsx # Contexto para manejo de internacionalización
@@ -136,6 +143,17 @@ Cada entrada en el array `weeks` representa una semana de clases y contiene:
 ### Ejemplo de renderización
 
 ![Renderización de la Semana 1](public/example-week.png)
+
+## 💾 Persistencia y Gestión de Datos
+
+La aplicación implementa un sistema robusto de gestión de datos:
+
+1.  **Autoguardado**: Todos los cambios realizados en el Modo Edición se guardan automáticamente en el `localStorage` del navegador. Esto asegura que el trabajo no se pierda si se cierra la pestaña.
+2.  **Resetear**: Un botón "Reset Data" permite revertir todos los cambios locales al estado inicial definido en `planeamiento.json`.
+3.  **Importar/Exportar JSON**: 
+    *   Los usuarios pueden exportar su estado actual como un archivo JSON.
+    *   Los usuarios pueden importar archivos JSON externos.
+    *   **Validación**: La implementación reciente incluye validación de esquema con **Zod**. Al importar un archivo JSON, la aplicación valida estrictamente que la estructura del archivo coincida exactamente con el esquema esperado (incluyendo campos anidados) antes de aplicar los cambios. Esto previene la corrupción del estado de la aplicación.
 
 ## 🤖 Asistencia de IA (Antigravity)
 

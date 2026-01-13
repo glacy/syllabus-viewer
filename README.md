@@ -13,6 +13,10 @@ Interactive application developed in **React + TypeScript + Vite** to visualize 
     *   **Week Reordering**: Move weeks up and down with automatic re-indexing.
     *   **Drag & Drop**: Intuitive drag-and-drop support for reordering weeks.
     *   **Live Editing**: Edit titles, objectives, activities, and evaluations in place.
+    *   **Auto-Save**: Changes are automatically saved to local storage.
+    *   **Import/Export**: detailed JSON import/export with schema validation.
+    *   **Unit Configuration**: Customizable unit label (e.g., "Week", "Session") via Settings.
+    *   **Keyboard Shortcuts**: Press `?` to view a list of all available shortcuts (toggle Edit Mode, expand cards, etc.).
 *   **Dark Mode**: Light/Dark theme toggling with local persistence and system adaptation.
 *   **Modern Interface**: Clean and responsive design using **Tailwind CSS**.
 *   **Fluid Animations**: Expansion and filtering transitions implemented with **Framer Motion**.
@@ -56,7 +60,10 @@ syllabus-viewer/
 │   │   ├── WeekCard.tsx        # Container for the weekly card
 │   │   ├── WeekEvaluation.tsx  # Evaluations section
 │   │   ├── WeekObjectives.tsx  # Objectives section
-│   │   └── WeekReferences.tsx  # References section
+│   │   ├── WeekReferences.tsx  # References section
+│   │   ├── ConfirmationModal.tsx # Reusable confirmation modal
+│   │   ├── ShortcutsModal.tsx  # Keyboard shortcuts help modal
+│   │   └── SettingsModal.tsx   # Global settings modal
 │   ├── context/
 │   │   ├── EditModeContext.tsx # Context for handling edit mode
 │   │   ├── LanguageContext.tsx # Context for handling internationalization
@@ -136,6 +143,17 @@ Each entry in the `weeks` array represents a week of classes and contains:
 ### Rendering Example
 
 ![Week 1 Rendering](public/example-week.png)
+
+## 💾 Data Persistence & Management
+
+The application implements a robust data management system:
+
+1.  **Auto-Save**: All changes made in Edit Mode are automatically saved to the browser's `localStorage`. This ensures work is not lost if the tab is closed.
+2.  **Reset**: A "Reset Data" button permits reverting all local changes to the initial state defined in `planeamiento.json`.
+3.  **JSON Import/Export**: 
+    *   Users can export their current state as a JSON file.
+    *   Users can import external JSON files.
+    *   **Validation**: Recent implementation includes **Zod** schema validation. When importing a JSON file, the application strictly validates that the file structure matches the expected schema exactly (including nested fields like `weeks`, `metadata`, etc.) before applying changes. This prevents corruption of the application state.
 
 ## 🤖 AI Assistance (Antigravity)
 

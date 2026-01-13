@@ -42,7 +42,13 @@ export interface SyllabusEntry {
 /**
  * Root structure of the planeamiento.json file
  */
+export interface SyllabusConfig {
+    /** Label for the unit (e.g. "Week", "Session", "Module") */
+    unitLabel?: string;
+}
+
 export interface SyllabusData {
     metadata: CourseMetadata;
+    config?: SyllabusConfig;
     weeks: SyllabusEntry[];
 }
