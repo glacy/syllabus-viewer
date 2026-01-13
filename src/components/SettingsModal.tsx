@@ -60,6 +60,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                         </label>
                         <input
                             type="text"
+                            id="settings-unit-label"
+                            name="unitLabel"
                             value={syllabus.config?.unitLabel || ''}
                             onChange={(e) => updateConfig({ unitLabel: e.target.value })}
                             placeholder={t.unitLabelPlaceholder}

@@ -5,11 +5,15 @@ import { useLanguage } from '../context/LanguageContext';
 /**
  * Props for WeekActivities component.
  * @property {string} activities - Description of the week's activities.
+ * @property {boolean} [isEditing] - Whether the component is in edit mode.
+ * @property {function} [onUpdate] - Callback function to update activities.
+ * @property {number} [weekId] - The ID/number of the week, used for generating unique form field IDs.
  */
 interface WeekActivitiesProps {
     activities: string;
     isEditing?: boolean;
     onUpdate?: (newActivities: string) => void;
+    weekId?: number;
 }
 
 /**
@@ -19,7 +23,7 @@ interface WeekActivitiesProps {
  * @param {WeekActivitiesProps} props - Component props
  * @returns {React.ReactElement | null} The rendered activity block or null if empty.
  */
-export const WeekActivities: React.FC<WeekActivitiesProps> = ({ activities, isEditing, onUpdate }) => {
+export const WeekActivities: React.FC<WeekActivitiesProps> = ({ activities, isEditing, onUpdate, weekId }) => {
     const { t } = useLanguage();
     if (!activities && !isEditing) return null;
 
@@ -30,6 +34,8 @@ export const WeekActivities: React.FC<WeekActivitiesProps> = ({ activities, isEd
             </h4>
             {isEditing ? (
                 <textarea
+                    id={`week-${weekId}-activities`}
+                    name={`week-${weekId}-activities`}
                     className="w-full min-h-[100px] text-sm text-slate-600 dark:text-slate-100 bg-amber-50 dark:bg-slate-700 p-3 rounded-lg border border-amber-100 dark:border-slate-600 focus:ring-2 focus:ring-amber-500"
                     value={activities}
                     onChange={(e) => onUpdate && onUpdate(e.target.value)}

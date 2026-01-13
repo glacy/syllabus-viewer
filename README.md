@@ -32,6 +32,7 @@ Interactive application developed in **React + TypeScript + Vite** to visualize 
     *   **Screen Reader Support**: Decorative icons `aria-hidden` and `aria-expanded`/`aria-controls` attributes for dynamic states.
     *   **Semantic HTML**: Proper use of `<button>` and `<input>` elements for native accessibility.
     *   **Mobile Experience**: Floating action buttons display visible text labels when accessed on mobile devices to improve understanding without tooltips.
+    *   **Form Validation**: All form fields include unique `id` and `name` attributes to ensure compatibility with autofill tools and assistive technologies.
 
 ## 🛠️ Tech Stack
 

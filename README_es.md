@@ -31,6 +31,7 @@ Aplicación interactiva desarrollada en **React + TypeScript + Vite** para visua
     *   **Soporte lector de pantalla**: Iconos decorativos `aria-hidden` y atributos `aria-expanded`/`aria-controls` para estados dinámicos.
     *   **HTML Semántico**: Uso adecuado de elementos `<button>` e `<input>` para accesibilidad nativa.
     *   **Experiencia Móvil**: Los botones flotantes muestran etiquetas de texto visibles en dispositivos móviles para mejorar la comprensión sin depender de tooltips.
+    *   **Validación de Formularios**: Todos los campos de formulario incluyen atributos `id` y `name` únicos para garantizar la compatibilidad con herramientas de autocompletado y tecnologías de asistencia.
 
 ## 🛠️ Stack tecnológico
 

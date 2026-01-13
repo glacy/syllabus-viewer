@@ -125,6 +125,8 @@ export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
                                 <div className="space-y-2">
                                     <input
                                         type="text"
+                                        id={`week-${entry.week}-title`}
+                                        name={`week-${entry.week}-title`}
                                         value={title}
                                         onChange={handleTitleChange}
                                         className="w-full text-lg font-bold text-slate-800 dark:text-slate-100 bg-slate-100 dark:bg-slate-700 border-none rounded px-2 py-1 focus:ring-2 focus:ring-indigo-500"
@@ -155,6 +157,8 @@ export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
                                         ))}
                                         <div className="flex items-center gap-2">
                                             <input
+                                                id={`week-${entry.week}-new-topic`}
+                                                name={`week-${entry.week}-new-topic`}
                                                 className="text-xs bg-transparent border-b border-slate-300 dark:border-slate-600 focus:border-indigo-500 outline-none min-w-[100px] text-slate-600 dark:text-slate-300 placeholder:text-slate-400"
                                                 placeholder={t.addTopic}
                                                 value={newTopic}
@@ -265,6 +269,8 @@ export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
                                                 </label>
                                                 <input
                                                     type="text"
+                                                    id={`week-${entry.week}-subtitle`}
+                                                    name={`week-${entry.week}-subtitle`}
                                                     value={entry.subtitle || ''}
                                                     onChange={(e) => updateWeek(entry.week, { ...entry, subtitle: e.target.value })}
                                                     className="w-full text-lg font-semibold text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
@@ -279,18 +285,36 @@ export const WeekCard: React.FC<WeekCardProps> = ({ entry }) => {
                                     </div>
                                 )}
 
-                                <WeekObjectives objectives={entry.objectives} isEditing={isEditing} onUpdate={handleObjectivesUpdate} />
+                                <WeekObjectives
+                                    objectives={entry.objectives}
+                                    isEditing={isEditing}
+                                    onUpdate={handleObjectivesUpdate}
+                                    weekId={entry.week}
+                                />
 
-
-
-                                <WeekActivities activities={entry.activities} isEditing={isEditing} onUpdate={handleActivitiesUpdate} />
-                                <WeekEvaluation evaluation={entry.evaluation} isEditing={isEditing} onUpdate={handleEvaluationUpdate} />
-                                <WeekReferences references={entry.references} isEditing={isEditing} onUpdate={handleReferencesUpdate} />
+                                <WeekActivities
+                                    activities={entry.activities}
+                                    isEditing={isEditing}
+                                    onUpdate={handleActivitiesUpdate}
+                                    weekId={entry.week}
+                                />
+                                <WeekEvaluation
+                                    evaluation={entry.evaluation}
+                                    isEditing={isEditing}
+                                    onUpdate={handleEvaluationUpdate}
+                                    weekId={entry.week}
+                                />
+                                <WeekReferences
+                                    references={entry.references}
+                                    isEditing={isEditing}
+                                    onUpdate={handleReferencesUpdate}
+                                    weekId={entry.week}
+                                />
                             </div>
                         </motion.div>
                     )}
-                </AnimatePresence>
-            </motion.div>
+                </AnimatePresence >
+            </motion.div >
 
             <ConfirmationModal
                 isOpen={isDeleteModalOpen}

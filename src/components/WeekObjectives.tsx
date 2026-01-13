@@ -5,11 +5,15 @@ import { useLanguage } from '../context/LanguageContext';
 /**
  * Props for WeekObjectives component.
  * @property {string[]} objectives - List of learning objectives. Can be strings or key-value objects.
+ * @property {boolean} [isEditing] - Whether the component is in edit mode.
+ * @property {function} [onUpdate] - Callback function to update objectives.
+ * @property {number} [weekId] - The ID/number of the week, used for generating unique form field IDs.
  */
 interface WeekObjectivesProps {
     objectives: string[];
     isEditing?: boolean;
     onUpdate?: (newObjectives: string[]) => void;
+    weekId?: number;
 }
 
 /**
@@ -23,7 +27,7 @@ interface WeekObjectivesProps {
  * @param {WeekObjectivesProps} props - Component props
  * @returns {React.ReactElement | null} The rendered list or null if empty.
  */
-export const WeekObjectives: React.FC<WeekObjectivesProps> = ({ objectives, isEditing, onUpdate }) => {
+export const WeekObjectives: React.FC<WeekObjectivesProps> = ({ objectives, isEditing, onUpdate, weekId }) => {
     const { t } = useLanguage();
     if ((!objectives || objectives.length === 0) && !isEditing) return null;
 
@@ -65,6 +69,8 @@ export const WeekObjectives: React.FC<WeekObjectivesProps> = ({ objectives, isEd
                         {isEditing ? (
                             <div className="flex-1 flex gap-2">
                                 <input
+                                    id={`week-${weekId}-objective-${i}`}
+                                    name={`week-${weekId}-objective-${i}`}
                                     className="flex-1 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded px-2 py-1 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                     value={typeof obj === 'string' ? obj : JSON.stringify(obj)}
                                     onChange={(e) => handleChange(i, e.target.value)}

@@ -73,6 +73,8 @@ export const ImportJsonButton = ({ showLabel = false }: { showLabel?: boolean })
         <>
             <input
                 type="file"
+                id="import-json-file"
+                name="importJsonFile"
                 ref={fileInputRef}
                 onChange={handleFileSelect}
                 accept=".json"

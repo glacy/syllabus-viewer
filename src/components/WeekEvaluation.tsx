@@ -7,11 +7,15 @@ import { useLanguage } from '../context/LanguageContext';
 /**
  * Props for WeekEvaluation component.
  * @property {SyllabusEntry['evaluation']} evaluation - List of evaluation methods.
+ * @property {boolean} [isEditing] - Whether the component is in edit mode.
+ * @property {function} [onUpdate] - Callback function to update evaluation methods.
+ * @property {number} [weekId] - The ID/number of the week, used for generating unique form field IDs.
  */
 interface WeekEvaluationProps {
     evaluation: SyllabusEntry['evaluation'];
     isEditing?: boolean;
     onUpdate?: (newEvaluation: SyllabusEntry['evaluation']) => void;
+    weekId?: number;
 }
 
 /**
@@ -25,7 +29,7 @@ interface WeekEvaluationProps {
  * @param {WeekEvaluationProps} props - Component props
  * @returns {React.ReactElement | null} The rendered evaluation list or null if empty.
  */
-export const WeekEvaluation: React.FC<WeekEvaluationProps> = ({ evaluation, isEditing, onUpdate }) => {
+export const WeekEvaluation: React.FC<WeekEvaluationProps> = ({ evaluation, isEditing, onUpdate, weekId }) => {
     const { t } = useLanguage();
     if ((!evaluation || evaluation.length === 0) && !isEditing) return null;
 
@@ -70,6 +74,8 @@ export const WeekEvaluation: React.FC<WeekEvaluationProps> = ({ evaluation, isEd
                         {isEditing ? (
                             <div className="flex-1 flex gap-2 items-start">
                                 <select
+                                    id={`week-${weekId}-evaluation-${i}-type`}
+                                    name={`week-${weekId}-evaluation-${i}-type`}
                                     className="text-xs border border-slate-200 dark:border-slate-600 rounded px-2 py-1 bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
                                     value={ev.type}
                                     onChange={(e) => handleChange(i, 'type', e.target.value)}
@@ -78,6 +84,8 @@ export const WeekEvaluation: React.FC<WeekEvaluationProps> = ({ evaluation, isEd
                                     <option value="Sumativa">{t.evaluationTypes.summative}</option>
                                 </select>
                                 <input
+                                    id={`week-${weekId}-evaluation-${i}-desc`}
+                                    name={`week-${weekId}-evaluation-${i}-desc`}
                                     className="flex-1 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded px-2 py-1 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
                                     value={ev.description}
                                     onChange={(e) => handleChange(i, 'description', e.target.value)}

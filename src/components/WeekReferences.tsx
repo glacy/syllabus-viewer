@@ -6,11 +6,15 @@ import { useLanguage } from '../context/LanguageContext';
 /**
  * Props for WeekReferences component.
  * @property {SyllabusEntry['references']} references - Bibliographic references.
+ * @property {boolean} [isEditing] - Whether the component is in edit mode.
+ * @property {function} [onUpdate] - Callback function to update references.
+ * @property {number} [weekId] - The ID/number of the week, used for generating unique form field IDs.
  */
 interface WeekReferencesProps {
     references: SyllabusEntry['references'];
     isEditing?: boolean;
     onUpdate?: (newReferences: { text: string; pages?: string }[]) => void;
+    weekId?: number;
 }
 
 /**
@@ -25,7 +29,7 @@ interface WeekReferencesProps {
  * @param {WeekReferencesProps} props - Component props
  * @returns {React.ReactElement | null} The rendered references block or null if empty.
  */
-export const WeekReferences: React.FC<WeekReferencesProps> = ({ references, isEditing, onUpdate }) => {
+export const WeekReferences: React.FC<WeekReferencesProps> = ({ references, isEditing, onUpdate, weekId }) => {
     const { t } = useLanguage();
     const isEmpty = !references || (Array.isArray(references) && references.length === 0) || (typeof references === 'string' && references.trim() === '');
     if (isEmpty && !isEditing) return null;
@@ -73,6 +77,8 @@ export const WeekReferences: React.FC<WeekReferencesProps> = ({ references, isEd
                                 <div className="flex gap-2 items-start">
                                     <div className="flex-1 space-y-1">
                                         <input
+                                            id={`week-${weekId}-ref-${i}-text`}
+                                            name={`week-${weekId}-ref-${i}-text`}
                                             className="w-full bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded px-2 py-1 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400"
                                             value={ref.text}
                                             onChange={(e) => handleChange(i, 'text', e.target.value)}
@@ -90,6 +96,8 @@ export const WeekReferences: React.FC<WeekReferencesProps> = ({ references, isEd
                                             placeholder="Reference text..."
                                         />
                                         <input
+                                            id={`week-${weekId}-ref-${i}-pages`}
+                                            name={`week-${weekId}-ref-${i}-pages`}
                                             className="w-1/3 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded px-2 py-1 text-xs text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400"
                                             value={ref.pages || ''}
                                             onChange={(e) => handleChange(i, 'pages', e.target.value)}
