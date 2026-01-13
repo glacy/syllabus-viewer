@@ -115,10 +115,16 @@ Información global del curso que alimenta tanto al Header/Footer de la aplicaci
 *   `title`, `semester`, `university`, `description`
 *   `authors`: Lista de autores.
 
+#### Config (Opcional)
+Configuración general de la aplicación:
+*   `unitLabel`: Etiqueta personalizada para la unidad de tiempo (ej., "Semana", "Sesión", "Módulo").
+
 #### Weeks
 Cada entrada en el array `weeks` representa una semana de clases y contiene:
 
 *   `week`: Número secuencial de la semana.
+*   `title`: Título principal de la sesión.
+*   `subtitle`: Subtítulo o descripción del tema (opcional).
 *   `content`: Lista de temas a cubrir.
 *   `objectives`: Objetivos de aprendizaje específicos.
 *   `activities`: Descripción de actividades dinámicas (laboratorios, talleres).
@@ -128,6 +134,8 @@ Cada entrada en el array `weeks` representa una semana de clases y contiene:
 ```json
 {
     "week": 1,
+    "title": "Introducción a la Física",
+    "subtitle": "Conceptos Fundamentales",
     "content": [
       "Unidades y conversión de unidades",
       "unidades del SI",

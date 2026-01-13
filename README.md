@@ -116,10 +116,16 @@ Global course information that feeds both the application Header/Footer and MyST
 *   `title`, `semester`, `university`, `description`
 *   `authors`: List of authors.
 
+#### Config (Optional)
+Configuration settings for the application:
+*   `unitLabel`: Custom label for the time unit (e.g., "Week", "Session", "Module").
+
 #### Weeks
 Each entry in the `weeks` array represents a week of classes and contains:
 
 *   `week`: Sequential week number.
+*   `title`: Main title of the session.
+*   `subtitle`: Optional subtitle or topic description.
 *   `content`: List of topics to cover.
 *   `objectives`: Specific learning objectives.
 *   `activities`: Description of dynamic activities (labs, workshops).
@@ -129,6 +135,8 @@ Each entry in the `weeks` array represents a week of classes and contains:
 ```json
 {
     "week": 1,
+    "title": "Introduction to Physics",
+    "subtitle": "Fundamental Concepts",
     "content": [
       "Units and unit conversion",
       "SI units",
