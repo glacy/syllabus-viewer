@@ -1,0 +1,22 @@
+{
+    "title": "Syllabus Viewer - Física para Biotecnología",
+    "description": "Interactive application developed in React + TypeScript + Vite to visualize the didactic planning and learning objectives of the course.",
+    "creators": [
+        {
+            "name": "Lacy-Mora, Gerardo",
+            "affiliation": "Instituto Tecnológico de Costa Rica",
+            "orcid": "0000-0003-4361-3758"
+        }
+    ],
+    "access_right": "open",
+    "license": "MIT",
+    "keywords": [
+        "syllabus",
+        "education",
+        "react",
+        "visualization",
+        "physics",
+        "biotechnology"
+    ],
+    "upload_type": "software"
+}
