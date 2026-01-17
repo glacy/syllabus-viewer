@@ -1,5 +1,7 @@
 # Syllabus Viewer
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18234949.svg)](https://doi.org/10.5281/zenodo.18234949)
+
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.18234949.svg
+  :target: https://doi.org/10.5281/zenodo.18234949
 
 Interactive application developed in **React + TypeScript + Vite** to visualize the didactic planning and learning objectives of the course in a dynamic and attractive way.
 
